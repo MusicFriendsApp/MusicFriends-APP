@@ -16,14 +16,10 @@ const checkConnection = async () => {
   }
 }
 
-const syncModels = async (value) => {
-  const state = {
-    alter: {alter: true},
-    force: {force: true}
-  }
+const syncModels = async () => {
 
   try {
-    await sequelize.sync(state[value] || '')
+    await sequelize.sync()
     console.log(`All models synchronized using ${JSON.stringify(state[value] || '')}`)
   } catch (error) {
     console.log(error)

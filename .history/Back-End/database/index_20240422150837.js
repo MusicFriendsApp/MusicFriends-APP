@@ -16,7 +16,7 @@ const checkConnection = async () => {
   }
 }
 
-const syncModels = async (value) => {
+const syncModels = async () => {
   const state = {
     alter: {alter: true},
     force: {force: true}

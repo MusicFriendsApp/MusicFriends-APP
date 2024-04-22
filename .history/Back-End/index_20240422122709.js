@@ -1,6 +1,5 @@
 require('dotenv').config()
 const { syncModels, checkConnection } = require('./database/index')
-const addRelationsToModels = require('./database/models')
 
 const express = require('express')
 const morgan = require('morgan')
@@ -8,8 +7,7 @@ const cors = require('cors')
 
 const checkAndSyncSQL = async () => {
   await checkConnection()
-  addRelationsToModels()
-  await syncModels('force')
+  await syncModels()
 }
 
 const port = 3000

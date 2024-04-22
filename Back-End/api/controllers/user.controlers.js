@@ -25,19 +25,22 @@ async function getAllUser (request, response){
 
 async function addUser (request, response){
     const allUsers = getAllUser()
-    
+ 
     try {
-        const user = await User.create({
-            userName: request.body.userName,
-            country: request.body.country,
-            spotify_id: request.body.spotify_id,
-            profile_picture: request.body.profile_picture,
-        })
-        if (user) {
-            return response.status(400).send('Bad request: User already exists')
+        allUsers.forEach((user)=>{ 
+        if (user.spotify_id === request.body.spotify_id){
+        return response.status(400).send('Bad request: User already exists')    
         } else {
-            return response.status(200).send('User created')
+            const user = await User.create({
+                userName: request.body.userName,
+                country: request.body.country,
+                spotify_id: request.body.spotify_id,
+                profile_picture: request.body.profile_picture,
+            })
+            return response.status(200).send('User created')   
         }
+        })
+       
     } catch (error) {
         response.status(500).send(error.message)
     }

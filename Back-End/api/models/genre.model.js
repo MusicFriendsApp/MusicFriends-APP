@@ -7,9 +7,6 @@ const Genre = sequelize.define(
         genre_name: {
             type: DataTypes.STRING,
         },
-        artist_id: {
-            type: DataTypes.STRING,
-        },
     },
 
 )

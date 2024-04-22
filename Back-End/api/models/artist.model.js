@@ -7,9 +7,6 @@ const Artist = sequelize.define(
         artist_name: {
             type: DataTypes.STRING,
         },
-        genres_id: {
-            type: DataTypes.STRING,
-        },
         spotify_id: {
             type: DataTypes.STRING,
         },

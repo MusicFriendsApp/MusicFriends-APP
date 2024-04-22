@@ -16,15 +16,6 @@ const User = sequelize.define(
         profile_picture: {
             type: DataTypes.STRING,
         },
-        tracks_id: {
-            type: DataTypes.STRING,
-        },
-        artist_id: {
-            type: DataTypes.STRING,
-        },
-        genres_id: {
-            type: DataTypes.STRING,
-        },
     },
 
 )

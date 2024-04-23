@@ -11,6 +11,7 @@ const Artist = sequelize.define(
             type: DataTypes.STRING,
         },
     },
+
 )
 
 

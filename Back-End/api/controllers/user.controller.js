@@ -92,6 +92,6 @@ module.exports = {
   addUser,
   getAllUser,
   deleteUser,
-  updateUser
+  updateUser,
   //multipleUser
 };

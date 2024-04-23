@@ -70,28 +70,6 @@ async function updateUser(request, response) {
   }
 }
 
-// GENERATES MULTIPLE USER EXAMPLES FOR DEVELOPING
-/* async function multipleUser(request, response) {
-  try {
-    for (let index = 0; index < 20; index++) {
-      const user = User.create({
-        username: faker.internet.userName(),
-        country: faker.location.countryCode('alpha-2'),
-        spotify_id: Math.floor(Math.random() * 10000),
-        profile_picture: faker.image.abstract(1234, 2345, true),
-      });
-    }
-    return response.status(200).send("User created");
-  } catch (error) {
-    return response.status(400).send("Bad request: User already exists");
-  }
-} */
-
 module.exports = {
-  getOneUser,
-  addUser,
-  getAllUser,
-  deleteUser,
-  updateUser,
-  //multipleUser
+  getOneGenre, getAllGenres, addGenre
 };

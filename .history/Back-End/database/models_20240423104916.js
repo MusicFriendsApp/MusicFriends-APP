@@ -18,7 +18,7 @@ const addRelationsToModels = () => {
     Genre.belongsToMany(User, {through: UserGenres})
     User.belongsToMany(Track, {through: UserTracks})
     Track.belongsToMany(User, {through: UserTracks})
-    User.belongsToMany(User, {through: Follow, as: 'following_user_id'})
+    User.belongsToMany(User, {through: 'Follow', as: 'following_user_id'})
     // User.belongsToMany(User, {through: Follow, as: 'followed_user_id'})
     User.hasMany(Post)
     Post.belongsTo(User)

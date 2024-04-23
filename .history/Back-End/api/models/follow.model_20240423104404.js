@@ -3,6 +3,8 @@ const { DataTypes } = require('sequelize');
 
 const Follow = sequelize.define(
     'follow',
+
+
 )
 
 

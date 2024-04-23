@@ -1,16 +1,16 @@
-import './Home.css'
+import './Login.css'
 import { loginSpotify } from '../../services/loginSpotify'
 
-const Home = () => {
+const Login = () => {
 
 
 
   return (
-    <div id='homepage'>
-      <h1>This is the home page</h1>
+    <div id='loginpage'>
+      <h1>This is the Login page</h1>
       <button onClick={loginSpotify}>Log In</button>
     </div>
   )
 }
 
-export default Home
+export default Login

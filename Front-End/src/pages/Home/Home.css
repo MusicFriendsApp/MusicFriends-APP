@@ -3,4 +3,23 @@
     height: 70vh;
     background-image: url('../../assets/81091651_SL-022222-48740-06.jpeg') ;
     background-size: cover;
+    border: 2px solid green;
+    padding: 2px;
+    display: flex;
+}
+
+h1 {
+    display:inline;
+}
+
+#content-left {
+    border: solid 2px red;
+    width: 66%;
+    padding: 2px;
+}
+
+#content-right {
+    border: solid 2px red;
+    width: 33%;
+    padding: 2px;
 }

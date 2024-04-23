@@ -3,8 +3,6 @@ import { loginSpotify } from '../../services/loginSpotify'
 
 const Login = () => {
 
-
-
   return (
     <div id='loginpage'>
       <h1>This is the Login page</h1>

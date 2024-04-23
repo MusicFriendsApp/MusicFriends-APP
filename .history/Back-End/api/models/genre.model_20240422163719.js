@@ -1,17 +1,15 @@
 const { sequelize } = require('../../database/index.js');
 const { DataTypes } = require('sequelize');
 
-const Artist = sequelize.define(
-    'artist',
+const Genre = sequelize.define(
+    'genre',
     {
-        artist_name: {
-            type: DataTypes.STRING,
-        },
-        spotify_id: {
+        genre_name: {
             type: DataTypes.STRING,
         },
     },
+
 )
 
 
-module.exports = Artist
+module.exports = Genre

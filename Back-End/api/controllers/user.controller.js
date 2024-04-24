@@ -25,6 +25,7 @@ async function getAllUser(request, response) {
 
 async function addUser(request, response) {
   try {
+    console.log(request.body)
     await User.create({
       username: request.body.username,
       country: request.body.country,

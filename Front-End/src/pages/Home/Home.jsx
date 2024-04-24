@@ -10,10 +10,19 @@ const Home = () => {
   }, [])
 
   return (
+    <>
     <div id="homepage">
-        <h1>THIS IS HOME PAGE</h1>
+        <br/>
+        <div id="content-left">Content left
+          <div className="content-left-item">content-left-item</div>
+        </div>
+        
+        <div id="content-right">Content right
+          <div className="content-rigth-item">content-rigth-item</div>
+        </div>
       
     </div>
+    </>
   )
 }
 

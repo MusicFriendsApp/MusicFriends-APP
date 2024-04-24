@@ -8,8 +8,8 @@ const cors = require('cors')
 
 const checkAndSyncSQL = async () => {
   await checkConnection()
-  addRelationsToModels()cd 
-  await syncModels('')
+  addRelationsToModels() 
+  await syncModels('alter')
 }
 
 const port = 3000

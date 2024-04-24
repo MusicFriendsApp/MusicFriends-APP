@@ -10,7 +10,7 @@ export const Profile = () => {
 
       const userData = await getUserSpotify()
       setData(userData)
-      createUser(data.display_name,data.country,data.id,data.images[0].url,data.images[1].url)
+      createUser(userData.display_name,userData.country,userData.id,userData.images[0].url,userData.images[1].url)
     }
     getUserDataSpotify()
   }, [])

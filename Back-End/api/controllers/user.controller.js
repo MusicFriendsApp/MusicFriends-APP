@@ -29,11 +29,12 @@ async function addUser(request, response) {
       username: request.body.username,
       country: request.body.country,
       spotify_id: request.body.spotify_id,
-      profile_picture: request.body.profile_picture,
+      profile_picture_sm: request.body.profile_picture_sm,
+      profile_picture_bg: request.body.profile_picture_bg,
     });
     return response.status(200).send("User created");
   } catch (error) {
-    return response.status(400).send("Bad request: User already exists");
+    return response.status(400).send("User already exists");
   }
 }
 

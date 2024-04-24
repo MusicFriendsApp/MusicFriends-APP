@@ -16,6 +16,8 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 
+import { Link } from 'react-router-dom';
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -82,24 +84,31 @@ export default function Header() {
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
+    
+      <Menu
+        anchorEl={anchorEl}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        id={menuId}
+        keepMounted
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        open={isMenuOpen}
+        onClose={handleMenuClose}
+      >
+        <Link to={'/profile'}>
+
+        <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+        </Link>
+        <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      </Menu>
+
+
+    
   );
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
@@ -133,7 +142,7 @@ export default function Header() {
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
+          <Badge badgeContent={71} color="error">
             <NotificationsIcon />
           </Badge>
         </IconButton>

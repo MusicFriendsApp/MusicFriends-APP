@@ -2,10 +2,10 @@ const { getOneUser, getAllUser, multipleUser, addUser, deleteUser, updateUser} =
 
 const router = require('express').Router()
 router.get('/', getAllUser)
-router.get('/:id', getOneUser)
+router.get('/:spotify_id', getOneUser)
 router.post('/addUser', addUser)
 router.delete('/deleteUser/:spotify_id', deleteUser)
-router.put('/updateUser/:id', updateUser)
+router.put('/updateUser/:spotify_id', updateUser)
 //router.post('/multiple', multipleUser)
 
 module.exports = router

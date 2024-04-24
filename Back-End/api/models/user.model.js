@@ -14,7 +14,10 @@ const User = sequelize.define(
             type: DataTypes.STRING,
             unique: true,
         },
-        profile_picture: {
+        profile_picture_sm: {
+            type: DataTypes.STRING,
+        },
+        profile_picture_bg: {
             type: DataTypes.STRING,
         },
         role: {

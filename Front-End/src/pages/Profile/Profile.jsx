@@ -1,5 +1,5 @@
 import ('./Profile.css')
-import { getCurrentUser } from '../../services/user'
+import { getCurrentUser, createUser } from '../../services/user'
 import getUserSpotify from '../../services/getUserSpotify'
 import { useState, useEffect } from 'react'
 
@@ -10,6 +10,7 @@ export const Profile = () => {
 
       const userData = await getUserSpotify()
       setData(userData)
+      createUser(data.display_name,data.country,data.id,data.images[0].url,data.images[1].url)
     }
     getUserDataSpotify()
   }, [])

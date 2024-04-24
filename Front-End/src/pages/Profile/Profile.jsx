@@ -1,31 +1,21 @@
 import ('./Profile.css')
 import { getCurrentUser } from '../../services/user'
-
-
+import getUserSpotify from '../../services/getUserSpotify'
+import { useState, useEffect } from 'react'
 
 export const Profile = () => {
+  const [data, setData] = useState([])
+  useEffect(() => {
+    const getUserDataSpotify = async () => {
 
-    const token = localStorage.getItem('token')
-
-    const profile = fetchProfile(token)
-
-    const id = profile.id
-    console.log(id)
-
-    async function fetchProfile(token) {
-        const result = await fetch("https://api.spotify.com/v1/me", {
-          method: "GET", headers: { Authorization: `Bearer ${token}` }
-        });
-        
-
-        
-        
-        return await result.json();
-      } 
-
+      const userData = await getUserSpotify()
+      setData(userData)
+    }
+    getUserDataSpotify()
+  }, [])
 
   return (
-    <div>Profile </div>
+    <div>Profile {data.display_name}</div>
   )
 }
 

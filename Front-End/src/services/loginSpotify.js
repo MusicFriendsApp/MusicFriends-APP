@@ -7,10 +7,7 @@ export async function loginSpotify() {
     redirectToAuthCodeFlow(clientId)
   } else {
     const accessToken = await getAccessToken(clientId, code)
-    console.log(accessToken)
     localStorage.setItem('token', accessToken)
-    const profile = await fetchProfile(accessToken);
-    console.log(profile);
   }
     async function redirectToAuthCodeFlow(clientId) {
       const verifier = generateCodeVerifier(128)
@@ -69,12 +66,5 @@ export async function loginSpotify() {
         return access_token
       }
       
-      async function fetchProfile(token) {
-        const result = await fetch("https://api.spotify.com/v1/me", {
-          method: "GET", headers: { Authorization: `Bearer ${token}` }
-        });
-        
-        return await result.json();
-      }
   }
   

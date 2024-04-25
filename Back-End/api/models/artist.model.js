@@ -9,6 +9,7 @@ const Artist = sequelize.define(
         },
         spotify_id: {
             type: DataTypes.STRING,
+            unique: true,
         },
     },
 )

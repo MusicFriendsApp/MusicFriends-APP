@@ -20,8 +20,7 @@ export const getCurrentUser = async (spotify_id) => {
     return data 
 }
 
-///////////////////////
-export const userTopTenArtist = async (artist_name, spotify_id) => {
+export const addTopTenArtist = async (artist_name, spotify_id) => {
   try {
     const {data} = await api.post("/artist/addArtist", {
         artist_name: artist_name,

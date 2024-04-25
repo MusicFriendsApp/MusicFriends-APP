@@ -15,10 +15,10 @@ const User = sequelize.define(
             unique: true,
         },
         profile_picture_sm: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
         },
         profile_picture_bg: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
         },
         role: {
             type: DataTypes.ENUM('admin', 'user'),

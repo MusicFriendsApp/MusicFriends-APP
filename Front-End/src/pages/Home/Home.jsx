@@ -5,6 +5,7 @@ import { createUser } from '../../services/user'
 import { getUserSpotify } from '../../services/getUserSpotify' 
 import { getUserTopArtist } from '../../services/getUserTopArtist'
 import { addTopTenArtist } from '../../services/user'
+import profilePic from '../../assets/defaultProfilePicture.svg'
 
 const Home = () => {
   useEffect(() => {
@@ -27,7 +28,7 @@ const Home = () => {
       if (userData.images.length !== 0){
         createUser(userData.display_name,userData.country,userData.id,userData.images[0].url,userData.images[1].url)
       } else {
-        createUser(userData.display_name,userData.country,userData.id, url('../../assets/defaultProfilePicture.svg'),url('../../assets/defaultProfilePicture.svg'))
+        createUser(userData.display_name,userData.country,userData.id,profilePic,profilePic)
       }
     }
     getUserDataSpotify()
@@ -37,7 +38,6 @@ const Home = () => {
       const artistList = items.map(( artist )=>{
         return [artist.name, artist.id]
       })
-      console.log(artistList)
       artistList.forEach((artist) => {
         addTopTenArtist(artist[0], artist[1])
       })

@@ -27,7 +27,7 @@ const Home = () => {
       if (userData.images.length !== 0){
         createUser(userData.display_name,userData.country,userData.id,userData.images[0].url,userData.images[1].url)
       } else {
-        createUser(userData.display_name,userData.country,userData.id,'../../assets/defaultProfilePicture.svg','../../assets/defaultProfilePicture.svg')
+        createUser(userData.display_name,userData.country,userData.id, url('../../assets/defaultProfilePicture.svg'),url('../../assets/defaultProfilePicture.svg'))
       }
     }
     getUserDataSpotify()

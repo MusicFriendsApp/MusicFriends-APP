@@ -22,6 +22,7 @@ export const Profile = () => {
 
   return (
     <>
+    {console.log(data.profile_picture_bg)}
       <div className='profile-container'>
         <div className="card">
           <span className="pro">FREE</span>

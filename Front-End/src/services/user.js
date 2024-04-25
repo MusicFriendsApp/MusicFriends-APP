@@ -11,7 +11,6 @@ export const createUser = async (username,country,spotify_id,profile_picture_sm,
     })
     return data
   } catch (error) {
-    console.log(error)
   }
 }
 

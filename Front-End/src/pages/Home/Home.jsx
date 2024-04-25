@@ -2,7 +2,7 @@ import { loginSpotify } from "../../services/loginSpotify"
 import "./Home.css"
 import { useEffect, useState } from "react"
 import { createUser } from '../../services/user'
-import getUserSpotify from '../../services/getUserSpotify' 
+import {getUserSpotify} from '../../services/getUserSpotify' 
 
 const Home = () => {
   useEffect(() => {

@@ -1,4 +1,4 @@
-export default async function getUserSpotify() {
+export async function getUserSpotify() {
   const token = localStorage.getItem('access_token')
     async function fetchProfile(token) {
       const result = await fetch("https://api.spotify.com/v1/me", {
@@ -12,7 +12,7 @@ export default async function getUserSpotify() {
 }
 
 
-export default async function getUserTopArtist() {
+export async function getUserTopArtist() {
   const token = localStorage.getItem('access_token')
     async function fetchProfile(token) {
       const result = await fetch("https://api.spotify.com/v1/me/top/artists", {

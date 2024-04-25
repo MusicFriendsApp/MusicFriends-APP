@@ -27,7 +27,6 @@ export const userTopTenArtist = async (artist_name, spotify_id) => {
         artist_name: artist_name,
         spotify_id: spotify_id,
     })
-
     return data
   } catch (error) {
     console.log(error)

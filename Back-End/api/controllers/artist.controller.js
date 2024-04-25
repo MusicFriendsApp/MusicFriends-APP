@@ -1,4 +1,5 @@
 const Artist = require("../models/artist.model");
+const User = require("../models/user.model");
 
 
 async function getOneArtist(request, response) {
@@ -25,10 +26,19 @@ async function getAllArtist(request, response) {
 
 async function addArtist(request, response) {
   try {
-    await Artist.create({
+    const artist = await Artist.create({
       artist_name: request.body.artist_name,
       spotify_id: request.body.spotify_id,
     });
+
+    const user = await User.findOne({
+      where: {
+        spotify_id: '1115344794'
+      }
+    })
+
+    await user.addArtist(artist)
+
     return response.status(200).send("Artist created");
   } catch (error) {
     return response.status(400).send("Bad request: Artist already exists");

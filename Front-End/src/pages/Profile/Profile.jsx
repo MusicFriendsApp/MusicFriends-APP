@@ -1,23 +1,25 @@
 import('./Profile.css')
 import { getCurrentUser } from '../../services/user'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export const Profile = () => {
   localStorage.setItem('spotify_id', '1115344794')
   const [data, setData] = useState('')
   
-  async function getUserData() {
-    const spotify_id = localStorage.getItem('spotify_id').toString()
-      async function fetchProfile(spotify_id) {
-        const result = await getCurrentUser(spotify_id)
-        const profile = await result.json();
-        return profile
+  useEffect(() => {
+    async function getUserData() {
+      const spotify_id = localStorage.getItem('spotify_id').toString()
+        async function fetchProfile(spotify_id) {
+          const result = await getCurrentUser(spotify_id)
+          const profile = await result
+          return profile
+        }
+        const profile = await fetchProfile(spotify_id)
+        setData(profile)
       }
-      const profile = await fetchProfile(spotify_id)
-      setData(profile)
-  }
+      getUserData()
+  }, [])
 
-  getUserData()
 
   return (
     <>

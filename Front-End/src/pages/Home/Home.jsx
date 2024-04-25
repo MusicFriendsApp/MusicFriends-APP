@@ -14,8 +14,7 @@ const Home = () => {
     }
     login()
   }, [])
-
-  const [data, setData] = useState([])
+  
   const [token, setToken] = useState("")
   useEffect(() => {
     const getUserDataSpotify = async () => {

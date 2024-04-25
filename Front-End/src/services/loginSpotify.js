@@ -6,8 +6,15 @@ export async function loginSpotify() {
   if (!code) {
     redirectToAuthCodeFlow(clientId)
   } else {
-    const accessToken = await getAccessToken(clientId, code)
-    localStorage.setItem('token', accessToken)
+    const {access_token, refresh_token, expires_in} = await getAccessToken(clientId, code)
+    localStorage.setItem('access_token', access_token);
+    localStorage.setItem('refresh_token', refresh_token);
+    localStorage.setItem('expires_in', expires_in);
+    setInterval(async () => {
+      const {access_token, refresh_token} = await getRefreshToken()
+      localStorage.setItem('access_token', access_token);
+      localStorage.setItem('refresh_token', refresh_token);
+    }, 350000)
   }
     async function redirectToAuthCodeFlow(clientId) {
       const verifier = generateCodeVerifier(128)
@@ -45,7 +52,7 @@ export async function loginSpotify() {
         .replace(/\//g, '_')
         .replace(/=+$/, '')
       }
-      
+
       async function getAccessToken(clientId, code) {
         const verifier = localStorage.getItem('verifier')
         
@@ -62,9 +69,28 @@ export async function loginSpotify() {
           body: params,
         })
         
-        const { access_token } = await result.json()
-        return access_token
+        const response = await result.json()
+        return response
       }
-      
-  }
-  
+
+      async function getRefreshToken() {
+        const refreshToken = localStorage.getItem('refresh_token');
+        const url = "https://accounts.spotify.com/api/token";
+
+        const payload = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: new URLSearchParams({
+            grant_type: 'refresh_token',
+            refresh_token: refreshToken,
+            client_id: clientId
+          }),
+        }
+        const body = await fetch(url, payload);
+        const response = await body.json();
+        return response
+      }
+
+}

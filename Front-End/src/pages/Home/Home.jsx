@@ -43,10 +43,10 @@ const Home = () => {
 
 
 
-    getUserTopArtist()
+    getUserTopArtist() */
 
 
-  }, [token])
+  }, [token]) 
 
 
   return (

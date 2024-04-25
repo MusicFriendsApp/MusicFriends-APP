@@ -39,7 +39,7 @@ async function addUser(request, response) {
       profile_picture_sm: request.body.profile_picture_sm,
       profile_picture_bg: request.body.profile_picture_bg,
     });
-    return response.status(200).send("User created");
+    return response.status(200).send(`User ${user.username} created`);
   } catch (error) {
     return response.status(400).send("User already exists");
   }

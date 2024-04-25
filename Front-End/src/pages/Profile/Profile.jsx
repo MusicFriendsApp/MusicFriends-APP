@@ -3,7 +3,6 @@ import { getCurrentUser } from '../../services/user'
 import { useState, useEffect } from 'react'
 
 export const Profile = () => {
-  localStorage.setItem('spotify_id', '1115344794')
   const [data, setData] = useState('')
   
   useEffect(() => {

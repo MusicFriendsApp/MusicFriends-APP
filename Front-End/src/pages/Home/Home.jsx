@@ -14,13 +14,13 @@ const Home = () => {
     }
     login()
   }, [])
-  
+
   const [token, setToken] = useState("")
   useEffect(() => {
     const getUserDataSpotify = async () => {
 
       const userData = await getUserSpotify()
-      setData(userData)
+      localStorage.setItem('spotify_id', userData.id)
 
       if (userData.images.length !== 0){
         createUser(userData.display_name,userData.country,userData.id,userData.images[0].url,userData.images[1].url)

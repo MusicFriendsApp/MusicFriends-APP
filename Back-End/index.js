@@ -8,7 +8,7 @@ const cors = require('cors')
 
 const checkAndSyncSQL = async () => {
   await checkConnection()
-  addRelationsToModels()cd 
+  addRelationsToModels() 
   await syncModels('')
 }
 

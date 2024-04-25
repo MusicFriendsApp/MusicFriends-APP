@@ -1,13 +1,36 @@
 import { loginSpotify } from "../../services/loginSpotify"
 import "./Home.css"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { createUser } from '../../services/user'
+import getUserSpotify from '../../services/getUserSpotify' 
 
 const Home = () => {
   useEffect(() => {
-    if(!localStorage.getItem('token')) {
-      loginSpotify()
+    const login = async () => {
+      if(!localStorage.getItem('access_token')) {
+        const newToken = await loginSpotify()
+        setToken(newToken)
+      }
     }
+    login()
   }, [])
+
+  const [data, setData] = useState([])
+  const [token, setToken] = useState("")
+  useEffect(() => {
+    const getUserDataSpotify = async () => {
+
+      const userData = await getUserSpotify()
+      setData(userData)
+
+      if (userData.images.length !== 0){
+        createUser(userData.display_name,userData.country,userData.id,userData.images[0].url,userData.images[1].url)
+      } else {
+        createUser(userData.display_name,userData.country,userData.id,'../../assets/defaultProfilePicture.svg','../../assets/defaultProfilePicture.svg')
+      }
+    }
+    getUserDataSpotify()
+  }, [token])
 
   return (
     <>

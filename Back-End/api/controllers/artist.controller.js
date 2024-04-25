@@ -26,7 +26,7 @@ async function getAllArtist(request, response) {
 async function addArtist(request, response) {
   try {
     await Artist.create({
-     artist_name: request.body.artist_name,
+      artist_name: request.body.artist_name,
       spotify_id: request.body.spotify_id,
     });
     return response.status(200).send("Artist created");

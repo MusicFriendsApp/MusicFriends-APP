@@ -22,29 +22,33 @@ export const Profile = () => {
 
   return (
     <>
-      <div className="card-container">
-        <span className="pro">FREE</span>
-        <img className="round" src={data.profile_picture_bg} alt="user" />
-        <h3>{data.username}</h3>
-        <h6>{data.country}</h6>
-        <p>
-          User interface designer and <br /> front-end developer
-        </p>
-        <div className="buttons">
-          <button className="primary">Message</button>
-          <button className="primary ghost">Following</button>
+      <div className='profile-container'>
+        <div className="card">
+          <span className="pro">FREE</span>
+          <img className="round" src={data.profile_picture_bg} alt="user" />
+          <h3>{data.username}</h3>
+          <h6>{data.country}</h6>
+          <p>
+            User interface designer and <br /> front-end developer
+          </p>
+          <div className="buttons">
+            <button className="primary">Message</button>
+            <button className="primary">Follow</button>
+          </div>
         </div>
-        <div className="skills">
-          <h6>Skills</h6>
-          <ul>
-            <li>UI / UX</li>
-            <li>Front End Development</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Node</li>
-          </ul>
+        <div>
+          <div className="skills">
+            <h6>Skills</h6>
+            <ul>
+              <li>UI / UX</li>
+              <li>Front End Development</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>Node</li>
+            </ul>
+          </div>
         </div>
       </div>
     </>

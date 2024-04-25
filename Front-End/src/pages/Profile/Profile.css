@@ -12,7 +12,7 @@ p {
 	line-height: 21px;
 }
 
-.card-container {
+.card {
 	background-color: #231E39;
 	border-radius: 5px;
 	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
@@ -24,7 +24,7 @@ p {
 	text-align: center;
 }
 
-.card-container .pro {
+.card .pro {
 	color: #231E39;
 	background-color: #1db954;
 	border-radius: 3px;
@@ -37,7 +37,7 @@ p {
 	text-transform: uppercase;
 }
 
-.card-container .round {
+.card .round {
 	border: 1px solid #03BFCB;
   width: 50%;
 	border-radius: 50%;
@@ -57,6 +57,10 @@ button.primary {
 button.primary.ghost {
 	background-color: transparent;
 	color: #02899C;
+}
+
+.buttons {
+  margin-bottom: 50px;
 }
 
 .skills {
@@ -79,4 +83,10 @@ button.primary.ghost {
 	font-size: 12px;
 	margin: 0 7px 7px 0;
 	padding: 7px;
+}
+
+.profile-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }

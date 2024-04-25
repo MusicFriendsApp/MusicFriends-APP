@@ -3,7 +3,13 @@ const { faker } = require('@faker-js/faker');
 
 async function getOneUser(request, response) {
   try {
-    const user = await User.findByPk(request.params.id);
+    const user = await User.findOne(
+      {
+        where: {
+          spotify_id: request.params.spotify_id
+        }
+      }
+    );
     if (user) {
       return response.status(200).json(user);
     } else {

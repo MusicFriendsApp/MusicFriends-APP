@@ -11,7 +11,7 @@ const User = sequelize.define(
             type: DataTypes.STRING,
         },
         spotify_id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             unique: true,
         },
         profile_picture_sm: {

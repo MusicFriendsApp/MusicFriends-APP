@@ -32,7 +32,7 @@ async function getAllUser(request, response) {
 async function addUser(request, response) {
   try {
     console.log(request.body)
-    await User.create({
+    const prueba = await User.create({
       username: request.body.username,
       country: request.body.country,
       spotify_id: request.body.spotify_id,
@@ -41,6 +41,7 @@ async function addUser(request, response) {
     });
     return response.status(200).send(`User ${user.username} created`);
   } catch (error) {
+    console.log(error)
     return response.status(400).send("User already exists");
   }
 }

@@ -1,0 +1,33 @@
+#loginpage {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#login-button {
+  width: 100px;
+  padding: 5px;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-form > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+#terms {
+  cursor: pointer;
+}

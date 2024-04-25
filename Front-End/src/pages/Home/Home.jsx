@@ -3,6 +3,7 @@ import "./Home.css"
 import { useEffect, useState } from "react"
 import { createUser } from '../../services/user'
 import {getUserSpotify} from '../../services/getUserSpotify' 
+import { getUserTopArtist } from '../../services/user'
 
 const Home = () => {
   useEffect(() => {
@@ -29,7 +30,23 @@ const Home = () => {
       }
     }
     getUserDataSpotify()
+
+    const getUserTopArtistData = async () => {
+      const {items} = await getUserTopArtist()
+      const data = items.map((artist)=>{
+        return artist.name, artist.id
+      })
+
+      userTopTenArtist( artist.name, artist.id )
+    }
+
+
+
+    getUserTopArtist()
+
+
   }, [token])
+
 
   return (
     <>

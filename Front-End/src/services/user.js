@@ -19,11 +19,12 @@ export const getCurrentUser = async (spotify_id) => {
     return data 
 }
 
-export const addTopTenArtist = async (artist_name, spotify_id) => {
+export const addTopTenArtist = async (artist_name, spotify_id, userSpotifyId) => {
   try {
     const {data} = await api.post("/artist/addArtist", {
         artist_name: artist_name,
         spotify_id: spotify_id,
+        userSpotifyId: userSpotifyId
     })
     return data
   } catch (error) {

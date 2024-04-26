@@ -35,11 +35,12 @@ const Home = () => {
 
     const getUserTopArtistData = async () => {
       const {items} = await getUserTopArtist()
+      const userSpotifyId = localStorage.getItem('spotify_id')
       const artistList = items.map(( artist )=>{
         return [artist.name, artist.id]
       })
       artistList.forEach((artist) => {
-        addTopTenArtist(artist[0], artist[1])
+        addTopTenArtist(artist[0], artist[1], userSpotifyId)
       })
     }
     getUserTopArtistData()

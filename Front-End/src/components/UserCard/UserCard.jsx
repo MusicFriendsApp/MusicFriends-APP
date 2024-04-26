@@ -7,40 +7,19 @@ const UserCard = () => {
   const [data, setData] = useState({})
   const [isLoading, setIsLoading] = useState(true)
   const [isDataLoaded, setIsDataLoaded] = useState(false)
-  
- /*  useEffect(() => {
-    async function getUserData() {
-      const spotify_id = await localStorage.getItem('spotify_id')
-        async function fetchProfile(spotify_id) {
-          const result = await getCurrentUser(spotify_id)
-          const profile = await result
-          return profile
-        }
-        const profile = await fetchProfile(spotify_id)
-        setData(profile)
-        setIsLoading(false)
-        console.log(data)
-        console.log(isLoading)
-      }
-      console.log(data)
-      console.log(isLoading)
-      getUserData()
-  }, [])
-  console.log(data)
-  console.log(isLoading) */
 
   useEffect(() => {
     async function getUserData() {
       try {
         const spotify_id = localStorage.getItem('spotify_id')
         if (!spotify_id) {
-          throw new Error('No se encontró el ID de Spotify en el almacenamiento local')
+          throw new Error('Spotify ID not found')
         }
         const profile = await getCurrentUser(spotify_id)
         setData({...profile})
         setIsDataLoaded(true) 
       } catch (error) {
-        console.error('Error al obtener datos del usuario:', error.message)
+        console.error(error.message)
         setIsDataLoaded(true) 
       } 
     }

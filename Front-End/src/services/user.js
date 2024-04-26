@@ -32,3 +32,14 @@ export const addTopTenArtist = async (artist_name, spotify_id, userSpotifyId) =>
     console.log(error)
   }
 }
+
+export const addUserGenres = async (genre_name) => {
+  try {
+    const {data} = await api.post("/genre/addGenre", {
+        genre_name: genre_name,
+    })
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}

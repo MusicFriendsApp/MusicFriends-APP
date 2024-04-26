@@ -34,6 +34,7 @@ async function addGenre(request, response) {
         spotify_id: request.body.userSpotifyId
       }
     })
+    
     await user.addGenre(genre)
 
     return response.status(200).send("Genre created");

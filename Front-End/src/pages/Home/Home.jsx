@@ -5,7 +5,7 @@ import { createUser } from '../../services/user'
 import { getUserSpotify } from '../../services/getUserSpotify' 
 import { getUserTopArtist } from '../../services/getUserTopArtist'
 import { addTopTenArtist } from '../../services/user'
-import { addUserGenres } from "../../services/genre"
+import { addUserGenres } from "../../services/user"
 import profilePic from '../../assets/defaultProfilePicture.svg'
 import UserCard from "../../components/UserCard/UserCard"
 
@@ -44,10 +44,13 @@ const Home = () => {
       })
       artistList.forEach((artist) => {
         addTopTenArtist(artist[0], artist[1], userSpotifyId)
-                    //artist_name, spotify_id, userSpotifyId
+
       })
-      artistList.forEach((artist) => {
-        addUserGenres(artist.genres)
+      artistList.forEach((genres) => {
+        genres[2].forEach((genre) => {
+          console.log(userSpotifyId)
+          addUserGenres(genre, userSpotifyId)
+        })
       })      
       
 
@@ -76,6 +79,6 @@ const Home = () => {
     </div>
     </>
   )
-}        console.log("forEach GENRES")
+}        
 
 export default Home

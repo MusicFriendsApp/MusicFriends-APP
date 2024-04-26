@@ -76,6 +76,6 @@ const Home = () => {
     </div>
     </>
   )
-}
+}        console.log("forEach GENRES")
 
 export default Home

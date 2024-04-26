@@ -63,20 +63,20 @@ button.primary.ghost {
   margin-bottom: 50px;
 }
 
-.skills {
+.skills, .suggestedFriend {
 	background-color: #1F1A36;
 	text-align: left;
 	padding: 15px;
 	margin-top: 30px;
 }
 
-.skills ul {
+.skills ul, .suggestedFriend ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
 
-.skills ul li {
+.skills ul li, .suggestedFriend ul li {
 	border: 1px solid #2D2747;
 	border-radius: 2px;
 	display: inline-block;

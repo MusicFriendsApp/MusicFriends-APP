@@ -1,5 +1,6 @@
 const User = require("../models/user.model");
 const { faker } = require('@faker-js/faker');
+const UserGenres = require("../models/usergenres.model");
 
 async function getOneUser(request, response) {
   try {
@@ -79,6 +80,21 @@ async function updateUser(request, response) {
   }
 }
 
+
+async function userGenres(request, response) {
+  try {
+    const usersGenres = await UserGenres.findAll({
+      where: {
+        userid: request.params.userid
+      }
+    })
+    return response.status(200).json(usersGenres);
+  } catch (error) {
+    response.status(500).send(error.message);
+  }
+}
+
+
 // GENERATES MULTIPLE USER EXAMPLES FOR DEVELOPING
 /* async function multipleUser(request, response) {
   try {
@@ -102,5 +118,6 @@ module.exports = {
   getAllUser,
   deleteUser,
   updateUser,
+  userGenres,
   //multipleUser
 };

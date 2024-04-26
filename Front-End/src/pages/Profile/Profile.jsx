@@ -1,6 +1,8 @@
 import('./Profile.css')
+import { SuggestedFriend } from '../../components/SuggestedFriend/SuggestedFriend'
 import { getCurrentUser } from '../../services/user'
 import { useState, useEffect } from 'react'
+import ('../../components/SuggestedFriend/SuggestedFriend')
 
 export const Profile = () => {
   const [data, setData] = useState('')
@@ -22,7 +24,6 @@ export const Profile = () => {
 
   return (
     <>
-    {console.log(data.profile_picture_bg)}
       <div className='profile-container'>
         <div className="card">
           <span className="pro">FREE</span>
@@ -48,6 +49,17 @@ export const Profile = () => {
               <li>JavaScript</li>
               <li>React</li>
               <li>Node</li>
+            </ul>
+          </div>
+
+          <div className="suggestedFriend">
+            <h6>Suggested Friend by music genre</h6>
+            <ul>
+              <li><SuggestedFriend/></li>
+              <li><SuggestedFriend/></li>
+              <li><SuggestedFriend/></li>
+              <li><SuggestedFriend/></li>
+              <li><SuggestedFriend/></li>
             </ul>
           </div>
         </div>

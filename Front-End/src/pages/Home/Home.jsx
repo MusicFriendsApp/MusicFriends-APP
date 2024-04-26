@@ -5,6 +5,7 @@ import { createUser } from '../../services/user'
 import { getUserSpotify } from '../../services/getUserSpotify' 
 import { getUserTopArtist } from '../../services/getUserTopArtist'
 import { addTopTenArtist } from '../../services/user'
+import { addUserGenres } from "../../services/genre"
 import profilePic from '../../assets/defaultProfilePicture.svg'
 import UserCard from "../../components/UserCard/UserCard"
 
@@ -39,15 +40,24 @@ const Home = () => {
       const {items} = await getUserTopArtist()
       const userSpotifyId = localStorage.getItem('spotify_id')
       const artistList = items.map(( artist )=>{
-        return [artist.name, artist.id]
+        return [artist.name, artist.id, artist.genres]
       })
       artistList.forEach((artist) => {
         addTopTenArtist(artist[0], artist[1], userSpotifyId)
+                    //artist_name, spotify_id, userSpotifyId
       })
+      artistList.forEach((artist) => {
+        addUserGenres(artist.genres)
+      })      
+      
+
+      console.log(artistList)
     }
     getUserTopArtistData()
 
   }, [token]) 
+
+
 
   return (
     <>
@@ -66,6 +76,6 @@ const Home = () => {
     </div>
     </>
   )
-}
+}        console.log("forEach GENRES")
 
 export default Home

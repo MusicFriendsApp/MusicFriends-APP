@@ -52,7 +52,7 @@ export const Profile = () => {
             </ul>
           </div>
 
-          <div className="suggestedFriend">
+          <div className="suggestedFriendByArtist">
             <h6>Suggested Friend by music genre</h6>
             <ul>
               <li><SuggestedFriend/></li>

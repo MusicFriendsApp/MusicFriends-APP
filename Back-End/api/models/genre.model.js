@@ -6,6 +6,7 @@ const Genre = sequelize.define(
     {
         genre_name: {
             type: DataTypes.STRING,
+            unique: true
         },
     },
 )

@@ -48,13 +48,9 @@ const Home = () => {
       })
       artistList.forEach((genres) => {
         genres[2].forEach((genre) => {
-          console.log(userSpotifyId)
           addUserGenres(genre, userSpotifyId)
         })
       })      
-      
-
-      console.log(artistList)
     }
     getUserTopArtistData()
 

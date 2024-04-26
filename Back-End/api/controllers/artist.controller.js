@@ -1,7 +1,6 @@
 const Artist = require("../models/artist.model");
 const User = require("../models/user.model");
 
-
 async function getOneArtist(request, response) {
   try {
     const artist = await Artist.findByPk(request.params.id);

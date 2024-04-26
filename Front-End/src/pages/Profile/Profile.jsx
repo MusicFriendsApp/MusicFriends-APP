@@ -6,10 +6,10 @@ import ('../../components/SuggestedFriend/SuggestedFriend')
 
 export const Profile = () => {
   const [data, setData] = useState('')
-  
+
   useEffect(() => {
+    const spotify_id = localStorage.getItem('spotify_id')
     async function getUserData() {
-      const spotify_id = localStorage.getItem('spotify_id').toString()
         async function fetchProfile(spotify_id) {
           const result = await getCurrentUser(spotify_id)
           const profile = await result

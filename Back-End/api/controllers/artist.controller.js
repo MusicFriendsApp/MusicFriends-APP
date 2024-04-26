@@ -33,7 +33,7 @@ async function addArtist(request, response) {
 
     const user = await User.findOne({
       where: {
-        spotify_id: '1115344794'
+        spotify_id: request.body.userSpotifyId
       }
     })
 

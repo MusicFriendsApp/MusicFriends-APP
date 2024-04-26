@@ -7,8 +7,10 @@ import { getUserTopArtist } from '../../services/getUserTopArtist'
 import { addTopTenArtist } from '../../services/user'
 import { addUserGenres } from "../../services/genre"
 import profilePic from '../../assets/defaultProfilePicture.svg'
+import UserCard from "../../components/UserCard/UserCard"
 
 const Home = () => {
+
   useEffect(() => {
     const login = async () => {
       if(!localStorage.getItem('access_token')) {
@@ -60,12 +62,14 @@ const Home = () => {
   return (
     <>
     <div id="homepage">
-        <br/>
-        <div id="content-left">Content left
-          <div className="content-left-item">content-left-item</div>
+        <div id="content-left">
+          <UserCard/>
         </div>
-        
-        <div id="content-right">Content right
+        <div id="content-center">
+
+        <div className="content-center-item">content-center-item</div>
+        </div>
+        <div id="content-right">
           <div className="content-rigth-item">content-rigth-item</div>
         </div>
       

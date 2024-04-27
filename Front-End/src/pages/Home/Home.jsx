@@ -8,6 +8,7 @@ import { addTopTenArtist } from '../../services/user'
 import { addUserGenres } from "../../services/user"
 import profilePic from '../../assets/defaultProfilePicture.svg'
 import UserCard from "../../components/UserCard/UserCard"
+import { SuggestedFriend } from "../../components/SuggestedFriend/SuggestedFriend"
 
 const Home = () => {
 
@@ -70,6 +71,10 @@ const Home = () => {
         </div>
         <div id="content-right">
           <div className="content-rigth-item">content-rigth-item</div>
+          <h6>Suggested Friend by music genre</h6>
+            <ul>
+              <li><SuggestedFriend/></li>
+            </ul>
         </div>
       
     </div>

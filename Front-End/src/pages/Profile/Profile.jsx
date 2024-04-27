@@ -56,10 +56,6 @@ export const Profile = () => {
             <h6>Suggested Friend by music genre</h6>
             <ul>
               <li><SuggestedFriend/></li>
-              <li><SuggestedFriend/></li>
-              <li><SuggestedFriend/></li>
-              <li><SuggestedFriend/></li>
-              <li><SuggestedFriend/></li>
             </ul>
           </div>
         </div>

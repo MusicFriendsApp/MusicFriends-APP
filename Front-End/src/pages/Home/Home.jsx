@@ -1,72 +1,40 @@
-import { loginSpotify } from "../../services/loginSpotify"
 import "./Home.css"
 import { useEffect, useState } from "react"
-import { createUser } from '../../services/user'
-import { getUserSpotify } from '../../services/getUserSpotify' 
-import { getUserTopArtist } from '../../services/getUserTopArtist'
-import { addTopTenArtist } from '../../services/user'
-import { addUserGenres } from "../../services/user"
-import profilePic from '../../assets/defaultProfilePicture.svg'
+import { getCurrentUser } from "../../services/user"
 import UserCard from "../../components/UserCard/UserCard"
 import { SuggestedFriend } from "../../components/SuggestedFriend/SuggestedFriend"
 
 const Home = () => {
 
+  const [isLoading, setIsLoading] = useState(false)
+  const [data, setData] = useState({})
+  
   useEffect(() => {
-    const login = async () => {
-      if(!localStorage.getItem('access_token')) {
-        const newToken = await loginSpotify()
-        setToken(newToken)
+    const getUserData = async () => {
+      setIsLoading(true)
+      try {
+        const spotify_id = localStorage.getItem('spotify_id')
+        const profile = await getCurrentUser(spotify_id)
+        setData(profile)
+      } catch (error) {
+      } finally {
+        setIsLoading(false)
       }
     }
-    login()
+    getUserData()
   }, [])
 
-  const [token, setToken] = useState("")
-  useEffect(() => {
-    const getUserDataSpotify = async () => {
-
-      const userData = await getUserSpotify()
-      localStorage.setItem('spotify_id', userData.id)
-
-      if (userData.images.length !== 0){
-        createUser(userData.display_name,userData.country,userData.id,userData.images[0].url,userData.images[1].url)
-      } else {
-        createUser(userData.display_name,userData.country,userData.id,profilePic,profilePic)
-      }
-    }
-    getUserDataSpotify()
-
-    const getUserTopArtistData = async () => {
-      const {items} = await getUserTopArtist()
-      const userSpotifyId = localStorage.getItem('spotify_id')
-      const artistList = items.map(( artist )=>{
-        return [artist.name, artist.id, artist.genres]
-      })
-      artistList.forEach((artist) => {
-        addTopTenArtist(artist[0], artist[1], userSpotifyId)
-
-      })
-      artistList.forEach((genres) => {
-        genres[2].forEach((genre) => {
-          addUserGenres(genre, userSpotifyId)
-        })
-      })      
-    }
-    getUserTopArtistData()
-
-  }, [token]) 
-
-
+  if(isLoading) {
+    return <div>Loading...</div>
+  }
 
   return (
     <>
     <div id="homepage">
         <div id="content-left">
-          <UserCard/>
-        </div>
+          <UserCard data={data}/>
+        </div> 
         <div id="content-center">
-
         <div className="content-center-item">content-center-item</div>
         </div>
         <div id="content-right">

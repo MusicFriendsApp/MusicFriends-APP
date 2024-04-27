@@ -19,7 +19,7 @@ const Login = () => {
         }
         setOptions(optionsData[count])
     }
-    setTimeout(() => {
+      setTimeout(() => {
       generateInfo()
     }, 3500)
   }, [count])

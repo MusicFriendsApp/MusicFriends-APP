@@ -5,6 +5,7 @@ import Friends from "../pages/Friends/Friends";
 import Root from "../layout/layout";
 import Login from "../pages/Login/Login";
 import NotFound from "../pages/NotFound/NotFound";
+import Loading from "../pages/Loading/Loading";
 import { Profile } from "../pages/Profile/Profile";
 
 const router = createBrowserRouter([
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path:'/',
         element: <Login />,
+      },
+      {
+        path: '/Loading',
+        element: <Loading />
       },
       {
         path:'/Home',

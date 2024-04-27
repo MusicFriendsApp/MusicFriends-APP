@@ -17,7 +17,7 @@ export const createUser = async (username,country,spotify_id,profile_picture_sm,
 
 export const getCurrentUser = async (spotify_id) => {
     const {data} = await api.get(`/user/${spotify_id}`)
-    return data 
+    return data
 }
 
 export const addTopTenArtist = async (artist_name, spotify_id, userSpotifyId) => {

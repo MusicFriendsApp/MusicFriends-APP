@@ -10,6 +10,19 @@ const Login = () => {
   const [count, setCount] = useState(0)
   const optionsData = ['artists', 'genres', 'songs', 'common friends']
 
+  function clearStorage() {
+    let session = sessionStorage.getItem('register');
+    if (session == null) {
+      localStorage.removeItem('access_token');
+      localStorage.removeItem('refresh_token');
+      localStorage.removeItem('expires_in');
+      localStorage.removeItem('spotify_id');
+      localStorage.removeItem('verifier');
+    }
+    sessionStorage.setItem('register', 1);
+  }
+  window.addEventListener('load', clearStorage);
+
   useEffect(() => {
     const generateInfo = () => {
         setCount(count + 1)

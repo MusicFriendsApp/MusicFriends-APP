@@ -1,17 +1,14 @@
 import { loginSpotify } from "../../services/loginSpotify"
-import { useEffect, useState, useContext } from "react"
-import { UserContext } from '../../contexts/Contexts';
+import { useEffect, useState} from "react"
 import { getUserSpotify } from '../../services/getUserSpotify' 
 import { getUserTopArtist } from '../../services/getUserTopArtist'
 import { createUser, addUserGenres, addTopTenArtist } from "../../services/user"
 import profilePic from '../../assets/defaultProfilePicture.svg'
 import  { Navigate } from 'react-router-dom'
 import './Loading.css'
-import { getBottomNavigationActionUtilityClass } from "@mui/material";
 
 const Loading = () => {
   const [isLoading, setIsLoading] = useState(false)
-  const {currentUser, setCurrentUser} = useContext(UserContext)
   const [user, setUser] = useState(null)
 
   useEffect(() => {

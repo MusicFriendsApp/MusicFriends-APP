@@ -22,7 +22,6 @@ const settings = ['Profile', 'Logout'];
 
 export default function Header() {
   const currentUserData = useContext(UserContext)
-  console.log(currentUserData)
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -48,7 +47,7 @@ export default function Header() {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/home"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -105,7 +104,7 @@ export default function Header() {
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/home"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -136,7 +135,7 @@ export default function Header() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                {currentUserData.currentUser && <Avatar alt="Remy Sharp" src={currentUserData.currentUser.userData.images[0].url} />}
+                {currentUserData.currentUser && <Avatar alt="Remy Sharp" src={currentUserData.currentUser.profile_picture_sm} />}
               </IconButton>
             </Tooltip>
             <Menu

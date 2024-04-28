@@ -34,7 +34,6 @@ export const SuggestedFriend = () => {
       try {
         const spotify_id = localStorage.getItem('spotify_id')
         const {id} = await getCurrentUser(spotify_id)
-        console.log(id)
         const userGenres = await getUserGenres(id)
         console.log(userGenres)
       } catch (error) {

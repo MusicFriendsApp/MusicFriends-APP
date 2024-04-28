@@ -47,11 +47,12 @@ async function addGenre(request, response) {
 
 
 async function getUserGenres(request, response) {
-  //first my id
   try {
-    const userGenres = await UserGenres.findAll
-    
-    console.log(userGenres)
+    const userGenres = await UserGenres.findAll({
+      where: {
+        userId : request.params.id
+      }
+    })
     return response.status(200).json(userGenres);
   } catch (error) {
     console.log(error)

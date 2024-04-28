@@ -1,8 +1,6 @@
 const Post = require('../models/post.model')
 const { faker } = require('@faker-js/faker');
 
-//const { getOnePost, getAllPost, multiplePost, addPost, deletePost, updatePost} = require('../controllers/post .controler');
-
 async function getOnePost(request, response){
     try {
         const post = await Post.findByPk(request.params.id);
@@ -45,7 +43,7 @@ async function deletePost(request, response) {
     try {
       await Post.create({
         title: request.body.title,
-        body: request.body.body,
+        body: request.body.body, 
         createdAt: request.body.createdAt,
         updatedAt: request.body.profile_picture,
         userid: request.body.userid,
@@ -56,7 +54,6 @@ async function deletePost(request, response) {
     }
   }
   
-
 
 
 

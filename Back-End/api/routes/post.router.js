@@ -1,4 +1,4 @@
-const { getOnePost, getAllPost, deletePost, addPost } = require('../controllers/post.controler');
+const { getOnePost, getAllPost, deletePost, addPost } = require('../controllers/post.controller');
 
 const router = require('express').Router()
 router.get('/:id', getOnePost)

@@ -1,5 +1,6 @@
 const Genre = require("../models/genre.model");
 const User = require("../models/user.model");
+const UserGenres = require('../models/usergenres.model')
 
 async function getOneGenre(request, response) {
   try {
@@ -45,8 +46,22 @@ async function addGenre(request, response) {
 }
 
 
+async function getUserGenres(request, response) {
+  //first my id
+  try {
+    const userGenres = await UserGenres.findAll
+    
+    console.log(userGenres)
+    return response.status(200).json(userGenres);
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
 module.exports = {
   getOneGenre, 
   getAllGenres, 
   addGenre,
+  getUserGenres,
 };

@@ -1,6 +1,7 @@
 import './SuggestedFriend.css'
 import { useEffect, useState } from 'react'
 import { getCurrentUser } from '../../services/user'
+import { getUserGenres } from '../../services/genre'
 
 
 export const SuggestedFriend = () => {
@@ -19,7 +20,6 @@ export const SuggestedFriend = () => {
         const profile = await getCurrentUser(spotify_id)
         setData({...profile})
         setIsDataLoaded(true) 
-        console.log(spotify_id)
       } catch (error) {
         console.error(error.message)
         setIsDataLoaded(true) 
@@ -28,6 +28,23 @@ export const SuggestedFriend = () => {
 
     getUserData()
   }, [])
+
+  useEffect(() => {
+    async function getAllGenres () {
+      try {
+        const spotify_id = localStorage.getItem('spotify_id')
+        const {id} = await getCurrentUser(spotify_id)
+        console.log(id)
+        const userGenres = await getUserGenres(id)
+        console.log(userGenres)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    getAllGenres()
+  },[])
+
 
   return (
     <div>SuggestedFriend by music genres</div>

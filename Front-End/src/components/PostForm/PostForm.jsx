@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from 'react'
 const PostForm = () => {
   const [postInput, setPostInput] = useState("");
   const textAreaRef = useRef(null)
-  useEffect((textAreaRef, postInput) => {
+  useEffect((textAreaRef) => {
     if (textAreaRef) {
       textAreaRef.style.height = "0px";
       const scrollHeight = textAreaRef.scrollHeight;

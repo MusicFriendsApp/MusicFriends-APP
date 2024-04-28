@@ -43,7 +43,6 @@ const Login = () => {
       <h1>Find new friends with matching {options} with your Spotify</h1>
       <div>
         <button id='login-button' onClick={loginSpotify}>Log In</button>
-        <Button variant="outlined">Outlined</Button>
         <div id='checkbox-container'>
           <input id='terms' type='checkbox' required/>
           <p>You accept to be redirected to the Spotify login</p>

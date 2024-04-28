@@ -1,11 +1,7 @@
 #homepage {
-    background-color: rgb(82, 85, 85);
     border-radius: 5px;
     width: 90vw;
     height: 90vh;
-    background-image: url('../../assets/81091651_SL-022222-48740-06.jpeg') ;
-    background-size: cover;
-    border: 2px solid green;
     padding: 2px;
     display: flex;
 }
@@ -15,21 +11,18 @@ h1 {
 }
 
 #content-left {
-    border: solid 2px red;
     width: 20%;
     min-width: 400px;
     padding: 2px;
 }
 
 #content-center {
-  border: solid 2px red;
   width: 80%;
   min-width: 400px;
   padding: 2px;
 }
 
 #content-right {
-    border: solid 2px red;
     width: 20%;
     min-width: 200px;
     padding: 2px;

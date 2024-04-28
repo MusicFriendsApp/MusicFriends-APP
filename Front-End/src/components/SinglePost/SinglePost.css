@@ -1,5 +1,7 @@
 #single-post{
   display: flex;
+  width: 85%;
+  margin-top: 15px;
   flex-direction: column;
   border: 1px solid black;
   border-radius: 5px;

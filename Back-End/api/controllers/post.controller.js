@@ -43,10 +43,10 @@ async function deletePost(request, response) {
     try {
       await Post.create({
         title: request.body.title,
-        body: request.body.body, 
-        createdAt: request.body.createdAt,
-        updatedAt: request.body.profile_picture,
-        userid: request.body.userid,
+        body: request.body.body,
+        parentId: request.body.parent_id,
+        userId: request.body.spotify_id,
+        createdAt: request.body.createdAt
       });
       return response.status(200).send("Post created");
     } catch (error) {

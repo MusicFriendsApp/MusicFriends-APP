@@ -1,13 +1,13 @@
 import api from './index.js'
 
-export const addPost = async (title, body, spotify_id, parent_id) => {
+export const addPost = async (title, body, spotify_id, parent_id, createdAt) => {
   try {
     const {data} = await api.post("/post/addPost", {
-        username: username,
-        country: country,
-        spotify_id: spotify_id,
-        profile_picture_sm: profile_picture_sm,
-        profile_picture_bg: profile_picture_bg,
+      title: title,
+      body: body,
+      parentId: parent_id,
+      userId: spotify_id,
+      createdAt: createdAt
     })
     return data
   } catch (error) {

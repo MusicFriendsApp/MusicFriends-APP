@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { getCurrentUser } from "../../services/user"
 import UserCard from "../../components/UserCard/UserCard"
 import { SuggestedFriend } from "../../components/SuggestedFriend/SuggestedFriend"
+import Posts from "../../components/Posts/Posts"
 
 const Home = () => {
 
@@ -35,16 +36,16 @@ const Home = () => {
           <UserCard data={data}/>
         </div> 
         <div id="content-center">
-        <div className="content-center-item">content-center-item</div>
+          <Posts />
         </div>
         <div id="content-right">
-          <div className="content-rigth-item">content-rigth-item</div>
+          <div className="content-rigth-item">
           <h6>Suggested Friend by music genre</h6>
             <ul>
               <li><SuggestedFriend/></li>
             </ul>
+          </div>
         </div>
-      
     </div>
     </>
   )

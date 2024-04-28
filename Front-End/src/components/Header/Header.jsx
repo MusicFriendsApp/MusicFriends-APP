@@ -14,11 +14,15 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 import './Header.css'
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/Contexts';
 
 const pages = ['Home', 'Friends', 'About'];
 const settings = ['Profile', 'Logout'];
 
 export default function Header() {
+  const currentUserData = useContext(UserContext)
+  console.log(currentUserData)
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -113,7 +117,7 @@ export default function Header() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            SPOTIFY FRIENDS
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -132,7 +136,7 @@ export default function Header() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                {currentUserData.currentUser && <Avatar alt="Remy Sharp" src={currentUserData.currentUser.userData.images[0].url} />}
               </IconButton>
             </Tooltip>
             <Menu

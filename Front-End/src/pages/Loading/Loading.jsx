@@ -1,14 +1,18 @@
 import { loginSpotify } from "../../services/loginSpotify"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+import { UserContext } from '../../contexts/Contexts';
 import { getUserSpotify } from '../../services/getUserSpotify' 
 import { getUserTopArtist } from '../../services/getUserTopArtist'
 import { createUser, addUserGenres, addTopTenArtist } from "../../services/user"
 import profilePic from '../../assets/defaultProfilePicture.svg'
 import  { Navigate } from 'react-router-dom'
 import './Loading.css'
+import { getBottomNavigationActionUtilityClass } from "@mui/material";
 
 const Loading = () => {
   const [isLoading, setIsLoading] = useState(false)
+  const {currentUser, setCurrentUser} = useContext(UserContext)
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
     const login = async () => {
@@ -21,7 +25,6 @@ const Loading = () => {
   }, [])
 
   const [token, setToken] = useState("")
-  const [user, setUser] = useState(null)
 
   useEffect(() => {
     const getUserDataSpotify = async () => {
@@ -34,6 +37,7 @@ const Loading = () => {
           createUser(userData.display_name,userData.country,userData.id,profilePic,profilePic)
         }
         setIsLoading(false)
+        setCurrentUser({userData})
     }
     const getUserTopArtistData = async () => {
       setIsLoading(true)

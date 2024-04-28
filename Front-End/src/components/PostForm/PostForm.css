@@ -2,3 +2,6 @@ textarea{
   width: 90%;
   height: fit-content;
 }
+#submit-button {
+  cursor: pointer;
+}

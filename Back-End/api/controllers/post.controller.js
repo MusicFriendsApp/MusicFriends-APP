@@ -44,8 +44,7 @@ async function deletePost(request, response) {
       await Post.create({
         body: request.body.body,
         parentId: request.body.parent_id,
-        userId: request.body.spotify_id,
-        createdAt: request.body.createdAt
+        userId: request.body.spotify_id
       });
       return response.status(200).send("Post created");
     } catch (error) {

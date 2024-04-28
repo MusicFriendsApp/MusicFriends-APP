@@ -4,6 +4,7 @@ import { getCurrentUser } from "../../services/user"
 import UserCard from "../../components/UserCard/UserCard"
 import { SuggestedFriend } from "../../components/SuggestedFriend/SuggestedFriend"
 import Posts from "../../components/Posts/Posts"
+import loadingImage from "../../assets/loading.gif"
 
 const Home = () => {
 
@@ -26,7 +27,7 @@ const Home = () => {
   }, [])
 
   if(isLoading) {
-    return <div>Loading...</div>
+    return <img id="loading-image" src={loadingImage}/>
   }
 
   return (

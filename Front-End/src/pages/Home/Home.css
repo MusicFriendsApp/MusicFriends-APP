@@ -34,3 +34,7 @@ h1 {
     min-width: 200px;
     padding: 2px;
 }
+
+#loading-image{
+  width: 200px;
+}

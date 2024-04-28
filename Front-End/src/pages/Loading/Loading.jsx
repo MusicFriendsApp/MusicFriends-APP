@@ -58,8 +58,9 @@ const Loading = () => {
   }, [token]) 
 
   return (
-    <div>
-      <h1>Data Loading...</h1>
+    <div id="fetching-info">
+      <h1>Fetching data</h1>
+      <h1>Please wait ...</h1>
       {user && <Navigate to="/home" replace={true} />}
     </div>
   )

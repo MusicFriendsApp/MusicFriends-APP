@@ -1,0 +1,21 @@
+#single-post{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: grey;
+  padding: 20px;
+}
+#post-header{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  height: 35px;
+}
+
+#post-header img{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}

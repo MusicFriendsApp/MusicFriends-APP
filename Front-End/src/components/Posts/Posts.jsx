@@ -1,9 +1,10 @@
 import './Posts.css'
+import SinglePost from '../SinglePost/SinglePost'
 
-const Posts = () => {
+const Posts = ({data}) => {
   return (
     <div>
-      
+      <SinglePost data={data}/>
     </div>
   )
 }

@@ -9,7 +9,6 @@ const UserGenres = require('../api/models/usergenres.model')
 const ArtistTracks = require('../api/models/artisttracks.model')
 const UserTracks = require('../api/models/usertracks.model')
 const ArtistGenres = require('../api/models/artistgenres.model')
-const PostReply = require('../api/models/postreply.model')
 
 const addRelationsToModels = () => {
   try {
@@ -26,7 +25,7 @@ const addRelationsToModels = () => {
     Track.belongsToMany(Artist, {through: ArtistTracks})
     Artist.belongsToMany(Genre, {through: ArtistGenres})
     Genre.belongsToMany(Artist, {through: ArtistGenres})
-    Post.belongsTo(Post, {through: PostReply, as: 'children_id'})
+    Post.belongsTo(Post, {through: 'PostParent', as: 'children_id'})
 
     console.log('Relations added to models')
   } catch (error) {

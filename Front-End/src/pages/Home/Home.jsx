@@ -37,7 +37,7 @@ const Home = () => {
           <UserCard data={data}/>
         </div> 
         <div id="content-center">
-          <Posts />
+          <Posts data={data}/>
         </div>
         <div id="content-right">
           <div className="content-rigth-item">

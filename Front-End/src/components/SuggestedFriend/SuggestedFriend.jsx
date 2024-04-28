@@ -20,7 +20,6 @@ export const SuggestedFriend = () => {
         }
         const profile = await getCurrentUser(spotify_id)
         setData({...profile})
-        console.log(data)
         setIsDataLoaded(true) 
       } catch (error) {
         console.error(error.message)
@@ -32,11 +31,13 @@ export const SuggestedFriend = () => {
   }, [])
 
   useEffect(() => {
-    async function getAllGenres () {
+    async function getAllGenres() {
       try {
-        const {userGenres} = await getUserGenres(data.id)
-        setUserGenres({data})
-        console.log(data)
+        const userGenres = await getUserGenres(data.id)
+        console.log(userGenres)
+        setUserGenres({userGenres})
+        const userGenresArray = userGenres.map(({genreId}) => genreId)
+        console.log(userGenresArray)
       } catch (error) {
         console.log(error)
       }
@@ -44,8 +45,23 @@ export const SuggestedFriend = () => {
     getAllGenres()
   },[])
 
+  useEffect(() =>{
+    async function getAllRelatedUsersByGenres (){
+      try {
+        
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    getAllRelatedUsersByGenres()
+
+  }, [])
+
 
   return (
-    <div>SuggestedFriend by music genres</div>
+    <>
+      <h6>Mis gustos</h6>
+    </>
   )
 }

@@ -9,6 +9,7 @@ export const SuggestedFriend = () => {
   const [data, setData] = useState({})
   const [isLoading, setIsLoading] = useState(true)
   const [isDataLoaded, setIsDataLoaded] = useState(false)
+  const [userGenres, setUserGenres] = useState({})
 
   useEffect(() => {
     async function getUserData() {
@@ -19,6 +20,7 @@ export const SuggestedFriend = () => {
         }
         const profile = await getCurrentUser(spotify_id)
         setData({...profile})
+        console.log(data)
         setIsDataLoaded(true) 
       } catch (error) {
         console.error(error.message)
@@ -32,22 +34,13 @@ export const SuggestedFriend = () => {
   useEffect(() => {
     async function getAllGenres () {
       try {
-        const spotify_id = localStorage.getItem('spotify_id')
-        const {id} = await getCurrentUser(spotify_id)
-        try {
-          const userGenres = await getUserGenres(id)
-          console.log(userGenres)
-        } catch (error) {
-          console.log(error)
-        }
-        console.log(userGenres)
+        const {userGenres} = await getUserGenres(data.id)
+        setUserGenres({data})
+        console.log(data)
       } catch (error) {
         console.log(error)
       }
     }
-
-    
-
     getAllGenres()
   },[])
 

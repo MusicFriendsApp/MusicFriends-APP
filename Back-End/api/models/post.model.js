@@ -10,6 +10,9 @@ const Post = sequelize.define(
         body: {
             type: DataTypes.TEXT,
         },
+        parentId: {
+            type: DataTypes.INTEGER,
+        }
     },
 
 )

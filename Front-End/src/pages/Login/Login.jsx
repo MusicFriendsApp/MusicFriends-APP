@@ -52,20 +52,32 @@ const Login = () => {
           <div className='primera'> <img src="../src/assets/card.png" alt="" /> </div>
         </div>
         <div id='segunda'>
-          <div class='segunda'>Login with your Spotify account
+          <div className='segunda'>Login with your Spotify account
             <div id='auth'>AUTH Spotify</div>
           </div>
-          <div class='segunda'>We suggest you other users with similar music taste
-          <div className='segunda'> <img src="../src/assets/miniCard.png" alt="" /> </div>
+          <div className='segunda'>We suggest you other users with similar music taste
+          <div> <img src="../src/assets/miniCard.png" alt="" /> </div>
+          <div> <img src="../src/assets/miniCard.png" alt="" /> </div>
           </div>
         </div>
         <div id='tercera'>
-          <div class='tercera'>Add them to your friends and share your thoughts, artists or playlists</div>
-          <div class='tercera'>Watch their posts, profile, favourite artists and genres</div>
+          <div className='tercera'>Add them to your friends and share your thoughts, artists or playlists
+            <div><img src="../src/assets/comment.png" alt="" /></div>
+          </div>
+          
+          <div className='tercera'>Watch their posts, profile, favourite artists and genres
+          
+          <div><img src="../src/assets/watch.png" alt="" /></div></div>
         </div>
         <div id='cuarta'>
-          Become a bigger community and keep others updated with your favourite music
-          <button id='login-button' onClick={loginSpotify}>Get started</button>
+          <div>
+            Become a bigger community and keep others updated with your favourite music
+          </div>
+          <div>
+            <button id='login-button' onClick={loginSpotify}>Get started</button>
+          </div>
+          
+          
           </div>
       </form>
     </div>

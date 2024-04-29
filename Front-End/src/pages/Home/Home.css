@@ -13,6 +13,7 @@ h1 {
 
 #content-left {
     width: 20%;
+    height: 500px;
     min-width: 400px;
     padding: 2px;
 }
@@ -26,10 +27,16 @@ h1 {
 
 #content-right {
     width: 20%;
+    height: 500px;
     min-width: 200px;
     padding: 2px;
 }
 
 #loading-image{
   width: 200px;
+}
+
+.stick-element {
+  position: sticky;
+  top: 70px;
 }

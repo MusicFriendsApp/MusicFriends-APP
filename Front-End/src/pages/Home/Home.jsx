@@ -37,14 +37,14 @@ const Home = () => {
   return (
     <>
     <div id="homepage">
-        <div id="content-left">
+        <div className='stick-element' id="content-left">
           <UserCard data={data}/>
         </div> 
         <div id="content-center">
           <PostForm />
           <Posts data={data}/>
         </div>
-        <div id="content-right">
+        <div className='stick-element' id="content-right">
           <div className="content-rigth-item">
           <h6>Suggested Friend by music genre</h6>
             <ul>

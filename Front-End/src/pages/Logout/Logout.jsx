@@ -14,8 +14,8 @@ function Logout() {
       localStorage.removeItem('spotify_id');
       localStorage.removeItem('verifier');
       sessionStorage.removeItem('register');
-      setClearedData(true)
       setCurrentUser(null)
+      setClearedData(true)
     }
     clearStorage()
   }, [])

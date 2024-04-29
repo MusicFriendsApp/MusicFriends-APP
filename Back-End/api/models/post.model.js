@@ -7,8 +7,11 @@ const Post = sequelize.define(
         body: {
             type: DataTypes.TEXT,
         },
+        userId: {
+            type: DataTypes.STRING,
+        },
         parentId: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
         },
     },
     {

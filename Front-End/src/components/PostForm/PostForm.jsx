@@ -8,10 +8,6 @@ const PostForm = () => {
   const textAreaRef = useRef(null)
   const {currentUser, setCurrentUser} = useContext(UserContext)
   const [parentId, setParentId] = useState(null)
-  const submitPost = (e) => {
-    e.preventDefault()
-    addPost(postInput, parentId, currentUser.spotify_id)
-  }
 
   useEffect((textAreaRef) => {
     if (textAreaRef) {
@@ -25,10 +21,10 @@ const PostForm = () => {
     setPostInput(currentValue);
   };
   return (
-    <form>
+    <>
       <textarea onChange={handleInputValue} name="postContent" autoComplete='on' minLength={1} maxLength={350} required placeholder="Share your thoughts..." ref={textAreaRef} rows={5} value={postInput}/>
-      <input id='submit-button' type="submit" value="POST COMMENT" onSubmit={(e) => {submitPost(e)}}/>
-    </form>
+      <button id='submit-button' onClick={(e) => {addPost(postInput, currentUser.spotify_id, parentId)}}>POST COMMENT</button>
+    </>
   )
 }
 

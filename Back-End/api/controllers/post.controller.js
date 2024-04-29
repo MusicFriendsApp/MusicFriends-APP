@@ -43,11 +43,12 @@ async function deletePost(request, response) {
     try {
       await Post.create({
         body: request.body.body,
-        parentId: request.body.parent_id,
-        userId: request.body.spotify_id
+        userId: request.body.userId,
+        parentId: request.body.parentId,
       });
       return response.status(200).send("Post created");
     } catch (error) {
+      console.log(error)
       return response.status(400).send("Bad request: Post already exists");
     }
   }

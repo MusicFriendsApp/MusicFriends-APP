@@ -1,9 +1,19 @@
 #principal {
   display: flex;
+  flex-direction: column;
 }
 
+#aboutus {
+}
+
+#meet{
+
+}
+
+
+
 .about-container {
-  background-color: rgb(109, 109, 109);
+  background-color: rgb(128, 128, 128);
   height: 70vh;
   padding: 2px;
   display: flex;
@@ -24,7 +34,21 @@
 }
 
 .elemento{
-  border: 1px solid wheat;
-  width: 100px;
-  height: 200px;
+  border: 0px solid wheat;
+}
+.elemento > div > img {
+  width: 10rem;
+}
+
+h6{
+  color:rgb(15, 0, 99)
+}
+
+.puesto{
+  font-size: 0.8rem;
+  color:rgb(15, 0, 99)
+
+}
+h6, .puesto{
+  padding-left: 0.5rem;
 }

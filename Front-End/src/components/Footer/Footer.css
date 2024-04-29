@@ -2,6 +2,10 @@
   display: flex;
   width: 100%;
   background-color: rgb(75, 75, 75);
-  position: absolute;
-  bottom: 0px;
+}
+
+#footer-container{
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
 }

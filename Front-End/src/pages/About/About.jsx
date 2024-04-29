@@ -5,22 +5,28 @@ const About = () => {
   return (
     <>
       <div id="principal">
-        <h1>About Us</h1>
+        <h1 id='aboutus'>About Us</h1>
         <div class="about-container">
-          <div class="elemento">
-            <h6>Técnico</h6>
+            <div id='meet'><h4> Let's meet the Sporify Friends' clan</h4></div>
+          <div>
+            <div class="elemento">
+              <h6>Person</h6>
+              <div><img src="../src/assets/people01.png" alt="" /> </div>
+              <span className='puesto'>Coder</span>
+              </div>
+            </div>
 
+            <div class="elemento">
+              <h6>Person</h6>
+              <div><img src="../src/assets/people01.png" alt="" /> </div>
+              <span className='puesto'>Coder</span>
+            </div>
 
-          </div>
-          <div class="elemento">
-            <h6>Técnico</h6>
-
-
-          </div>
-          <div class="elemento">
-          <h6>Técnico</h6>
-
-          </div>
+            <div class="elemento">
+              <h6>Person</h6>
+              <div><img src="../src/assets/people01.png" alt="" /> </div>
+              <span className='puesto'>Coder</span>
+            </div>
 
         </div>
       </div>

@@ -38,19 +38,31 @@ const Login = () => {
   }, [count])
 
   return (
+    <>
     <div id='loginpage'>
       <form id='login-form'>
         <h1>Find new friends with matching {options} with your Spotify</h1>
-        <div>
           <button id='login-button' onClick={loginSpotify}>Log In</button>
           <div id='checkbox-container'>
             <input id='terms' type='checkbox' required/>
             <p>You accept to be redirected to the Spotify login</p>
           </div>
+        <div id='primera'> 
+          <div>Connect with people that listen to the same artists or genres you listen</div>
+          <div>PICTURE</div>
         </div>
+        <div id='segunda'>
+          <div class='segunda'>2</div>
+          <div class='segunda'>2</div>
+        </div>
+        <div id='tercera'>
+          <div class='segunda'>3</div>
+          <div class='segunda'>3</div>
+        </div>
+        <div id='cuarta'>hello</div>
       </form>
-      <div id='primera'>hello</div>
     </div>
+    </>
   )
 }
 

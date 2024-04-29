@@ -3,9 +3,13 @@
   width: 100%;
   justify-content: center;
   border: blue solid 1px;
+  flex-wrap: wrap;
 }
 
 #login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100px;
   padding: 5px;
 }
@@ -17,7 +21,7 @@
   align-items: center;
 }
 
-#login-form > div {
+#login-form{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,6 +37,23 @@
   cursor: pointer;
 }
 
-#primera{
-  border: blue solid 1px;
+#primera, #cuarta{
+  border: rgb(160, 160, 160) solid 1px;
+  height: 150px;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 30vw;
+}
+#primera {
+  display: flex;
+}
+
+#segunda, .segunda{
+  border: rgb(255, 0, 55) solid 1px;
+  display: flex;
+}
+
+#tercera, .tercera{
+  border: rgb(12, 156, 55) solid 1px;
+  display: flex;
 }

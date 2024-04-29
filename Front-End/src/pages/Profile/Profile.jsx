@@ -13,6 +13,7 @@ export const Profile = () => {
         async function fetchProfile(spotify_id) {
           const result = await getCurrentUser(spotify_id)
           const profile = await result
+          console.log({result})
           return profile
         }
         const profile = await fetchProfile(spotify_id)
@@ -26,7 +27,7 @@ export const Profile = () => {
     <>
       <div className='profile-container'>
         <div className="card">
-          <span className="pro">FREE</span>
+          <span className="pro">{data.country}</span>
           <img className="round" src={data.profile_picture_bg} alt="user" />
           <h3>{data.username}</h3>
           <h6>{data.country}</h6>

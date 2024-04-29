@@ -6,6 +6,25 @@ async function getOneUser(request, response) {
     const user = await User.findOne(
       {
         where: {
+          id: request.params.id
+        }
+      }
+    );
+    if (user) {
+      return response.status(200).json(user);
+    } else {
+      return response.status(404).send("No user found");
+    }
+  } catch (error) {
+    response.status(500).send(error.message);
+  }
+}
+
+async function getCurrentUser(request, response) {
+  try {
+    const user = await User.findOne(
+      {
+        where: {
           spotify_id: request.params.spotify_id
         }
       }
@@ -105,5 +124,6 @@ module.exports = {
   getAllUser,
   deleteUser,
   updateUser,
-  userGenres
+  userGenres,
+  getCurrentUser
 };

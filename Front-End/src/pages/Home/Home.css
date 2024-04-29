@@ -1,9 +1,10 @@
 #homepage {
     border-radius: 5px;
     width: 90vw;
-    height: 90vh;
+    min-height: 65vh;
     padding: 2px;
     display: flex;
+    justify-content: space-around;
 }
 
 h1 {
@@ -19,6 +20,7 @@ h1 {
 #content-center {
   width: 80%;
   min-width: 400px;
+  max-width: 780px;
   padding: 2px;
 }
 

@@ -6,6 +6,7 @@ const Post = sequelize.define(
     {
         body: {
             type: DataTypes.TEXT,
+            allowNull: false,
         },
         parentId: {
             type: DataTypes.STRING,

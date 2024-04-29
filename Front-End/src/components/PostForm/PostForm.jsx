@@ -4,7 +4,7 @@ import { addPost } from '../../services/post';
 import { UserContext } from '../../contexts/Contexts';
 
 const PostForm = () => {
-  const [postInput, setPostInput] = useState("");
+  const [postInput, setPostInput] = useState(null);
   const textAreaRef = useRef(null)
   const {currentUser, setCurrentUser} = useContext(UserContext)
   const [parentId, setParentId] = useState(null)

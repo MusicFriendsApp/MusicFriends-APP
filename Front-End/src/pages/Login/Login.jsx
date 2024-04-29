@@ -60,12 +60,12 @@ const Login = () => {
         </div>
         <div id='tercera'>
           <div className='tercera'>Add them to your friends and share your thoughts, artists or playlists
-            <div><img src="../src/assets/comment.png" alt="" /></div>
+            <div><img src="../src/assets/comment-removebg-preview.png" alt="" /></div>
           </div>
           
           <div className='tercera'>Watch their posts, profile, favourite artists and genres
           
-          <div><img src="../src/assets/watch.png" alt="" /></div></div>
+          <div><img src="../src/assets/watch-removebg-preview.png" alt="" /></div></div>
         </div>
         <div id='cuarta'>
           <div>

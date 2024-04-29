@@ -2,7 +2,6 @@ import './SinglePost.css'
 import likeImg from '../../assets/heart-like.svg'
 
 const SinglePost = ({data, postData}) => {
-  console.log(postData)
   return (
     <div id='single-post'>
       <div id='post-header'>

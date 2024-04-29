@@ -2,12 +2,14 @@ import './Posts.css'
 import SinglePost from '../SinglePost/SinglePost'
 import loadingImage from "../../assets/loading.gif"
 import { getUserPosts } from "../../services/post"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+import { PostContext } from '../../contexts/Contexts'
 
 const Posts = ({data}) => {
 
   const [isLoading, setIsLoading] = useState(false)
   const [userPosts, setUserPosts] = useState(null)
+  const {send, setSend} = useContext(PostContext)
 
   useEffect(() => {
     const getUserData = async () => {
@@ -22,9 +24,7 @@ const Posts = ({data}) => {
       }
     }
     getUserData()
-  }, [])
-  
-  console.log(userPosts)
+  }, [send])
 
   if(isLoading) {
     return <img id="loading-image" src={loadingImage}/>

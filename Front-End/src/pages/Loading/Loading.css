@@ -1,7 +1,9 @@
 #fetching-info {
   display:flex;
+  min-height: 65vh;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 #error-message{

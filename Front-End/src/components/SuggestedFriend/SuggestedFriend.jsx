@@ -7,9 +7,6 @@ import SuggestedFriendCard from '../SuggestedFriendCard/SuggestedFriendCard'
 export const SuggestedFriend = () => {
   const [currentUser, setCurrentUser] = useState([])
   const [userList, setUserList] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [isDataLoaded, setIsDataLoaded] = useState(false)
-  const [userGenres, setUserGenres] = useState({})
   const [renderSuggestions, setRenderSuggestions] = useState([])
 
   useEffect(() => {
@@ -24,7 +21,6 @@ export const SuggestedFriend = () => {
         console.error(error.message)
       }
     }
-
     getUserData()
   }, [])
 
@@ -41,22 +37,13 @@ export const SuggestedFriend = () => {
           return user.filter((user) => {
             return user.userId !== currentUser.id
           })
+        }).filter((user) => {
+          return user.length > 0
         })
         const suggestedFriends = await Promise.all(filteredUsers.map(async (userSuggestion) => {
-          if (userSuggestion.length > 0) {
-            const suggestedUser = await Promise.all(userSuggestion.map(async (user) => {
-                return await getOneUser(user.userId)
-              })
-            )
-            return suggestedUser
-          }
+          return await getOneUser(userSuggestion[0].userId)
         }))
-        const toRenderSuggestions = suggestedFriends.filter((user) => {
-          return user !== undefined
-        })
-        console.log(toRenderSuggestions)
-        setRenderSuggestions(...toRenderSuggestions)
-        console.log(renderSuggestions)
+        setRenderSuggestions(suggestedFriends)
       } catch (error) {
         console.log(error)
       }
@@ -64,22 +51,13 @@ export const SuggestedFriend = () => {
     getAllGenres()
   }, [userList])
 
-  useEffect(() => {
-    async function getAllRelatedUsersByGenres() {
-      try {
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    getAllRelatedUsersByGenres()
-  }, [])
-
   return (
     <>
-      <h6>{renderSuggestions && renderSuggestions.map((data) => {
-        return <SuggestedFriendCard data={data}/>
-      })}</h6>
+      <div id='suggestions-container'>
+        {renderSuggestions && renderSuggestions.map((data) => {
+          return <SuggestedFriendCard data={data}/>
+        })}
+      </div>
     </>
   )
 }

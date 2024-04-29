@@ -1,38 +1,37 @@
 #homepage {
-    border-radius: 5px;
-    width: 90vw;
-    min-height: 65vh;
-    padding: 2px;
-    display: flex;
-    justify-content: space-around;
+  border-radius: 5px;
+  width: 90vw;
+  min-height: 65vh;
+  display: flex;
+  justify-content: space-around;
 }
 
 h1 {
-    display:inline;
+  display: inline;
 }
 
 #content-left {
-    width: 20%;
-    height: 500px;
-    min-width: 400px;
-    padding: 2px;
+  width: 30%;
+  height: 500px;
+  min-width: 400px;
+  padding: 2px;
 }
 
 #content-center {
-  width: 80%;
+  width: 40%;
   min-width: 400px;
   max-width: 780px;
   padding: 2px;
 }
 
 #content-right {
-    width: 20%;
-    height: 500px;
-    min-width: 200px;
-    padding: 2px;
+  width: 25%;
+  height: 500px;
+  min-width: 200px;
+  padding: 2px;
 }
 
-#loading-image{
+#loading-image {
   width: 200px;
 }
 

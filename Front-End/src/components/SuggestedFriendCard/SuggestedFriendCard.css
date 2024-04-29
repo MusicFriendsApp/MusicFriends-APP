@@ -1,3 +1,28 @@
+#suggested-friend-card {
+  display: flex;
+  width: 90%;
+  height: 60px;
+  border: 1px solid black;
+  border-radius: 5px;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+
+#suggested-friend-header {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
 #suggested-friend-avatar {
-  width: 10px;
+  width: 30px;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+}
+
+#suggested-friend-name {
+  padding: 0;
+  margin: 0;
 }

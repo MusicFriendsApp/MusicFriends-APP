@@ -1,11 +1,13 @@
 import './SuggestedFriendCard.css'
 
 const SuggestedFriendCard = ({data}) => {
-  console.log(data)
   return (
-    <div>
-      <img id='suggested-friend-avatar' src={data.profile_picture_sm}/>
-      <h1>{data.username}</h1>
+    <div id='suggested-friend-card'>
+      <div id='suggested-friend-header'>
+        <img id='suggested-friend-avatar' src={data.profile_picture_sm}/>
+        <h4 id='suggested-friend-name'>{data.username}</h4>
+      </div>
+      <button>Follow</button>
     </div>
   );
 };

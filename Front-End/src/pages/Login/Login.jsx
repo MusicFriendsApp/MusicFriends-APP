@@ -56,7 +56,7 @@ const Login = () => {
             <div id='auth'>AUTH Spotify</div>
           </div>
           <div class='segunda'>We suggest you other users with similar music taste
-           <div>prueba</div>
+          <div className='segunda'> <img src="../src/assets/miniCard.png" alt="" /> </div>
           </div>
         </div>
         <div id='tercera'>

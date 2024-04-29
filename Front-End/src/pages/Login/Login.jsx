@@ -2,11 +2,26 @@ import './Login.css'
 import { loginSpotify } from '../../services/loginSpotify'
 import { useState, useEffect } from 'react'
 
+import Button from '@mui/material/Button';
+
 const Login = () => {
 
   const [options, setOptions] = useState('music')
   const [count, setCount] = useState(0)
   const optionsData = ['artists', 'genres', 'songs', 'common friends']
+
+  function clearStorage() {
+    let session = sessionStorage.getItem('register');
+    if (session == null) {
+      localStorage.removeItem('access_token');
+      localStorage.removeItem('refresh_token');
+      localStorage.removeItem('expires_in');
+      localStorage.removeItem('spotify_id');
+      localStorage.removeItem('verifier');
+    }
+    sessionStorage.setItem('register', 1);
+  }
+  window.addEventListener('load', clearStorage);
 
   useEffect(() => {
     const generateInfo = () => {
@@ -17,7 +32,7 @@ const Login = () => {
         }
         setOptions(optionsData[count])
     }
-    setTimeout(() => {
+      setTimeout(() => {
       generateInfo()
     }, 3500)
   }, [count])

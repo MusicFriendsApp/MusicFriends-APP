@@ -4,13 +4,19 @@ const { DataTypes } = require('sequelize');
 const Post = sequelize.define(
     'post',
     {
-        title: {
-            type: DataTypes.STRING,
-        },
         body: {
             type: DataTypes.TEXT,
         },
+        userId: {
+            type: DataTypes.STRING,
+        },
+        parentId: {
+            type: DataTypes.STRING,
+        },
     },
+    {
+      timestamps: true,
+    }
 
 )
 

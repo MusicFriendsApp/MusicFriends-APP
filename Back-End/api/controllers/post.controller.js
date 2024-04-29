@@ -1,8 +1,6 @@
 const Post = require('../models/post.model')
 const { faker } = require('@faker-js/faker');
 
-//const { getOnePost, getAllPost, multiplePost, addPost, deletePost, updatePost} = require('../controllers/post .controler');
-
 async function getOnePost(request, response){
     try {
         const post = await Post.findByPk(request.params.id);
@@ -44,19 +42,17 @@ async function deletePost(request, response) {
   async function addPost(request, response) {
     try {
       await Post.create({
-        title: request.body.title,
         body: request.body.body,
-        createdAt: request.body.createdAt,
-        updatedAt: request.body.profile_picture,
-        userid: request.body.userid,
+        userId: request.body.userId,
+        parentId: request.body.parentId,
       });
       return response.status(200).send("Post created");
     } catch (error) {
+      console.log(error)
       return response.status(400).send("Bad request: Post already exists");
     }
   }
   
-
 
 
 

@@ -1,68 +1,60 @@
-import { loginSpotify } from "../../services/loginSpotify"
 import "./Home.css"
-import { useEffect, useState } from "react"
-import { createUser } from '../../services/user'
-import { getUserSpotify } from '../../services/getUserSpotify' 
-import { getUserTopArtist } from '../../services/getUserTopArtist'
-import { addTopTenArtist } from '../../services/user'
-import profilePic from '../../assets/defaultProfilePicture.svg'
+import { useEffect, useState, useContext } from "react"
+import { getCurrentUser } from "../../services/user"
+import UserCard from "../../components/UserCard/UserCard"
+import { SuggestedFriend } from "../../components/SuggestedFriend/SuggestedFriend"
+import Posts from "../../components/Posts/Posts"
+import PostForm from "../../components/PostForm/PostForm"
+import loadingImage from "../../assets/loading.gif"
+import { UserContext } from "../../contexts/Contexts"
 
 const Home = () => {
+
+  const [isLoading, setIsLoading] = useState(false)
+  const {currentUser, setCurrentUser} = useContext(UserContext)
+  const [data, setData] = useState({})
+  
   useEffect(() => {
-    const login = async () => {
-      if(!localStorage.getItem('access_token')) {
-        const newToken = await loginSpotify()
-        setToken(newToken)
+    const getUserData = async () => {
+      setIsLoading(true)
+      try {
+        const spotify_id = localStorage.getItem('spotify_id')
+        const profile = await getCurrentUser(spotify_id)
+        setData(profile)
+        setCurrentUser(profile)
+      } catch (error) {
+      } finally {
+        setIsLoading(false)
       }
     }
-    login()
+    getUserData()
   }, [])
 
-  const [token, setToken] = useState("")
-  useEffect(() => {
-    const getUserDataSpotify = async () => {
-
-      const userData = await getUserSpotify()
-      localStorage.setItem('spotify_id', userData.id)
-
-      if (userData.images.length !== 0){
-        createUser(userData.display_name,userData.country,userData.id,userData.images[0].url,userData.images[1].url)
-      } else {
-        createUser(userData.display_name,userData.country,userData.id,profilePic,profilePic)
-      }
-    }
-    getUserDataSpotify()
-
-    const getUserTopArtistData = async () => {
-      const {items} = await getUserTopArtist()
-      const userSpotifyId = localStorage.getItem('spotify_id')
-      const artistList = items.map(( artist )=>{
-        return [artist.name, artist.id]
-      })
-      artistList.forEach((artist) => {
-        addTopTenArtist(artist[0], artist[1], userSpotifyId)
-      })
-    }
-    getUserTopArtistData()
-
-  }, [token]) 
-
+  if(isLoading) {
+    return <img id="loading-image" src={loadingImage}/>
+  }
 
   return (
     <>
     <div id="homepage">
-        <br/>
-        <div id="content-left">Content left
-          <div className="content-left-item">content-left-item</div>
+        <div id="content-left">
+          <UserCard data={data}/>
+        </div> 
+        <div id="content-center">
+          <PostForm />
+          <Posts data={data}/>
         </div>
-        
-        <div id="content-right">Content right
-          <div className="content-rigth-item">content-rigth-item</div>
+        <div id="content-right">
+          <div className="content-rigth-item">
+          <h6>Suggested Friend by music genre</h6>
+            <ul>
+              <li><SuggestedFriend/></li>
+            </ul>
+          </div>
         </div>
-      
     </div>
     </>
   )
-}
+}        
 
 export default Home

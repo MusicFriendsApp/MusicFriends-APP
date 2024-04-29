@@ -17,7 +17,7 @@ export const createUser = async (username,country,spotify_id,profile_picture_sm,
 
 export const getCurrentUser = async (spotify_id) => {
     const {data} = await api.get(`/user/${spotify_id}`)
-    return data 
+    return data
 }
 
 export const addTopTenArtist = async (artist_name, spotify_id, userSpotifyId) => {
@@ -33,23 +33,14 @@ export const addTopTenArtist = async (artist_name, spotify_id, userSpotifyId) =>
   }
 }
 
-export const userGenres = async (spotify_id) => {
-    const {userid} = await api.get(`/user/${spotify_id}`)
-      return userid
-}
-
-
-
-      /* 
-async function userGenres(request, response) {
+export const addUserGenres = async (genre_name, userSpotifyId) => {
   try {
-    const usersGenres = await UserGenres.findAll({
-      where: {
-        userid: request.params.userid
-      }
+    const {data} = await api.post("/genre/addGenre", {
+        genre_name: genre_name,
+        userSpotifyId: userSpotifyId
     })
-    return response.status(200).json(usersGenres);
+    return data
   } catch (error) {
-    response.status(500).send(error.message);
+    console.log(error)
   }
-} */
+}

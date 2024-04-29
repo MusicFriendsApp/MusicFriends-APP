@@ -7,15 +7,9 @@ const Post = sequelize.define(
         body: {
             type: DataTypes.TEXT,
         },
-        userId: {
-            type: DataTypes.STRING,
-        },
         parentId: {
             type: DataTypes.STRING,
         },
-    },
-    {
-      timestamps: true,
     }
 
 )

@@ -11,7 +11,6 @@ import './Loading.css'
 const Loading = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [user, setUser] = useState(null)
-  const [error, setError] = useState(null)
   const {currentUser, setCurrentUser} = useContext(UserContext)
 
   useEffect(() => {
@@ -31,9 +30,6 @@ const Loading = () => {
       setIsLoading(true)
         const userData = await getUserSpotify()
         localStorage.setItem('spotify_id', userData.id)
-        if(userData.error.status === 401) {
-          setError(userData.error)
-        } 
         if (userData.images.length !== 0){
           createUser(userData.display_name,userData.country,userData.id,userData.images[0].url,userData.images[1].url)
         } else {
@@ -63,16 +59,6 @@ const Loading = () => {
     getUserDataSpotify()
     getUserTopArtistData()
   }, [token]) 
-
-if(error) {
-  return(
-    <div id="error-message">
-      <h1>Ooopss... Error {error.status} {error.message}</h1>
-      <h1>Something went wrong retrieving your data.</h1>
-      <h1>Please, refresh and try again.</h1>
-    </div>
-  )
-}
 
   return (
     <div id="fetching-info">

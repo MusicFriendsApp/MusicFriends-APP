@@ -1,4 +1,5 @@
 const Post = require('../models/post.model')
+const User = require('../models/user.model')
 const { faker } = require('@faker-js/faker');
 
 async function getOnePost(request, response){
@@ -39,13 +40,20 @@ async function deletePost(request, response) {
     }
   }
 
-  async function addPost(request, response) {
+  async function addNewPost(request, response) {
     try {
-      await Post.create({
+      const post = await Post.create({
         body: request.body.body,
-        userId: request.body.userId,
         parentId: request.body.parentId,
       });
+
+      const user = await User.findOne({
+        where: {
+          spotify_id: request.body.userSpotifyId
+        }
+      })
+  
+      await user.addPost(post)
       return response.status(200).send("Post created");
     } catch (error) {
       console.log(error)
@@ -61,5 +69,5 @@ module.exports = {
     getOnePost,
     getAllPost,
     deletePost,
-    addPost
+    addNewPost
 }

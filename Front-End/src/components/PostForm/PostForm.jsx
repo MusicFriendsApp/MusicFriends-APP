@@ -22,8 +22,10 @@ const PostForm = () => {
   };
   return (
     <>
-      <textarea onChange={handleInputValue} name="postContent" autoComplete='on' minLength={1} maxLength={350} required placeholder="Share your thoughts..." ref={textAreaRef} rows={5} value={postInput}/>
-      <button id='submit-button' onClick={(e) => {addPost(postInput, currentUser.spotify_id, parentId)}}>POST COMMENT</button>
+      <form>
+        <textarea onChange={handleInputValue} name="postContent" autoComplete='on' minLength={1} maxLength={350} required placeholder="Share your thoughts..." ref={textAreaRef} rows={5} value={postInput}/>
+        <button id='submit-button' onClick={(e) => {addPost(postInput, currentUser.spotify_id, parentId)}}>POST COMMENT</button>
+      </form>
     </>
   )
 }

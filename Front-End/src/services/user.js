@@ -1,4 +1,3 @@
-import UserGenres from '../../../Back-End/api/models/usergenres.model.js'
 import api from './index.js'
 
 export const createUser = async (username,country,spotify_id,profile_picture_sm,profile_picture_bg) => {

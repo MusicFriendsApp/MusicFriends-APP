@@ -40,15 +40,16 @@ const Login = () => {
   return (
     <div id='loginpage'>
       <form id='login-form'>
-      <h1>Find new friends with matching {options} with your Spotify</h1>
-      <div>
-        <button id='login-button' onClick={loginSpotify}>Log In</button>
-        <div id='checkbox-container'>
-          <input id='terms' type='checkbox' required/>
-          <p>You accept to be redirected to the Spotify login</p>
+        <h1>Find new friends with matching {options} with your Spotify</h1>
+        <div>
+          <button id='login-button' onClick={loginSpotify}>Log In</button>
+          <div id='checkbox-container'>
+            <input id='terms' type='checkbox' required/>
+            <p>You accept to be redirected to the Spotify login</p>
+          </div>
         </div>
-      </div>
       </form>
+      <div id='primera'>hello</div>
     </div>
   )
 }

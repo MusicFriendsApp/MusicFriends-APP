@@ -6,6 +6,7 @@ import Login from "../pages/Login/Login";
 import NotFound from "../pages/NotFound/NotFound";
 import Loading from "../pages/Loading/Loading";
 import { Profile } from "../pages/Profile/Profile";
+import Logout from "../pages/Logout/Logout";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path:'/About',
         element: <About />
+      },
+      {
+        path:'/Logout',
+        element: <Logout />
       }
     ]
   }

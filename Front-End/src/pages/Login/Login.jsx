@@ -2,8 +2,6 @@ import './Login.css'
 import { loginSpotify } from '../../services/loginSpotify'
 import { useState, useEffect } from 'react'
 
-import Button from '@mui/material/Button';
-
 const Login = () => {
 
   const [options, setOptions] = useState('music')
@@ -76,9 +74,7 @@ const Login = () => {
           <div>
             <button id='login-button' onClick={loginSpotify}>Get started</button>
           </div>
-          
-          
-          </div>
+        </div>
       </form>
     </div>
     </>

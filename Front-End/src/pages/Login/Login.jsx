@@ -45,21 +45,28 @@ const Login = () => {
           <button id='login-button' onClick={loginSpotify}>Log In</button>
           <div id='checkbox-container'>
             <input id='terms' type='checkbox' required/>
-            <p>You accept to be redirected to the Spotify login</p>
+            <p id='terms-p'>You accept to be redirected to the Spotify login</p>
           </div>
         <div id='primera'> 
-          <div>Connect with people that listen to the same artists or genres you listen</div>
-          <div>PICTURE</div>
+          <div className='primera'>Connect with people that listen to the same artists or genres you listen</div>
+          <div className='primera'> <img src="../src/assets/card.png" alt="" /> </div>
         </div>
         <div id='segunda'>
-          <div class='segunda'>2</div>
-          <div class='segunda'>2</div>
+          <div class='segunda'>Login with your Spotify account
+            <div id='auth'>AUTH Spotify</div>
+          </div>
+          <div class='segunda'>We suggest you other users with similar music taste
+           <div>prueba</div>
+          </div>
         </div>
         <div id='tercera'>
-          <div class='segunda'>3</div>
-          <div class='segunda'>3</div>
+          <div class='tercera'>Add them to your friends and share your thoughts, artists or playlists</div>
+          <div class='tercera'>Watch their posts, profile, favourite artists and genres</div>
         </div>
-        <div id='cuarta'>hello</div>
+        <div id='cuarta'>
+          Become a bigger community and keep others updated with your favourite music
+          <button id='login-button' onClick={loginSpotify}>Get started</button>
+          </div>
       </form>
     </div>
     </>

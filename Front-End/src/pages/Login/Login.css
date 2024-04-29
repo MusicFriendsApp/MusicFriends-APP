@@ -1,9 +1,14 @@
+
+
+
 #loginpage {
   display: flex;
   width: 100%;
   justify-content: center;
   border: blue solid 1px;
   flex-wrap: wrap;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
 }
 
 #login-button {
@@ -33,6 +38,10 @@
   align-items: center;
 }
 
+#terms-p{
+  font-size: 0.7rem;
+}
+
 #terms {
   cursor: pointer;
 }
@@ -46,14 +55,53 @@
 }
 #primera {
   display: flex;
+  margin-bottom: 10px;;
+}
+
+#primera > div > img {
+  width: 150px;
 }
 
 #segunda, .segunda{
-  border: rgb(255, 0, 55) solid 1px;
+  display: flex;
+  margin: 10px
+}
+.segunda{
+  flex-direction: column;
+  align-items: center;
+}
+
+.segunda, .tercera {
+  border: rgb(160, 160, 160) solid 1px;
+  border-radius: 20px;
+  width: 400px;
+  max-width: 300px;
+  min-height: 100px;
+  padding: 10px
+}
+
+#tercera{
   display: flex;
 }
 
-#tercera, .tercera{
-  border: rgb(12, 156, 55) solid 1px;
-  display: flex;
+.tercera {
+  width: 450px;
+  max-width: 350px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#cuarta {
+  margin-top: 20px;
+
+}
+
+#auth {
+  border: rgb(160, 160, 160) solid 1px;
+  border-radius: 20px;
+  height: 100px;
+  width: 200px;
+  text-align: center;
+  align-content: center;
 }

@@ -12,3 +12,12 @@ export const addPost = async (body, spotify_id, parent_id) => {
     console.log(error)
   }
 }
+
+export const getUserPosts = async (spotify_id) => {
+  try {
+    const {data} = await api.get(`/post/userPosts/${spotify_id}`)
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}

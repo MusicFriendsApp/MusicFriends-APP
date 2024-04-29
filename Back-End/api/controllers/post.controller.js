@@ -40,34 +40,49 @@ async function deletePost(request, response) {
     }
   }
 
-  async function addNewPost(request, response) {
-    try {
-      const post = await Post.create({
-        body: request.body.body,
-        parentId: request.body.parentId,
-      });
+async function addNewPost(request, response) {
+  try {
+    const post = await Post.create({
+      body: request.body.body,
+      parentId: request.body.parentId,
+    });
 
-      const user = await User.findOne({
-        where: {
-          spotify_id: request.body.userSpotifyId
-        }
-      })
+    const user = await User.findOne({
+      where: {
+        spotify_id: request.body.userSpotifyId
+      }
+    })
   
-      await user.addPost(post)
-      return response.status(200).send("Post created");
-    } catch (error) {
-      console.log(error)
-      return response.status(400).send("Bad request: Post already exists");
-    }
+    await user.addPost(post)
+    return response.status(200).send("Post created");
+  } catch (error) {
+    console.log(error)
+    return response.status(400).send("Bad request: Post already exists");
   }
-  
+}
 
-
-
+async function getCurrentUserPosts(request, response) {
+  try {
+    const user = await User.findOne({
+      where: {
+        spotify_id: request.params.userId
+      }
+    })
+    const posts = await Post.findAll({
+      where: {
+        userId: user.id
+      }
+    });
+    return response.status(200).json(posts);
+  } catch (error) {
+    response.status(500).send(error.message);
+  }
+}
 
 module.exports = {
     getOnePost,
     getAllPost,
     deletePost,
-    addNewPost
+    addNewPost,
+    getCurrentUserPosts
 }

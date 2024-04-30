@@ -1,6 +1,7 @@
 #suggested-friend-card {
   display: flex;
   width: 90%;
+  min-width: 200px;
   height: 60px;
   border: 1px solid black;
   border-radius: 5px;

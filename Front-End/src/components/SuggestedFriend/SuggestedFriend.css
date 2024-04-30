@@ -1,5 +1,6 @@
 #suggestions-container {
   width: 85%;
+  min-width: 220px;
   border: 1px solid white;
   background-color: grey;
   border-radius: 4px;

@@ -2,18 +2,24 @@
   display: flex;
   width: 85%;
   margin-top: 15px;
+  min-width: 390px;
   flex-direction: column;
   border: 1px solid black;
   border-radius: 5px;
   background-color: grey;
   padding: 20px;
 }
+
 #post-header{
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
   height: 35px;
+}
+
+#post-body{
+  display: flex;
 }
 
 #post-header img{

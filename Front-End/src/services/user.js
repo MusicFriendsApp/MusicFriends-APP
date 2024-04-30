@@ -54,3 +54,27 @@ export const addUserGenres = async (genre_name, userSpotifyId) => {
     console.log(error)
   }
 }
+
+export const followUser = async (currentUserId, toFollowUserId) => {
+  try {
+    const {data} = await api.post('/user/followUser', {
+        currentUserId: currentUserId,
+        toFollowId: toFollowUserId,
+    })
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const unfollowUser = async (currentUserId, toFollowUserId) => {
+  try {
+    const {data} = await api.post('/user/unfollowUser', {
+        currentUserId: currentUserId,
+        toFollowId: toFollowUserId,
+    })
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}

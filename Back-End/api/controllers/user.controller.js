@@ -1,5 +1,6 @@
 const User = require("../models/user.model");
 const UserGenres = require("../models/usergenres.model");
+const Follow = require("../models/follow.model")
 
 async function getOneUser(request, response) {
   try {
@@ -48,7 +49,7 @@ async function getAllUser(request, response) {
   }
 }
 
-async function addUser(request, response) {
+async function createUser(request, response) {
   try {
     await User.create({
       username: request.body.username,
@@ -118,12 +119,64 @@ async function userGenres(request, response) {
   }
 }
 
+async function followUser(request, response) {
+  try {
+    const currentUser = await User.findOne({
+      where: {
+        spotify_id: request.body.currentUserId
+      }
+    });
+    const toFollowUser = await User.findOne({
+      where: {
+        spotify_id: request.body.toFollowId
+      }
+    });
+    
+    await Follow.create({
+      userId: currentUser.id,
+      followingUserId: toFollowUser.id,
+    })
+    
+    return response.status(200).send('User Followed');
+  } catch (error) {
+    response.status(500).send(error.message);
+  }
+}
+
+async function unfollowUser(request, response) {
+  try {
+    const currentUser = await User.findOne({
+      where: {
+        spotify_id: request.body.currentUserId
+      }
+    });
+    const toFollowUser = await User.findOne({
+      where: {
+        spotify_id: request.body.toFollowId
+      }
+    });
+    
+    await Follow.destroy({
+      where: {
+        userId: currentUser.id,
+        followingUserId: toFollowUser.id,
+      }
+    })
+    
+    return response.status(200).send('User Followed');
+  } catch (error) {
+    response.status(500).send(error.message);
+  }
+}
+
 module.exports = {
   getOneUser,
-  addUser,
+  createUser,
   getAllUser,
   deleteUser,
   updateUser,
   userGenres,
-  getCurrentUser
+  getCurrentUser,
+  followUser,
+  unfollowUser
 };

@@ -5,7 +5,19 @@
 }
 
 #footer-container{
-  border: 1px solid red;
+  border: 1px solid rgb(70, 70, 70);
   display: grid;
-  grid-template-columns: 0.2fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+#logo{
+  width: 50px;
+  align-self: center;
+  position: relative;
+  top: 60px;
+  left: 100px;
+}
+
+li, #column03 > p{
+  font-size: 0.7rem;
 }

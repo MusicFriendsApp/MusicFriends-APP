@@ -3,6 +3,13 @@
   flex-direction: column;
 }
 
+#principal, .about-container, .elemento {
+  border: rgb(160, 160, 160) solid 1px;
+  border-radius: 20px;
+  padding: 20px;gap: 15px
+
+}
+
 #aboutus {
 }
 
@@ -10,17 +17,14 @@
 
 }
 
-
-
 .about-container {
-  background-color: rgb(128, 128, 128);
-  height: 70vh;
-  padding: 2px;
+  padding: 22px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;  
   color: white;
   width: 80vw;
+  flex-wrap: wrap;
 }
 
 .about-container h1 {
@@ -34,21 +38,22 @@
 }
 
 .elemento{
-  border: 0px solid wheat;
-}
-.elemento > div > img {
-  width: 10rem;
 }
 
 h6{
-  color:rgb(15, 0, 99)
+  color:rgb(255, 255, 255)
 }
 
 .puesto{
   font-size: 0.8rem;
-  color:rgb(15, 0, 99)
+  color:rgb(255, 255, 255)
 
 }
 h6, .puesto{
   padding-left: 0.5rem;
+}
+
+div > a > img.icon {
+  width: 2rem;
+  padding: 5px;
 }

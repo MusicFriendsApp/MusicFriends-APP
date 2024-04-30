@@ -18,14 +18,13 @@ const addRelationsToModels = () => {
     Genre.belongsToMany(User, {through: UserGenres})
     User.belongsToMany(Track, {through: UserTracks})
     Track.belongsToMany(User, {through: UserTracks})
-    User.belongsToMany(User, {through: Follow, as: 'following_user_id'})
+    User.belongsToMany(User, {through: Follow, as: 'following_user'})
     User.hasMany(Post)
     Post.belongsTo(User)
     Artist.belongsToMany(Track, {through: ArtistTracks})
     Track.belongsToMany(Artist, {through: ArtistTracks})
     Artist.belongsToMany(Genre, {through: ArtistGenres})
     Genre.belongsToMany(Artist, {through: ArtistGenres})
-    //Post.belongsTo(Post, {through: 'PostParent', as: 'children_id'})
 
     console.log('Relations added to models')
   } catch (error) {

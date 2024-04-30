@@ -91,7 +91,7 @@ export default function Header() {
               }}
             >
               {pages.map((page) => (
-                <Link to={`/${page}`}>
+                <Link key={page} to={`/${page}`}>
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
@@ -120,7 +120,7 @@ export default function Header() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Link to={`/${page}`}>
+              <Link key={page} to={`/${page}`}>
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
@@ -155,7 +155,7 @@ export default function Header() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <Link to={`/${setting}`}>
+                <Link key={setting} to={`/${setting}`}>
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>

@@ -33,7 +33,7 @@ const Posts = ({data}) => {
   return (
     <div>
       {userPosts && userPosts.sort((a, b) => {return b.id - a.id}).map((post) => {
-        return <SinglePost data={data} postData={post}/>
+        return <SinglePost key={post.id} data={data} postData={post}/>
       })}
     </div>
   )

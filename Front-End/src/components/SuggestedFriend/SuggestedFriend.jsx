@@ -55,7 +55,7 @@ export const SuggestedFriend = () => {
     <>
       <div id='suggestions-container'>
         {renderSuggestions && renderSuggestions.map((data) => {
-          return <SuggestedFriendCard data={data}/>
+          return <SuggestedFriendCard key={data.id} data={data}/>
         })}
       </div>
     </>

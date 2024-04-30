@@ -11,20 +11,20 @@ const Footer = () => {
       
       <div id='column01'>
         <img id='logo' src={logo} alt="" />
-        <h6 id='company-name'>Spotify Friends</h6>
+        <h6 id='company-name'  className='text-footer'>Spotify Friends</h6>
       </div>
       <div id='column02'>
-        <h6>A Social Networking/Friendship App based on your preferences about music, musical genres and artist. 
+        <h6 className='text-footer'>A Social Networking/Friendship App based on your preferences about music, musical genres and artist. 
           Enjoy your music, share with friends and keep up to date on the scene. Have you ever tried?</h6>
         <ul>
-          <li>User Authentication</li>
-          <li>Profile</li>
-          <li>Friend Networking</li>
-          <li>Chat</li>
-          <li>Friend Requests</li>
-          <li>Activity Feed</li>
-          <li>Music Recommendations</li>
-          <li>Events</li>
+          <li className='text-footer'>User Authentication</li>
+          <li className='text-footer'>Profile</li>
+          <li className='text-footer'>Friend Networking</li>
+          <li className='text-footer'>Chat</li>
+          <li className='text-footer'>Friend Requests</li>
+          <li className='text-footer'>Activity Feed</li>
+          <li className='text-footer'>Music Recommendations</li>
+          <li className='text-footer'>Events</li>
         </ul>
       </div>
 {/* 

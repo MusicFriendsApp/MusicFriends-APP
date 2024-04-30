@@ -1,6 +1,6 @@
 import './SuggestedFriend.css'
 import { useEffect, useState } from 'react'
-import { getCurrentUser, getAllUsers, getOneUser } from '../../services/user'
+import { getCurrentUser, getAllUsers, getOneUser, checkFriend } from '../../services/user'
 import { getUserGenres } from '../../services/genre'
 import SuggestedFriendCard from '../SuggestedFriendCard/SuggestedFriendCard'
 
@@ -40,9 +40,16 @@ export const SuggestedFriend = () => {
         }).filter((user) => {
           return user.length > 0
         })
-        const suggestedFriends = await Promise.all(filteredUsers.map(async (userSuggestion) => {
+        const notFriendsUsers = await Promise.all(filteredUsers.map(async (users) => {
+          return await Promise.all(users.filter(async(user) => {
+            return await checkFriend(currentUser.id, user.userId) === null
+          }))
+        }))
+
+        const suggestedFriends = await Promise.all(notFriendsUsers.map(async (userSuggestion) => {
           return await getOneUser(userSuggestion[0].userId)
         }))
+        
         setRenderSuggestions(suggestedFriends)
       } catch (error) {
         console.log(error)

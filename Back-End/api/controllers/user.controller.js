@@ -169,6 +169,30 @@ async function unfollowUser(request, response) {
   }
 }
 
+async function isFollowing(request, response) {
+  try {
+    const currentUser = await User.findOne({
+      where: {
+        id: request.body.currentUserId
+      }
+    });
+    const isFollowUser = await User.findOne({
+      where: {
+        id: request.body.isFollowingUserId,
+      }
+    });
+    const isFollowed = await Follow.findOne({
+      where: {
+        userId: currentUser.id,
+        followingUserId: isFollowUser.id,
+      }
+    })
+    return response.status(200).json(isFollowed);
+  } catch (error) {
+    response.status(500).send(error.message);
+  }
+}
+
 module.exports = {
   getOneUser,
   createUser,
@@ -178,5 +202,6 @@ module.exports = {
   userGenres,
   getCurrentUser,
   followUser,
-  unfollowUser
+  unfollowUser,
+  isFollowing
 };

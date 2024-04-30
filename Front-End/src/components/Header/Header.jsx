@@ -39,7 +39,7 @@ export default function Header() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" style={{backgroundColor: 'pink'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />

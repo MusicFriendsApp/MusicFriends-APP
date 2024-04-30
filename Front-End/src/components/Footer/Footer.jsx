@@ -10,7 +10,7 @@ const Footer = () => {
       <div id="footer-container">
       
       <div id='column01'>
-        <img id='logo' src="../src/assets/logo.png" alt="" />
+        <img id='logo' src={logo} alt="" />
         <h6 id='company-name'>Spotify Friends</h6>
       </div>
       <div id='column02'>

@@ -1,6 +1,6 @@
 import './SuggestedFriend.css'
 import { useEffect, useState } from 'react'
-import { getCurrentUser, getAllUsers, getOneUser } from '../../services/user'
+import { getCurrentUser, getAllUsers, getOneUser, checkFriend } from '../../services/user'
 import { getUserGenres } from '../../services/genre'
 import SuggestedFriendCard from '../SuggestedFriendCard/SuggestedFriendCard'
 
@@ -25,38 +25,31 @@ export const SuggestedFriend = () => {
   }, [])
 
   useEffect(() => {
-    async function getAllGenres() {
+    async function filterSuggestions() {
+      if (!currentUser || userList.length === 0) return;
       try {
-        const currentUserGenres = await getUserGenres(currentUser.id)
-        const allUsersGenres = await Promise.all(
-          userList.map(async (user) => {
-            return await getUserGenres(user.id)
+        const currentUserGenres = await getUserGenres(currentUser.id);
+        const suggestions = await Promise.all(
+          userList.filter(user => user.id !== currentUser.id).map(async user => {
+            const isFriend = await checkFriend(currentUser.id, user.id);
+            return isFriend ? null : user;
           })
-        )
-        const filteredUsers = allUsersGenres.map((user) => {
-          return user.filter((user) => {
-            return user.userId !== currentUser.id
-          })
-        }).filter((user) => {
-          return user.length > 0
-        })
-        const suggestedFriends = await Promise.all(filteredUsers.map(async (userSuggestion) => {
-          return await getOneUser(userSuggestion[0].userId)
-        }))
-        setRenderSuggestions(suggestedFriends)
+        );
+        const validSuggestions = suggestions.filter(user => user !== null);
+        setRenderSuggestions(validSuggestions);
       } catch (error) {
-        console.log(error)
+        console.error('Error filtering suggestions:', error);
       }
     }
-    getAllGenres()
-  }, [userList])
+    filterSuggestions();
+  }, [currentUser, userList]);
 
   return (
     <>
       <div id='suggestions-container'>
-        {renderSuggestions && renderSuggestions.map((data) => {
+        {renderSuggestions.length > 0 ? renderSuggestions.map((data) => {
           return <SuggestedFriendCard key={data.id} data={data}/>
-        })}
+        }) : <p>You already follow everyone!</p>}
       </div>
     </>
   )

@@ -1,6 +1,7 @@
-const { getOneUser, getCurrentUser, getAllUser, createUser, deleteUser, updateUser, userGenres, followUser, unfollowUser} = require('../controllers/user.controller');
+const { getOneUser, getCurrentUser, getAllUser, createUser, deleteUser, updateUser, userGenres, followUser, unfollowUser, isFollowing} = require('../controllers/user.controller');
 
 const router = require('express').Router()
+router.post('/checkFriend', isFollowing)
 router.post('/followUser', followUser)
 router.post('/unfollowUser', unfollowUser)
 router.get('/', getAllUser)

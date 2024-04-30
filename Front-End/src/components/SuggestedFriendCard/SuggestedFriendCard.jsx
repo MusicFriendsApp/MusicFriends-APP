@@ -17,12 +17,6 @@ const SuggestedFriendCard = ({data}) => {
       setFollow('Following')
     }
   }
-  // useEffect(() => {
-  //   if(isFollowing === false) {
-  //   }
-  //   if(isFollowing === true) {
-  //   }
-  // }, [isFollowing])
 
   return (
     <div id='suggested-friend-card'>

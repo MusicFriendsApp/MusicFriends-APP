@@ -78,3 +78,15 @@ export const unfollowUser = async (currentUserId, toFollowUserId) => {
     console.log(error)
   }
 }
+
+export const checkFriend = async (currentUserId, isFollowingUserId) => {
+  try {
+    const {data} = await api.post('/user/checkFriend', {
+        currentUserId: currentUserId,
+        isFollowingUserId: isFollowingUserId,
+    })
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}

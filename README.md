@@ -195,3 +195,35 @@ Here's a formatted table outlining the endpoints for **user** management based o
 - Use consistent endpoint naming and structure to facilitate easier maintenance and scalability of your application’s backend.
 
 This table serves as a part of the API documentation, providing a clear guideline for developers on how to interact with the user management functionalities within your application.
+
+The code you've provided includes some modifications and additions to the routes for user management compared to the previous version. Let's detail the changes and then provide the updated table of endpoints:
+
+### Changes in the Code:
+1. **Function Rename**: `addUser` is now `createUser`. This change updates the terminology to a more common CRUD (Create, Read, Update, Delete) naming convention.
+2. **New Endpoints**:
+   - `/checkFriend`: A new POST route to check if the current user is following another user.
+   - `/followUser`: A new POST route for following a user.
+   - `/unfollowUser`: A new POST route for unfollowing a user.
+
+### Updated Table of Endpoints:
+Here's the updated table of endpoints, reflecting the changes and additions:
+
+| METHOD | ENDPOINT                     | TOKEN | ROLE   | DESCRIPTION                                 | POST/PARAMS                               | RETURNS                                          |
+|--------|------------------------------|-------|--------|---------------------------------------------|-------------------------------------------|-------------------------------------------------|
+| GET    | /users                       | Yes   | Admin  | Fetch all users                             | -                                         | Array of users                                  |
+| GET    | /users/:id                   | Yes   | -      | Fetch a single user by ID                   | -                                         | User details                                    |
+| GET    | /users/currentUser/:spotify_id | Yes | User  | Fetch the current user's details            | -                                         | Current user details                            |
+| POST   | /users/addUser               | Yes   | Admin  | Add a new user                              | first_name, last_name, email, etc.        | { message: "User added", user: { details } }   |
+| DELETE | /users/deleteUser/:spotify_id| Yes   | Admin  | Delete a user by Spotify ID                 | -                                         | { message: "User deleted" }                     |
+| PUT    | /users/updateUser/:spotify_id| Yes   | User  | Update user details                         | first_name, last_name, email, etc.        | { message: "User updated", user: { details } } |
+| GET    | /users/genres/:userid        | Yes   | User  | Fetch genres associated with a user         | -                                         | Array of genres linked to the user             |
+| POST   | /users/checkFriend           | Yes   | User  | Check if a user is following another user   | follower_id, following_id                 | { isFollowing: true/false }                     |
+| POST   | /users/followUser            | Yes   | User  | Follow a user                               | follower_id, following_id                 | { message: "User followed" }                    |
+| POST   | /users/unfollowUser          | Yes   | User  | Unfollow a user                             | follower_id, following_id                 | { message: "User unfollowed" }                  |
+
+### Notes:
+- **TOKEN**: All routes now specify whether authentication is required ("Yes"), assuming that user operations are secured. This might vary depending on your actual authentication strategy.
+- **ROLE**: Specifies the required user role for accessing the route. Admins can add or delete users, while regular users can update their information, follow/unfollow users, etc.
+- **POST/PARAMS**: This specifies the parameters needed for POST and PUT requests. For the new endpoints (`checkFriend`, `followUser`, `unfollowUser`), you would typically pass user identifiers indicating who is performing the action and on whom.
+
+These changes and the resulting endpoint documentation provide a comprehensive API guide that supports CRUD operations along with social features like following and unfollowing users, and checking friendship statuses, enhancing the application's functionality for user interactions.

@@ -22,3 +22,6 @@ SpotifyFriends is a web application that allows users to connect, network, and p
 - Express.js: Web application framework for Node.js.
 - Spotify API: Integration with Spotify for user authentication and music data.
 - Material-UI: React UI framework for designing consistent and responsive user interfaces.
+
+## Some Mobile design...
+![SpotifyFriendsAPP](https://github.com/SpotifyFriends/SpotifyFriends-APP/assets/91672631/55826454-fd23-45f2-a5d3-ad4fdd7128d6)

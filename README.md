@@ -32,7 +32,7 @@ SpotifyFriends is a web application that allows users to connect, network, and p
 
 ## Endpoints:
 
-Here's how the table for the endpoints related to the artist management:
+Here's how the table for the endpoints related to the **artist** management:
 
 | METHOD | ENDPOINT          | TOKEN | ROLE   | DESCRIPTION                   | POST PARAMS                       | RETURNS                            |
 |--------|-------------------|-------|--------|-------------------------------|-----------------------------------|------------------------------------|
@@ -52,7 +52,7 @@ Here's how the table for the endpoints related to the artist management:
 
 This table layout will help you or any developer working with your API to quickly understand the capabilities of your artist management endpoints and how to interact with them. Adjust the specifics of the TOKEN and ROLE columns based on your actual authentication and authorization setup.
 
-Below is the table formatted to outline the endpoints for genre management based on the routing setup:
+Below is the table formatted to outline the endpoints for **genre** management based on the routing setup:
 
 | METHOD | ENDPOINT            | TOKEN | ROLE   | DESCRIPTION                          | POST PARAMS                              | RETURNS                                  |
 |--------|---------------------|-------|--------|--------------------------------------|------------------------------------------|------------------------------------------|
@@ -114,7 +114,7 @@ This setup organizes endpoints into logical groups based on their function, such
 - This structure helps decouple the routing logic from the application logic, promoting cleaner and more modular code.
 - Make sure to appropriately secure each router according to the needs of the application, especially for routes that handle sensitive data.
 
-Below is the table summarizing the endpoints for post management, based on the routing setup for our application. This format includes method, endpoint, token requirement, role specification, description, POST parameters, and expected returns:
+Below is the table summarizing the endpoints for **post** management, based on the routing setup for our application. This format includes method, endpoint, token requirement, role specification, description, POST parameters, and expected returns:
 
 | METHOD | ENDPOINT                  | TOKEN | ROLE   | DESCRIPTION                             | POST PARAMS                                | RETURNS                                  |
 |--------|---------------------------|-------|--------|-----------------------------------------|-------------------------------------------|------------------------------------------|
@@ -142,7 +142,7 @@ Below is the table summarizing the endpoints for post management, based on the r
 
 This table format will be useful for API documentation, helping developers understand how to interact with your post management system efficiently.
 
-Here's the table outlining the endpoints for track management based on the routing setup. This style matches our earlier format for presenting API endpoints clearly and comprehensively:
+Here's the table outlining the endpoints for **track** management based on the routing setup. This style matches our earlier format for presenting API endpoints clearly and comprehensively:
 
 | METHOD | ENDPOINT              | TOKEN | ROLE   | DESCRIPTION                   | POST PARAMS                                  | RETURNS                                |
 |--------|-----------------------|-------|--------|-------------------------------|----------------------------------------------|----------------------------------------|
@@ -166,7 +166,7 @@ Here's the table outlining the endpoints for track management based on the routi
 - Make sure your actual application's security and user role checks align with the token and role requirements specified here to ensure proper access control.
 - This table format can help in documenting the API effectively, offering developers clear guidance on how to interact with the track management system in your application.
 
-Here's a formatted table outlining the endpoints for user management based on routing setup. This format will continue to use the clear and comprehensive style we have specified for presenting API endpoints:
+Here's a formatted table outlining the endpoints for **user** management based on routing setup. This format will continue to use the clear and comprehensive style we have specified for presenting API endpoints:
 
 | METHOD | ENDPOINT                  | TOKEN | ROLE   | DESCRIPTION                      | POST/PARAMS                               | RETURNS                                         |
 |--------|---------------------------|-------|--------|----------------------------------|------------------------------------------|------------------------------------------------|

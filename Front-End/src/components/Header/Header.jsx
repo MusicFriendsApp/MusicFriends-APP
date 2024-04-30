@@ -17,6 +17,10 @@ import './Header.css'
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/Contexts';
 
+
+
+const color = 'rgb(18,18,18)' // font color
+
 const pages = ['Home', 'Friends', 'About'];
 const settings = ['Profile', 'Logout'];
 
@@ -39,7 +43,8 @@ export default function Header() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };return (
-    <AppBar position="sticky" style={{backgroundColor: 'pink'}}>
+    <>
+    <AppBar position="sticky" style={{backgroundColor: 'rgb(29,185,84)'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -54,7 +59,7 @@ export default function Header() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: {color},
               textDecoration: 'none',
             }}
           >
@@ -68,7 +73,7 @@ export default function Header() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color={color}
             >
               <MenuIcon />
             </IconButton>
@@ -93,7 +98,7 @@ export default function Header() {
               {pages.map((page) => (
                 <Link key={page} to={`/${page}`}>
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Typography textAlign="center" color={color}>{page}</Typography>
                   </MenuItem>
                 </Link>
               ))}
@@ -112,7 +117,7 @@ export default function Header() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: {color},
               textDecoration: 'none',
             }}
           >
@@ -124,7 +129,7 @@ export default function Header() {
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  sx={{ my: 2, color: {color}, display: 'block' }}
                 >
                   {page}
                 </Button>
@@ -166,5 +171,6 @@ export default function Header() {
         </Toolbar>
       </Container>
     </AppBar>
+    </>
   );
 }

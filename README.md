@@ -23,7 +23,7 @@ SpotifyFriends is a web application that allows users to connect, network, and p
 - Spotify API: Integration with Spotify for user authentication and music data.
 - Material-UI: React UI framework for designing consistent and responsive user interfaces.
 
-## Some Mobile design...
+## MOCKUP design...
 ![SpotifyFriendsAPP](https://github.com/SpotifyFriends/SpotifyFriends-APP/assets/91672631/55826454-fd23-45f2-a5d3-ad4fdd7128d6)
 
 ## Diagram Table...
@@ -78,5 +78,120 @@ Below is the table formatted to outline the endpoints for genre management based
 
 This table format is useful for documentation purposes, providing developers and users with clear guidelines on how to interact with your API effectively.
 
+Below is a formatted table that outlines the routing setup for the different sections of our web application, based on the routing setup. This table describes the general structure and purpose of each routing module without specific endpoint details, which would be found in each respective router file.
 
+| ROUTE BASE   | LINKED ROUTER FILE | DESCRIPTION                        |
+|--------------|--------------------|------------------------------------|
+| /user        | `./user.router`    | Routes handling user-specific operations such as authentication, user profile management, and user settings. |
+| /genre       | `./genre.router`   | Routes dedicated to genre-related functionalities including listing genres, adding new genres, and retrieving genre details. |
+| /track       | `./track.router`   | Routes managing track-related actions such as adding tracks, retrieving track details, and listing all tracks. |
+| /post        | `./post.router`    | Routes concerning post operations, suitable for managing blog posts, user comments, or other content types in the app. |
+| /artist      | `./artist.router`  | Routes for artist-related functionalities including browsing artists, adding new artists, and retrieving specific artist details. |
 
+### Detailed Explanation
+
+- **ROUTE BASE**: This column specifies the base path for each set of routes, which is the first part of the URL path that groups similar functionalities.
+- **LINKED ROUTER FILE**: Points to the specific router file within your project that contains more detailed routes and logic under each base path.
+- **DESCRIPTION**: Provides a brief overview of what each router file is expected to handle in terms of application functionality.
+
+### Usage
+
+In the main Express application file, this `router` would be used to aggregate all specific routers under a central routing module, which is then used to simplify the overall routing architecture of the app. For instance, it could be incorporated into the main server file as follows:
+
+```javascript
+const express = require('express');
+const app = express();
+const mainRouter = require('./path/to/this/router');
+
+app.use(mainRouter);
+```
+
+This setup organizes endpoints into logical groups based on their function, such as users, genres, tracks, posts, and artists, making the codebase easier to maintain and scale. Each router file (`user.router`, `genre.router`, etc.) would then define more specific routes (like `GET`, `POST`, `DELETE`) related to its domain.
+
+### Notes
+
+- Ensure that each router file correctly handles its respective routes and includes any necessary middleware for things like authentication and error handling.
+- This structure helps decouple the routing logic from the application logic, promoting cleaner and more modular code.
+- Make sure to appropriately secure each router according to the needs of the application, especially for routes that handle sensitive data.
+
+Below is the table summarizing the endpoints for post management, based on the routing setup for our application. This format includes method, endpoint, token requirement, role specification, description, POST parameters, and expected returns:
+
+| METHOD | ENDPOINT                  | TOKEN | ROLE   | DESCRIPTION                             | POST PARAMS                                | RETURNS                                  |
+|--------|---------------------------|-------|--------|-----------------------------------------|-------------------------------------------|------------------------------------------|
+| GET    | /posts/:id                | Yes   | -      | Fetch a single post by ID               | -                                         | Post details                             |
+| GET    | /posts                    | Yes   | -      | Fetch all posts                         | -                                         | Array of posts                           |
+| GET    | /posts/userPosts/:userId  | Yes   | User   | Fetch all posts for a specific user     | -                                         | Array of posts for the specified user    |
+| DELETE | /posts/deletePost/:post_id| Yes   | Admin  | Delete a specific post by ID            | -                                         | { message: "Post deleted" }              |
+| POST   | /posts/addPost            | Yes   | User   | Add a new post                          | title, content, etc.                      | { message: "Post added", post: { details } } |
+
+### Detailed Explanation
+
+- **METHOD**: Indicates the HTTP method used for the request (GET, POST, DELETE).
+- **ENDPOINT**: Describes the specific API endpoint path. I added `/posts` as a base to each endpoint to reflect a common RESTful design pattern.
+- **TOKEN**: Specifies whether an authentication token is required to access the endpoint. "Yes" indicates that these operations generally need user authentication.
+- **ROLE**: If a specific user role is necessary to access the endpoint, it is listed here. For instance, deleting a post might be restricted to admin users, while adding a post might be available to any authenticated user.
+- **DESCRIPTION**: Provides a brief explanation of the endpoint's purpose.
+- **POST PARAMS**: Lists the parameters required in the POST request's body for endpoints that create or modify data. For GET and DELETE requests, this is not applicable and is represented by "-".
+- **RETURNS**: Describes the expected response format and content returned by the server after processing the request.
+
+### Notes
+
+- The routes and their setup imply a need for user authentication and possibly authorization for certain actions (e.g., deleting posts may require admin privileges).
+- Each endpoint assumes a RESTful approach where the base path (`/posts`) precedes specific actions or resource identifiers.
+- Ensure your actual application security practices match the assumptions here about token and role requirements to secure sensitive operations effectively. 
+
+This table format will be useful for API documentation, helping developers understand how to interact with your post management system efficiently.
+
+Here's the table outlining the endpoints for track management based on the routing setup. This style matches our earlier format for presenting API endpoints clearly and comprehensively:
+
+| METHOD | ENDPOINT              | TOKEN | ROLE   | DESCRIPTION                   | POST PARAMS                                  | RETURNS                                |
+|--------|-----------------------|-------|--------|-------------------------------|----------------------------------------------|----------------------------------------|
+| GET    | /tracks               | Yes   | -      | Fetch all tracks              | -                                            | Array of tracks                        |
+| GET    | /tracks/:id           | Yes   | -      | Fetch a single track by ID    | -                                            | Track details                          |
+| POST   | /tracks/addTrack      | Yes   | User   | Add a new track               | title, artist, genre, etc.                   | { message: "Track added", track: { details } } |
+
+### Detailed Explanation
+
+- **METHOD**: Specifies the HTTP method used for the request (GET, POST).
+- **ENDPOINT**: Indicates the specific API endpoint path, with a base path of `/tracks` added for a common RESTful design pattern.
+- **TOKEN**: "Yes" suggests that these operations generally require user authentication, to ensure data security and integrity.
+- **ROLE**: If a specific user role is necessary to access the endpoint, it would be listed here. For instance, adding a new track might be available to authenticated users who are artists or admins.
+- **DESCRIPTION**: Provides a brief explanation of what each endpoint does.
+- **POST PARAMS**: For the POST request, this column lists the necessary data that should be included in the request body to add a new track. For GET requests, this field is not applicable and is represented by "-".
+- **RETURNS**: Describes what the client can expect as a response from the server after the request has been processed.
+
+### Notes
+
+- The setup implies a RESTful approach where each action on tracks is neatly organized under a unified base path (`/tracks`).
+- Make sure your actual application's security and user role checks align with the token and role requirements specified here to ensure proper access control.
+- This table format can help in documenting the API effectively, offering developers clear guidance on how to interact with the track management system in your application.
+
+Here's a formatted table outlining the endpoints for user management based on routing setup. This format will continue to use the clear and comprehensive style we have specified for presenting API endpoints:
+
+| METHOD | ENDPOINT                  | TOKEN | ROLE   | DESCRIPTION                      | POST/PARAMS                               | RETURNS                                         |
+|--------|---------------------------|-------|--------|----------------------------------|------------------------------------------|------------------------------------------------|
+| GET    | /users                    | Yes   | Admin  | Fetch all users                  | -                                        | Array of users                                  |
+| GET    | /users/:id                | Yes   | -      | Fetch a single user by ID        | -                                        | User details                                    |
+| GET    | /users/currentUser/:spotify_id | Yes | User  | Fetch the current user's details | -                                        | Current user details                            |
+| POST   | /users/addUser            | Yes   | Admin  | Add a new user                   | first_name, last_name, email, etc.       | { message: "User added", user: { details } }   |
+| DELETE | /users/deleteUser/:spotify_id | Yes | Admin | Delete a user by Spotify ID      | -                                        | { message: "User deleted" }                    |
+| PUT    | /users/updateUser/:spotify_id | Yes | User  | Update user details              | first_name, last_name, email, etc.       | { message: "User updated", user: { details } } |
+| GET    | /users/genres/:userid     | Yes   | User  | Fetch genres associated with a user | -                                      | Array of genres linked to the user             |
+
+### Detailed Explanation
+
+- **METHOD**: Specifies the HTTP method used for the request (GET, POST, DELETE, PUT).
+- **ENDPOINT**: Indicates the specific API endpoint path, with `/users` as a base to maintain a RESTful design.
+- **TOKEN**: "Yes" indicates that these operations generally require user authentication, often to ensure data security and integrity.
+- **ROLE**: Specifies if a specific user role is necessary to access the endpoint, such as "Admin" for adding or deleting users, or "User" for fetching personal data or updating one's own information.
+- **DESCRIPTION**: Provides a brief explanation of what each endpoint does.
+- **POST/PARAMS**: For POST and PUT requests, this column lists the data needed in the request body. For GET and DELETE requests, parameters in the endpoint (like IDs) are noted.
+- **RETURNS**: Describes what the client can expect as a response from the server after the request has been processed.
+
+### Notes
+
+- This API design assumes that certain actions like adding or deleting a user are restricted to administrators, while actions like updating a user or fetching personal genres are available to individual users.
+- Ensure that your application's actual security practices align with these token and role requirements to control access effectively.
+- Use consistent endpoint naming and structure to facilitate easier maintenance and scalability of your application’s backend.
+
+This table serves as a part of the API documentation, providing a clear guideline for developers on how to interact with the user management functionalities within your application.

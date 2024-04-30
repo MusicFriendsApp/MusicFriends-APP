@@ -1,6 +1,6 @@
 import './SuggestedFriend.css'
 import { useEffect, useState } from 'react'
-import { getCurrentUser, getAllUsers, getOneUser, checkFriend } from '../../services/user'
+import { getCurrentUser, getAllUsers, checkFriend } from '../../services/user'
 import { getUserGenres } from '../../services/genre'
 import SuggestedFriendCard from '../SuggestedFriendCard/SuggestedFriendCard'
 
@@ -24,6 +24,31 @@ export const SuggestedFriend = () => {
     getUserData()
   }, [])
 
+/*   useEffect(() => {
+    async function filterSuggestions() {
+      if (!currentUser || userList.length === 0) return;
+      try {
+        const suggestions = await Promise.all(
+          userList.filter(user => user.id !== currentUser.id).map(async user => {
+            const isFriend = await checkFriend(currentUser.id, user.id);
+            return isFriend ? null : user;
+          })
+        );
+        const validSuggestions = suggestions.filter(user => user !== null);
+        const currentUserGenres = await getUserGenres(currentUser.id)
+        const allUsersGenres = await Promise.all(
+          validSuggestions.map(async (user) => {
+            return await getUserGenres(user.id)
+          })
+        )
+        setRenderSuggestions(validSuggestions);
+      } catch (error) {
+        console.error('Error filtering suggestions:', error);
+      }
+    }
+    filterSuggestions();
+  }, [currentUser, userList]); */
+
   useEffect(() => {
     async function filterSuggestions() {
       if (!currentUser || userList.length === 0) return;
@@ -31,8 +56,20 @@ export const SuggestedFriend = () => {
         const currentUserGenres = await getUserGenres(currentUser.id);
         const suggestions = await Promise.all(
           userList.filter(user => user.id !== currentUser.id).map(async user => {
+            const suggestedUserGenres = await getUserGenres(user.id)
+            
             const isFriend = await checkFriend(currentUser.id, user.id);
-            return isFriend ? null : user;
+            if (isFriend) {
+              return null
+            } else {
+              const commonGenres = suggestedUserGenres.filter((obj) =>  {
+                  return currentUserGenres.filter((genre) => {
+                  return genre.genreId === obj.genreId
+                  })
+                })
+              return commonGenres.length > 0 ? user : null;
+            } // Filter out current
+            
           })
         );
         const validSuggestions = suggestions.filter(user => user !== null);
@@ -43,6 +80,7 @@ export const SuggestedFriend = () => {
     }
     filterSuggestions();
   }, [currentUser, userList]);
+  
 
   return (
     <>

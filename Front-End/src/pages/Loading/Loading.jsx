@@ -1,9 +1,9 @@
 import { loginSpotify } from "../../services/loginSpotify"
 import { useEffect, useState, useContext } from "react"
-import { UserContext } from "../../contexts/Contexts"
+import { UserContext, FriendListContext } from "../../contexts/Contexts"
 import { getUserSpotify } from '../../services/getUserSpotify' 
 import { getUserTopArtist } from '../../services/getUserTopArtist'
-import { createUser, addUserGenres, addTopTenArtist } from "../../services/user"
+import { createUser, addUserGenres, addTopTenArtist, getAllUsers, checkFriend } from "../../services/user"
 import profilePic from '../../assets/defaultProfilePicture.svg'
 import  { Navigate } from 'react-router-dom'
 import './Loading.css'
@@ -12,6 +12,7 @@ const Loading = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [user, setUser] = useState(null)
   const {currentUser, setCurrentUser} = useContext(UserContext)
+  const {friends, setFriends} = useContext(FriendListContext)
 
   useEffect(() => {
     const login = async () => {
@@ -56,8 +57,14 @@ const Loading = () => {
         setIsLoading(false)
         setUser(true)
     }
+    const getUserFriends = async () => {
+      setIsLoading(true)
+        const users = await getAllUsers()
+        console.log(users)
+    }
     getUserDataSpotify()
     getUserTopArtistData()
+    getUserFriends()
   }, [token]) 
 
   return (

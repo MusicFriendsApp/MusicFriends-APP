@@ -7,7 +7,7 @@
 #footer-container{
   border: 1px solid rgb(70, 70, 70);
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1.1fr 1fr 1fr;
 }
 
 #logo{
@@ -16,6 +16,12 @@
   position: relative;
   top: 60px;
   left: 100px;
+}
+
+#company-name {
+  position: relative;
+  top: -37px;
+  left: 73px;
 }
 
 li, #column03 > p{

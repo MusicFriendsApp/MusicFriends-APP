@@ -8,6 +8,12 @@ const Login = () => {
   const [count, setCount] = useState(0)
   const optionsData = ['artists', 'genres', 'songs', 'common friends']
 
+  const [isChecked, setIsChecked] = useState(true)
+
+  const checkBoxHandler = (e) => {
+    setIsChecked(!isChecked)
+  }
+
   function clearStorage() {
     let session = sessionStorage.getItem('register');
     if (session == null) {
@@ -40,9 +46,9 @@ const Login = () => {
     <div id='loginpage'>
       <form id='login-form'>
         <h1>Find new friends with matching {options} with your Spotify</h1>
-          <button id='login-button' onClick={loginSpotify}>Log In</button>
+          <button id='login-button' disabled={isChecked} onClick={loginSpotify}>Log In</button>
           <div id='checkbox-container'>
-            <input id='terms' type='checkbox' required/>
+            <input id='terms' type='checkbox' required onClick={(e) => checkBoxHandler(e)}/>
             <p id='terms-p'>You accept to be redirected to the Spotify login</p>
           </div>
         <div id='primera'> 

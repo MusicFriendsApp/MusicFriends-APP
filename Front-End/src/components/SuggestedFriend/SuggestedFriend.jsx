@@ -55,13 +55,19 @@ export const SuggestedFriend = () => {
     }
     filterSuggestions();
   }, [currentUser, userList]);
-  
+
+  const randomColor = () => {
+    const randomColorArray = ['#b761bc', '#1db954', '#d7dbdc', '#86b3f6', '#e38417']
+    const selectRandom = Math.floor(Math.random() * 5)
+    return randomColorArray[selectRandom]
+  }
 
   return (
     <>
+      <h6>People to discover</h6>
       <div id='suggestions-container'>
         {renderSuggestions.length > 0 ? renderSuggestions.map((data) => {
-          return <SuggestedFriendCard key={data.id} data={data}/>
+          return <SuggestedFriendCard key={data.id} data={data} randomColor={randomColor()}/>
         }) : <p>You already follow everyone!</p>}
       </div>
     </>

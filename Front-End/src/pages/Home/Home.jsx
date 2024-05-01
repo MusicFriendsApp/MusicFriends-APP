@@ -46,7 +46,6 @@ const Home = () => {
         </div>
         <div className='stick-element' id="content-right">
           <div className="content-rigth-item">
-            <h6>People to discover</h6>
             <SuggestedFriend/>
           </div>
         </div>

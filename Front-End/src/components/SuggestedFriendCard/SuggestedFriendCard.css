@@ -24,7 +24,8 @@
 }
 
 #suggested-friend-avatar {
-  width: 35px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   border: 2px solid #b761bc;
   padding: 0;

@@ -1,5 +1,6 @@
 import('./Profile.css')
 import { SuggestedFriend } from '../../components/SuggestedFriend/SuggestedFriend'
+import UserCard from '../../components/UserCard/UserCard'
 import { getCurrentUser } from '../../services/user'
 import { useState, useEffect } from 'react'
 import ('../../components/SuggestedFriend/SuggestedFriend')
@@ -13,7 +14,6 @@ export const Profile = () => {
         async function fetchProfile(spotify_id) {
           const result = await getCurrentUser(spotify_id)
           const profile = await result
-          console.log({result})
           return profile
         }
         const profile = await fetchProfile(spotify_id)
@@ -26,19 +26,7 @@ export const Profile = () => {
   return (
     <>
       <div className='profile-container'>
-        <div className="card">
-          <span className="pro">{data.country}</span>
-          <img className="round" src={data.profile_picture_bg} alt="user" />
-          <h3>{data.username}</h3>
-          <h6>{data.country}</h6>
-          <p>
-            User interface designer and <br /> front-end developer
-          </p>
-          <div className="buttons">
-            <button className="primary">Message</button>
-            <button className="primary">Follow</button>
-          </div>
-        </div>
+        <UserCard data={data}/>
         <div>
           <div className="skills">
             <h6>Skills</h6>

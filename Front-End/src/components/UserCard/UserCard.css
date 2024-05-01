@@ -18,8 +18,11 @@ p {
 	line-height: 21px;
 }
 
-.myCard {
-	background-color: var(--main-bg-color);
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+	background-color:#121212;
 	border-radius: 5px;
 	box-shadow: 0px 10px 20px -10px rgba(5, 156, 38, 0.75);
 	color: #b3b3b3;
@@ -27,12 +30,14 @@ p {
 	position: relative;
 	width: 350px;
 	max-width: 100%;
+  height: 550px;
 	text-align: center;
 }
 
 .myCard .pro {
 	background-color: var(--main-bg-color);
 	color: #231E39;
+  background-color: #1db954;
 	border-radius: 3px;
 	font-size: 14px;
 	font-weight: bold;
@@ -43,10 +48,11 @@ p {
 	text-transform: uppercase;
 }
 
-.myCard .round {
-	border: 1px solid var(--main-border-color);
-  	width: 50%;
+.card .round {
+	border: 1px solid #03BFCB;
+  width: 50%;
 	border-radius: 50%;
+  margin-top: 25px;
 	padding: 7px;
 }
 
@@ -67,4 +73,14 @@ p {
 
 .buttons {
   margin-bottom: 50px;
+}
+
+.current-user-card .buttons{
+  display: none;
+}
+
+.user-stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }

@@ -44,7 +44,7 @@ const PostForm = () => {
   
   return (
     <>
-      <form>
+      <form id='comment-section-form'>
         <textarea onChange={handleInputValue} name="postContent" autoComplete='on' minLength={1} maxLength={350} required placeholder="Share your thoughts..." ref={textAreaRef} rows={5} value={postInput}/>
         <button id='submit-button' onClick={(e) => {handlePost(e)}}>POST COMMENT</button>
       </form>

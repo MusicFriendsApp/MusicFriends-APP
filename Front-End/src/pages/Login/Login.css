@@ -1,10 +1,14 @@
-#loginpage {
+#login-page {
   display: flex;
   width: 100%;
   justify-content: center;
   flex-wrap: wrap;
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.9rem;
+}
+
+#login-page h1 {
+  text-align: center;
 }
 
 #login-button {
@@ -18,12 +22,9 @@
   color: white;
 }
 
-#login-button:disabled{
-/*   background-color: hsla(141, 73%, 42%, 0.3);
- */  
- background-color: #1F2937;
-  pointer-events: none;
-  cursor: not-allowed;
+#login-button.disabled{
+  background-color: #1F2937;
+  cursor: pointer;
 }
 
 #login-form {
@@ -135,4 +136,13 @@
   width: 200px;
   text-align: center;
   align-content: center;
+}
+
+.alert-check {
+  color: #cb1b26;
+  padding: 5px;
+  border-radius: 3px;
+  font-weight: bolder;
+  background-color: #ffc6c4;
+  margin-bottom: 0;
 }

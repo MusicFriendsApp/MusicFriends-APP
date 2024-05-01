@@ -1,5 +1,4 @@
 #homepage {
-  border-radius: 5px;
   width: 90vw;
   min-height: 65vh;
   display: flex;
@@ -11,28 +10,30 @@ h1 {
 }
 
 #content-left {
-  width: 30%;
-  height: 500px;
+  width: 20%;
+  height: 600px;
   min-width: 400px;
-  padding: 2px;
+  padding-top: 25px;
 }
 
 #content-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 40%;
   min-width: 450px;
   max-width: 780px;
-  padding: 2px;
+  padding-top: 27px;
 }
 
 #content-right {
   width: 25%;
-  height: 500px;
+  height: 600px;
   min-width: 200px;
-  padding: 2px;
 }
 
 #loading-image {
-  width: 200px;
+  width: 150px;
 }
 
 .stick-element {

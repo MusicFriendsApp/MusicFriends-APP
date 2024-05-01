@@ -6,12 +6,17 @@ const Login = () => {
 
   const [options, setOptions] = useState('music')
   const [count, setCount] = useState(0)
+  const [alert, setAlert] = useState(null)
   const optionsData = ['artists', 'genres', 'songs', 'common friends']
 
-  const [isChecked, setIsChecked] = useState(true)
+  const [isChecked, setIsChecked] = useState('disabled')
 
   const checkBoxHandler = (e) => {
-    setIsChecked(!isChecked)
+    return isChecked === 'disabled' ? setIsChecked('') : setIsChecked('disabled')
+  }
+
+  const acceptCondition = () => {
+    return isChecked === 'disabled' ? setAlert('You must accept the checkbox below') : loginSpotify()
   }
 
   function clearStorage() {
@@ -43,10 +48,11 @@ const Login = () => {
 
   return (
     <>
-    <div id='loginpage'>
-      <form id='login-form'>
-        <h1>Find new friends with matching {options} with your Spotify</h1>
-          <button id='login-button' disabled={isChecked} onClick={loginSpotify}>Log In</button>
+    <div id='login-page'>
+      <div id='login-form'>
+        <h1>Find new friends with matching {options} with your Spotify <br /> and share with them what you want</h1>
+          <button id='login-button' className={isChecked} onClick={acceptCondition}>Log In</button>
+          {alert && <p className='alert-check'>{alert}</p>}
           <div className='checkbox-container'>
             <input id='terms' type='checkbox' required onClick={(e) => checkBoxHandler(e)}/>
             <p id='terms-p'>You accept to be redirected to the Spotify login</p>
@@ -78,14 +84,15 @@ const Login = () => {
             Become a bigger community and keep others updated with your favourite music
           </div>
           <div>
-            <button id='login-button' disabled={isChecked} onClick={loginSpotify}>Get started</button>
+            <button id='login-button' className={isChecked} onClick={acceptCondition}>Get started</button>
           </div>
+          {alert && <p className='alert-check'>{alert}</p>}
           <div className='checkbox-container'>
             <input id='terms' type='checkbox' required onClick={(e) => checkBoxHandler(e)}/>
             <p id='terms-p'>You accept to be redirected to the Spotify login</p>
           </div>
         </div>
-      </form>
+      </div>
     </div>
     </>
   )

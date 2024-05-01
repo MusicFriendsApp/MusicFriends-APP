@@ -30,10 +30,6 @@ const Home = () => {
     getUserData()
   }, [])
 
-  if(isLoading) {
-    return <img id="loading-image" src={loadingImage}/>
-  }
-
   return (
     <>
     <div id="homepage">

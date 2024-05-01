@@ -37,6 +37,7 @@ h1 {
   width: 25%;
   height: 600px;
   min-width: 300px;
+  margin-bottom: 125px;
 }
 
 #loading-image {

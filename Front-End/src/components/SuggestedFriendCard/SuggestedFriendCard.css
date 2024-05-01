@@ -3,7 +3,9 @@
   width: 90%;
   min-width: 200px;
   height: 60px;
+  background-color: #121212;
   border: 1px solid black;
+  box-shadow: 0px 1px 1px #1db954;
   border-radius: 5px;
   justify-content: space-between;
   padding: 10px;
@@ -12,13 +14,14 @@
 
 #suggested-friend-header {
   display: flex;
-  gap: 4px;
+  gap: 10px;
   align-items: center;
 }
 
 #suggested-friend-avatar {
-  width: 30px;
+  width: 35px;
   border-radius: 50%;
+  border: 2px solid #b761bc;
   padding: 0;
   margin: 0;
 }

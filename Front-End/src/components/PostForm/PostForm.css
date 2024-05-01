@@ -2,6 +2,8 @@ textarea{
   width: 95%;
   max-width: 95%;
   min-width: 95%;
+  min-height: 80px;
+  max-height: 150px;
   height: fit-content;
 }
 #submit-button {

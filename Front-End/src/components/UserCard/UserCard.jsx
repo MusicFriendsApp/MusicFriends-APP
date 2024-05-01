@@ -10,14 +10,18 @@ const UserCard = ({data}) => {
       setUserCard('card current-user-card')
     }
   }, [])
+  const randomColor = () => {
+    const randomColorArray = ['#b761bc', '#1db954', '#d7dbdc', '#86b3f6', '#e38417']
+    const selectRandom = Math.floor(Math.random() * 5)
+    return randomColorArray[selectRandom]
+  }
 
   return (
     <div>
       <div className="card">
         <span className="pro">FREE</span>
-        <img className="round" src={data.profile_picture_bg} alt="user" />
+        <img className="round" src={data.profile_picture_bg} alt="user" style={{backgroundColor: randomColor()}}/>
         <h3>{data.username}</h3>
-        <h6>{data.country}</h6>
         <div className='user-stats-container'>
           <hr />
           <div>

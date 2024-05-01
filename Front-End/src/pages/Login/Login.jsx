@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react'
 
 const Login = () => {
 
-  const [options, setOptions] = useState('music')
+  const [options, setOptions] = useState('MUSIC')
   const [count, setCount] = useState(0)
   const [alert, setAlert] = useState(null)
-  const optionsData = ['artists', 'genres', 'songs', 'common friends']
+  const optionsData = ['ARTISTS', 'GENRES', 'SONGS', 'PLAYLISTS']
 
   const [isChecked, setIsChecked] = useState('disabled')
 

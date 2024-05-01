@@ -23,10 +23,10 @@ SpotifyFriends is a web application that allows users to connect, network, and p
 - Spotify API: Integration with Spotify for user authentication and music data.
 - Material-UI: React UI framework for designing consistent and responsive user interfaces.
 
-## MOCKUP design...
+## MOCKUP design
 ![SpotifyFriendsAPP](https://github.com/SpotifyFriends/SpotifyFriends-APP/assets/91672631/55826454-fd23-45f2-a5d3-ad4fdd7128d6)
 
-## Diagram Table...
+## Diagram Table
 ![Diagrama SpotifyFriends](https://github.com/SpotifyFriends/SpotifyFriends-APP/assets/91672631/01ce97e7-3392-437a-aaea-b8956ef77906)
 
 

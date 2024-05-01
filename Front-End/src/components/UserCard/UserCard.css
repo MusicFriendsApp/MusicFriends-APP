@@ -62,7 +62,7 @@ p {
 }
 
 .button-myprofile >.primary {
-	background-color: black;
+	background-color: #3B3B3B;
 	border: 1px solid #1db954;
 	border-radius: 3px;
 	color: #b3b3b3;

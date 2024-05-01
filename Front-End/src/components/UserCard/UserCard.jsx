@@ -14,7 +14,7 @@ const UserCard = ({data}) => {
   return (
     <div>
       <div className={userCard}>
-        <span className="pro">PREMIUM</span>
+        <span className="pro">FREE</span>
         <img className="round" src={data.profile_picture_bg} alt="user" />
         <h3>{data.username}</h3>
         <h6>{data.country}</h6>

@@ -1,7 +1,10 @@
 textarea{
-  width: 90%;
+  width: 95%;
   height: fit-content;
 }
 #submit-button {
   cursor: pointer;
+}
+#comment-section-form {
+  width: 100%;
 }

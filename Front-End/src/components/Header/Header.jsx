@@ -48,11 +48,12 @@ export default function Header() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Link to="/Home">
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/home"
+            href=""
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -65,7 +66,7 @@ export default function Header() {
           >
             SPOTIFY FRIENDS
           </Typography>
-
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -105,11 +106,12 @@ export default function Header() {
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Link to="/Home">
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href="/home"
+            href=""
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -123,6 +125,7 @@ export default function Header() {
           >
             SPOTIFY FRIENDS
           </Typography>
+            </Link> 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Link key={page} to={`/${page}`}>

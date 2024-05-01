@@ -60,7 +60,6 @@ const Loading = () => {
     const getUserFriends = async () => {
       setIsLoading(true)
         const users = await getAllUsers()
-        console.log(users)
     }
     getUserDataSpotify()
     getUserTopArtistData()
@@ -71,7 +70,7 @@ const Loading = () => {
     <div id="fetching-info">
       <h1>Fetching data</h1>
       <h1>Please wait ...</h1>
-      {user && <Navigate to="/home" replace={true} />}
+      {user && <Navigate to="/Home" replace={true} />}
     </div>
   )
 }

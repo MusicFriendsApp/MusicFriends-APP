@@ -1,9 +1,15 @@
 textarea{
   width: 95%;
+  max-width: 95%;
+  min-width: 95%;
   height: fit-content;
 }
 #submit-button {
   cursor: pointer;
+  background-color: #1db954;
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
 }
 #comment-section-form {
   width: 100%;

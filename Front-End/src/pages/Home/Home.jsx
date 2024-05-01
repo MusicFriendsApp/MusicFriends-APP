@@ -3,9 +3,9 @@ import { useEffect, useState, useContext } from "react"
 import { getCurrentUser } from "../../services/user"
 import UserCard from "../../components/UserCard/UserCard"
 import { SuggestedFriend } from "../../components/SuggestedFriend/SuggestedFriend"
+import loadingImage from "../../assets/loading.gif"
 import Posts from "../../components/Posts/Posts"
 import PostForm from "../../components/PostForm/PostForm"
-import loadingImage from "../../assets/loading.gif"
 import { UserContext } from "../../contexts/Contexts"
 
 const Home = () => {
@@ -34,7 +34,11 @@ const Home = () => {
     <>
     <div id="homepage">
         <div className='stick-element' id="content-left">
-          <UserCard data={data}/>
+          {data && Object.keys(data).length > 0 ? (
+            <UserCard data={data}/>
+          ) : (
+            <img id="loading-image" src={loadingImage} alt="loading image" />
+          )}
         </div> 
         <div id="content-center">
           <PostForm />
@@ -42,8 +46,8 @@ const Home = () => {
         </div>
         <div className='stick-element' id="content-right">
           <div className="content-rigth-item">
-          <h6>People to discover</h6>
-          <SuggestedFriend/>
+            <h6>People to discover</h6>
+            <SuggestedFriend/>
           </div>
         </div>
     </div>

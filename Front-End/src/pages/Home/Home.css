@@ -10,10 +10,13 @@ h1 {
 }
 
 #content-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20%;
   height: 600px;
   min-width: 400px;
-  padding-top: 25px;
+  padding-top: 15px;
 }
 
 #content-center {
@@ -34,6 +37,7 @@ h1 {
 
 #loading-image {
   width: 150px;
+  height: 150px;
 }
 
 .stick-element {

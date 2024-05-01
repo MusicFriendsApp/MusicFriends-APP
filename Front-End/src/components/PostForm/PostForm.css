@@ -5,6 +5,7 @@ textarea{
   min-height: 80px;
   max-height: 150px;
   height: fit-content;
+  background-color: #3b3b3b;
 }
 #submit-button {
   cursor: pointer;

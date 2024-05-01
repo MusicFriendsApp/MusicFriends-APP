@@ -72,7 +72,8 @@
 
 #segunda, .segunda{
   display: flex;
-  margin: 10px
+  margin: 10px;
+  padding: 10px;
 }
 .segunda{
   flex-direction: column;
@@ -84,7 +85,7 @@
 }
 
 #tercera > div > div > img{
-  width: 150px;
+  width: 250px;
 }
 
 .segunda, .tercera {
@@ -93,7 +94,6 @@
   width: 400px;
   max-width: 300px;
   min-height: 100px;
-  padding: 10px
 }
 
 #tercera{
@@ -103,6 +103,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
 .tercera {
@@ -120,6 +121,7 @@
   align-content: center;
   align-items: center;
   margin-top: 20px;
+  padding: 30px
 }
 
 #cuarta > div > button{
@@ -130,12 +132,10 @@
 }
 
 #auth {
-  border: rgb(160, 160, 160) solid 1px;
   border-radius: 20px;
-  height: 100px;
-  width: 200px;
   text-align: center;
   align-content: center;
+  padding: 15px;
 }
 
 .alert-check {

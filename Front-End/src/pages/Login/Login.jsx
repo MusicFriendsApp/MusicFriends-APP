@@ -63,16 +63,16 @@ const Login = () => {
         </div>
         <div id='segunda'>
           <div className='segunda'>Login with your Spotify account
-            <div id='auth'>AUTH Spotify</div>
+            <div id='auth'> <img src="../src/assets/auth-spotify.png" alt="" /></div>
           </div>
           <div className='segunda'>We suggest you other users with similar music taste
-          <div> <img src="../src/assets/miniCard.png" alt="" /> </div>
-          <div> <img src="../src/assets/miniCard.png" alt="" /> </div>
-          </div>
+          <div> <img src="../src/assets/suggest.png" alt="" /> </div>
+{/*           <div> <img src="../src/assets/miniCard.png" alt="" /> </div>
+ */}          </div>
         </div>
         <div id='tercera'>
           <div className='tercera'>Add them to your friends and share your thoughts, artists or playlists
-            <div><img src="../src/assets/comment-removebg-preview.png" alt="" /></div>
+            <div><img src="../src/assets/posts.png" alt="" /></div>
           </div>
           
           <div className='tercera'>Watch their posts, profile, favourite artists and genres

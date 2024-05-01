@@ -34,8 +34,7 @@ p {
 	text-align: center;
 }
 
-.myCard .pro {
-	background-color: var(--main-bg-color);
+.card .pro {
 	color: #231E39;
   background-color: #1db954;
 	border-radius: 3px;

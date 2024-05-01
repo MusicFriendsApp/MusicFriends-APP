@@ -1,7 +1,7 @@
 import './Footer.css'
 import logo from '../../assets/logo.png'
 
-import AdbIcon from '@mui/icons-material/Stream';
+import AdbIcon from '@mui/icons-material/Diversity2';
 
 
 const optionsData = ['artists', 'genres', 'songs', 'common friends']

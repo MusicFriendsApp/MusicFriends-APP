@@ -9,6 +9,11 @@
   background-color: #121212;
   padding: 20px;
   box-shadow: 0px 2px 0px #1db954;
+  white-space: pre-wrap;      /* Webkit */    
+  white-space: -moz-pre-wrap; /* Firefox */     
+  white-space: -pre-wrap;     /* Opera <7 */    
+  white-space: -o-pre-wrap;   /* Opera 7 */     
+  word-wrap: break-word; 
 }
 
 #post-header{
@@ -21,6 +26,11 @@
 
 #post-body{
   display: flex;
+  width: 100%;
+}
+
+#post-body p {
+  max-width: 100%;
 }
 
 #post-header img{

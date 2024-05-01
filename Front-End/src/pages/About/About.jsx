@@ -1,8 +1,8 @@
 import './About.css'
-import twitch from '../../assets/ico-twitch.svg'
-import github from '../../assets/ico-github.svg'
-import linkedin from '../../assets/ico-linkedin.svg'
-import spotify from '../../assets/ico-spotify.svg'
+import twitch from '../../assets/ico-twitch-c.svg'
+import github from '../../assets/ico-github-c.svg'
+import linkedin from '../../assets/ico-linkedin-c.svg'
+import spotify from '../../assets/ico-spotify-c.svg'
 
 
 const About = () => {
@@ -10,11 +10,11 @@ const About = () => {
     <>
       <div id="principal">
         <h1 id='aboutus'>About Us</h1>
+            <div id='meet'><h3> Let's meet the Sporify Friends' clan</h3></div>
         <div class="about-container">
-            <div id='meet'><h4> Let's meet the Sporify Friends' clan</h4></div>
           <div>
             <div class="elemento">
-              <h6>Person</h6>
+              <h5>Pablo Santana</h5>
               <div><img src="../src/assets/people01.png" alt="" /> </div>
               <span className='puesto'>Coder</span>
               <div>
@@ -37,7 +37,7 @@ const About = () => {
             </div>
 
             <div class="elemento">
-              <h6>Person</h6>
+              <h5>Daniel Carretero</h5>
               <div><img src="../src/assets/people01.png" alt="" /> </div>
               <span className='puesto'>Coder</span>
               <div>
@@ -58,7 +58,7 @@ const About = () => {
             </div>
 
             <div class="elemento">
-              <h6>Person</h6>
+              <h5>Freddy Escalada</h5>
               <div><img src="../src/assets/people01.png" alt="" /> </div>
               <span className='puesto'>Coder</span>
               <div>

@@ -13,7 +13,7 @@ const UserCard = ({data}) => {
 
   return (
     <div>
-      <div className={userCard}>
+      <div className="card">
         <span className="pro">FREE</span>
         <img className="round" src={data.profile_picture_bg} alt="user" />
         <h3>{data.username}</h3>
@@ -42,7 +42,7 @@ const UserCard = ({data}) => {
           User interface designer and <br /> front-end developer
         </p>
         <div className="buttons">
-          <button className="primary">Follow</button>
+          <button className="primary">My profile</button>
         </div>
       </div>
     </div>

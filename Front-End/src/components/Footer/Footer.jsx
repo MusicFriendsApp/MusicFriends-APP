@@ -1,6 +1,8 @@
 import './Footer.css'
 import logo from '../../assets/logo.png'
 
+import AdbIcon from '@mui/icons-material/Stream';
+
 
 const optionsData = ['artists', 'genres', 'songs', 'common friends']
 
@@ -10,11 +12,12 @@ const Footer = () => {
       <div id="footer-container">
       
       <div id='column01'>
-        <img id='logo' src={logo} alt="" />
-        <h6 id='company-name'  className='text-footer'>Spotify Friends</h6>
+        <h6 id='company-name'  className='text-footer'>Spotify Friends<AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /></h6>
+        {/* <img id='logo' src={logo} alt="" /> */}
+        
       </div>
       <div id='column02'>
-        <h6 className='text-footer'>A Social Networking/Friendship App based on your preferences about music, musical genres and artist. 
+        <h6 className='text-footer'>SPOTIFY FRIENDS is a Social Networking/Friendship App based on your preferences about music, musical genres and artist. 
           Enjoy your music, share with friends and keep up to date on the scene. Have you ever tried?</h6>
         <ul>
           <li className='text-footer'>User Authentication</li>

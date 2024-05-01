@@ -13,7 +13,7 @@ p {
 }
 
 .card {
-	background-color: #231E39;
+	background-color:#DBEAE4;
 	border-radius: 5px;
 	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
 	color: #B3B8CD;
@@ -26,7 +26,6 @@ p {
 
 .card .pro {
 	color: #231E39;
-	background-color: #1db954;
 	border-radius: 3px;
 	font-size: 14px;
 	font-weight: bold;

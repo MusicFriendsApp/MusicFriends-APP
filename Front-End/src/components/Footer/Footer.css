@@ -7,6 +7,7 @@
 #footer-container{
   border-top: 1px solid rgb(29,185,84);
   padding-bottom: 10px;
+  padding-top: 5px;
   display: grid;
   grid-template-columns: 1.1fr 1fr 1fr;
 }
@@ -19,17 +20,32 @@
   left: 100px;
 }
 
+div > div > h6 > svg.css-1uzrjc8-MuiSvgIcon-root{
+  fill: rgb(179,179,179);
+  width: 60px;
+  height: 60px;
+  align-self: center;
+  position: relative;
+  left:13px;
+}
+
 #company-name {
   position: relative;
-  top: -37px;
   left: 73px;
+  text-transform: uppercase;
 }
 
 li, #column03 > p{
   font-size: 0.7rem;
 }
 
-.text-footer{
+div > div > .text-footer{
   color: rgb(179,179,179);
+  text-transform: none;
 }
 
+
+ul {
+  position: relative;
+  left: -10px;
+}

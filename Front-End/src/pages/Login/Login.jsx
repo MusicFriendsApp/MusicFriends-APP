@@ -47,7 +47,7 @@ const Login = () => {
       <form id='login-form'>
         <h1>Find new friends with matching {options} with your Spotify</h1>
           <button id='login-button' disabled={isChecked} onClick={loginSpotify}>Log In</button>
-          <div id='checkbox-container'>
+          <div className='checkbox-container'>
             <input id='terms' type='checkbox' required onClick={(e) => checkBoxHandler(e)}/>
             <p id='terms-p'>You accept to be redirected to the Spotify login</p>
           </div>
@@ -78,7 +78,11 @@ const Login = () => {
             Become a bigger community and keep others updated with your favourite music
           </div>
           <div>
-            <button id='login-button' onClick={loginSpotify}>Get started</button>
+            <button id='login-button' disabled={isChecked} onClick={loginSpotify}>Get started</button>
+          </div>
+          <div className='checkbox-container'>
+            <input id='terms' type='checkbox' required onClick={(e) => checkBoxHandler(e)}/>
+            <p id='terms-p'>You accept to be redirected to the Spotify login</p>
           </div>
         </div>
       </form>

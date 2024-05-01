@@ -61,9 +61,9 @@ p {
   background-color: #1db954;
 }
 
-.button.primary {
-	background-color: #03BFCB;
-	border: 1px solid #03BFCB;
+.button-myprofile >.primary {
+	background-color: black;
+	border: 1px solid #1db954;
 	border-radius: 3px;
 	color: #b3b3b3;
 	font-family: Montserrat, sans-serif;
@@ -73,7 +73,7 @@ p {
 
 .button.primary.ghost {
 	background-color: transparent;
-	color: #02899C;
+	color: #1db954;
 }
 
 .buttons {

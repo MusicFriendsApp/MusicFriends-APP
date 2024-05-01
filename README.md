@@ -24,10 +24,11 @@ SpotifyFriends is a web application that allows users to connect, network, and p
 - Material-UI: React UI framework for designing consistent and responsive user interfaces.
 
 ## MOCKUP design
-![SpotifyFriendsAPP](https://github.com/SpotifyFriends/SpotifyFriends-APP/assets/91672631/55826454-fd23-45f2-a5d3-ad4fdd7128d6)
+![mockup SpotifyFriends](https://github.com/SpotifyFriends/SpotifyFriends-APP/assets/118024726/bee4b753-a07d-47ad-ad0b-f937c84504bc)
 
 ## Diagram Table
-![Diagrama SpotifyFriends](https://github.com/SpotifyFriends/SpotifyFriends-APP/assets/91672631/01ce97e7-3392-437a-aaea-b8956ef77906)
+![Diagrama SpotifyFriends](https://github.com/SpotifyFriends/SpotifyFriends-APP/assets/118024726/6d731c70-b830-48e6-beb7-e4b1f4836678)
+
 
 
 ## Endpoints:

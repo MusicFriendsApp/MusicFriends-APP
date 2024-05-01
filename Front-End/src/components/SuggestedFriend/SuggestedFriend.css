@@ -9,3 +9,7 @@
   align-items: flex-start;
   gap: 10px;
 }
+
+#suggestions-container > h3 {
+  font-family: monospace;
+}

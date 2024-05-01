@@ -6,16 +6,16 @@ const SuggestedFriendCard = ({data, randomColor}) => {
 
   const currentUserId = localStorage.getItem('spotify_id')
   const [isFollowing, setIsFollowing] = useState(false)
-  const [follow, setFollow] = useState('Follow')
+  const [follow, setFollow] = useState('FOLLOW')
   
   const handleFollow = async () => {
     setIsFollowing(!isFollowing)
     if(isFollowing) {
       unfollowUser(currentUserId, data.spotify_id)
-      setFollow('Follow')
+      setFollow('FOLLOW')
     } else {
       followUser(currentUserId, data.spotify_id)
-      setFollow('Following')
+      setFollow('FOLLOWING')
     }
   }
 

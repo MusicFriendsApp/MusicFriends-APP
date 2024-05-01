@@ -12,6 +12,9 @@ textarea{
   border: none;
   border-radius: 2px;
   padding: 5px;
+  font-weight: 600;
+  text-shadow: 0 1px 1px black;
+  font-family: monospace;
 }
 #comment-section-form {
   width: 100%;

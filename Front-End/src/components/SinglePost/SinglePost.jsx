@@ -17,7 +17,7 @@ const SinglePost = ({data, postData}) => {
         <p></p>
       </div>
       <div id='post-footer'>
-        <button id='like-button'><img id='like-button-img' src={likeImg} alt="heart image" /></button><button id='reply-button'>Reply</button>
+        <button id='like-button'><img id='like-button-img' src={likeImg} alt="heart image" /></button><button id='reply-button'>REPLY</button>
       </div>
     </div>
   )

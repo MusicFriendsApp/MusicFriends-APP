@@ -1,8 +1,8 @@
 import './Login.css'
 import { loginSpotify } from '../../services/loginSpotify'
 import { useState, useEffect } from 'react'
-import exampleCard from "../src/assets/card.png"
-import exampleAuth from "../src/assets/auth-spotify.png"
+import exampleCard from "../../assets/card.png"
+import exampleAuth from "../../assets/auth-spotify.png"
 
 const Login = () => {
 
@@ -68,18 +68,18 @@ const Login = () => {
             <div id='auth'> <img src={exampleAuth} alt="" /></div>
           </div>
           <div className='segunda'>We suggest you other users with similar music taste
-          <div> <img src="../src/assets/suggest.png" alt="" /> </div>
+          <div> <img src="../../assets/suggest.png" alt="" /> </div>
 {/*           <div> <img src="../src/assets/miniCard.png" alt="" /> </div>
  */}          </div>
         </div>
         <div id='tercera'>
           <div className='tercera'>Add them to your friends and share your thoughts, artists or playlists
-            <div><img src="../src/assets/posts.png" alt="" /></div>
+            <div><img src="../../assets/posts.png" alt="" /></div>
           </div>
           
           <div className='tercera'>Watch their posts, profile, favourite artists and genres
           
-          <div><img src="../src/assets/watch-removebg-preview.png" alt="" /></div></div>
+          <div><img src="../../assets/watch-removebg-preview.png" alt="" /></div></div>
         </div>
         <div id='cuarta'>
           <div>

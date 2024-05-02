@@ -1,14 +1,17 @@
 import './ArtistCard.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import defaultImage from '../../assets/defaultProfilePicture.svg'
 
 const ArtistCard= ({artistData}) => {
   const [artistImage, setArtistImage] = useState('')
   console.log(artistData)
-  if(artistData.images) {
-    setArtistImage(artistData.images[1].url)
-  } else {
-    setArtistImage('/src/assests/defaultProfilePicture.svg')
-  }
+  useEffect(() => {
+    if (artistData.images && artistData.images.length > 1) {
+      setArtistImage(artistData.images[1].url);
+    } else {
+      setArtistImage(defaultImage);
+    }
+  }, [artistData]);
 
   return (
     <div id='artist-card'>

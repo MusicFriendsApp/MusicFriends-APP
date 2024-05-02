@@ -17,9 +17,9 @@ const Artists = () => {
   }, [])
 
   return (
-    <div>
-      {topArtists && topArtists.length > 0 ? topArtists.map((data) => {
-          return <ArtistCard key={data.id} artistData={topArtists}/>
+    <div id='artist-container'>
+      {topArtists && topArtists.length > 0 ? topArtists.map((artist) => {
+          return <ArtistCard key={artist.id} artistData={artist}/>
         }) : (
             <img id="loading-image" src={loadingImage} alt="loading image" />
           )}

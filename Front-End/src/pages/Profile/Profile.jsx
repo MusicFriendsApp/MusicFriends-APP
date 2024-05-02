@@ -31,12 +31,10 @@ export const Profile = () => {
               ) : (
                 <img id="loading-image" src={loadingImage} alt="loading image" />
               )}
-          <Artists />
         </div>
-        <div>
-          <div className="user-posts">
-            <Posts user={data}/>
-          </div>
+        <div id='artists-list-container'>
+          <h3>YOUR MOST LISTENED ARTISTS</h3>
+          <Artists />
         </div>
       </div>
     </>

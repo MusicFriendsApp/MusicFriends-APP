@@ -68,7 +68,7 @@ export const SuggestedFriend = () => {
       <h3>PEOPLE TO CONNECT</h3>
         {renderSuggestions.length > 0 ? renderSuggestions.map((data) => {
           return <SuggestedFriendCard key={data.id} data={data} randomColor={randomColor()}/>
-        }) : <p>You already follow everyone!</p>}
+        }) : <p>We'll find someone for you soon!</p>}
       </div>
     </>
   )

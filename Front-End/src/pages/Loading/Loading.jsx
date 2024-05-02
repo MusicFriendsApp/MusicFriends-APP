@@ -1,28 +1,30 @@
 import { loginSpotify } from "../../services/loginSpotify"
 import { useEffect, useState, useContext } from "react"
-import { UserContext, FriendListContext } from "../../contexts/Contexts"
+import { UserContext } from "../../contexts/Contexts"
 import { getUserSpotify } from '../../services/getUserSpotify' 
 import { getUserTopArtist } from '../../services/getUserTopArtist'
-import { createUser, addUserGenres, addTopTenArtist, getAllUsers, checkFriend } from "../../services/user"
+import { createUser, addUserGenres, addTopTenArtist, getAllUsers } from "../../services/user"
 import profilePic from '../../assets/defaultProfilePicture.svg'
 import  { Navigate } from 'react-router-dom'
 import './Loading.css'
+import { AuthContext } from '../../contexts/Contexts';
 
 const Loading = () => {
+  const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext)
   const [isLoading, setIsLoading] = useState(false)
   const [user, setUser] = useState(null)
   const {currentUser, setCurrentUser} = useContext(UserContext)
-  const {friends, setFriends} = useContext(FriendListContext)
 
   useEffect(() => {
     const login = async () => {
       if(!localStorage.getItem('access_token')) {
         const newToken = await loginSpotify()
         setToken(newToken)
+        setIsLoggedIn(true)
       }
     }
     login()
-  }, [])
+  }, [isLoggedIn])
 
   const [token, setToken] = useState("")
 
@@ -31,6 +33,7 @@ const Loading = () => {
       setIsLoading(true)
         const userData = await getUserSpotify()
         localStorage.setItem('spotify_id', userData.id)
+        sessionStorage.setItem('currentUser_id', userData.id)
         if (userData.images.length !== 0){
           createUser(userData.display_name,userData.country,userData.id,userData.images[0].url,userData.images[1].url)
         } else {
@@ -64,7 +67,7 @@ const Loading = () => {
     getUserDataSpotify()
     getUserTopArtistData()
     getUserFriends()
-  }, [token]) 
+  }, [token, isLoggedIn]) 
 
   return (
     <div id="fetching-info">

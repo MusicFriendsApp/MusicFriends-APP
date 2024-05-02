@@ -22,7 +22,6 @@ const Home = () => {
         const profile = await getCurrentUser(spotify_id)
         setCurrentUser(profile)
         setData(profile)
-        sessionStorage.setItem('currentUser_id', profile.id)
       } catch (error) {
       } finally {
         setIsLoading(false)

@@ -1,5 +1,4 @@
 import './Profile.css'
-import Posts from '../../components/Posts/Posts'
 import UserCard from '../../components/UserCard/UserCard'
 import loadingImage from "../../assets/loading.gif"
 import { getCurrentUser } from '../../services/user'

@@ -42,7 +42,7 @@ const Home = () => {
         </div> 
         <div id="content-center">
           <PostForm />
-          <Posts data={data}/>
+          <Posts />
         </div>
         <div className='stick-element' id="content-right">
           <div className="content-rigth-item">

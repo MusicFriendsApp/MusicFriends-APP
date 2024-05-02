@@ -9,25 +9,25 @@ const About = () => {
   return (
     <>
       <div id="principal">
-        <h1 id='aboutus'>About Us</h1>
-            <div id='meet'><h3> Let's meet the Sporify Friends' clan</h3></div>
-        <div class="about-container">
+        <h1 id='about-us'>ABOUT US</h1>
+        <div id='meet'><h3> LET'S MEET THE DEVS</h3></div>
+        <div className="about-container">
           <div>
-            <div class="elemento">
-              <h5>Pablo Santana</h5>
-              <div><img src="../src/assets/people01.png" alt="" /> </div>
-              <span className='puesto'>Coder</span>
+            <div className="about-card">
+              <h2>Pablo Santana</h2>
+              <div><img className="about-us-avatar" src="../src/assets/kurayamiface.jpg" alt="" /> </div>
+              <span className='title-job'>Fullstack Web Developer</span>
               <div>
-                <a href="#">
+                <a href="https://www.twitch.tv/darkown3r" target='_blank'>
                   <img className='icon' src={twitch} alt="" />
                   </a>
-                <a href="#">
+                <a href="https://github.com/DarkOwn3r" target='_blank'>
                   <img className='icon' src={github} alt="" />
                   </a>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/pablo-santana-ojeda/" target='_blank'>
                   <img className='icon' src={linkedin} alt="" />
                   </a>
-                <a href="#">
+                <a href="https://open.spotify.com/user/1115344794?si=ce62467c251f4b0b" target='_blank'>
                   <img className='icon' src={spotify} alt="" />
                   </a>
               </div>
@@ -36,42 +36,42 @@ const About = () => {
               </div>
             </div>
 
-            <div class="elemento">
-              <h5>Daniel Carretero</h5>
-              <div><img src="../src/assets/people01.png" alt="" /> </div>
-              <span className='puesto'>Coder</span>
+            <div className="about-card">
+              <h2>Daniel Carretero</h2>
+              <div><img className="about-us-avatar" src="../src/assets/people01.png" alt="" /> </div>
+              <span className='title-job'>Fullstack Web Developer</span>
               <div>
-                <a href="#">
+                <a href="#" target='_blank'>
                   <img className='icon' src={twitch} alt="" />
                   </a>
-                <a href="#">
+                <a href="https://github.com/dcarrete" target='_blank'>
                   <img className='icon' src={github} alt="" />
                   </a>
-                <a href="#">
+                <a href="#" target='_blank'>
                   <img className='icon' src={linkedin} alt="" />
                   </a>
-                <a href="#">
+                <a href="#" target='_blank'>
                   <img className='icon' src={spotify} alt="" />
                   </a>
               </div>
 
             </div>
 
-            <div class="elemento">
-              <h5>Freddy Escalada</h5>
-              <div><img src="../src/assets/people01.png" alt="" /> </div>
-              <span className='puesto'>Coder</span>
+            <div className="about-card">
+              <h2>Freddy Escalada</h2>
+              <div><img className="about-us-avatar" src="../src/assets/people01.png" alt="" /> </div>
+              <span className='title-job'>Fullstack Web Developer</span>
               <div>
-                <a href="#">
+                <a href="#" target='_blank'>
                   <img className='icon' src={twitch} alt="" />
                   </a>
-                <a href="#">
+                <a href="https://github.com/tajamajaka" target='_blank'>
                   <img className='icon' src={github} alt="" />
                   </a>
-                <a href="#">
+                <a href="#" target='_blank'>
                   <img className='icon' src={linkedin} alt="" />
                   </a>
-                <a href="#">
+                <a href="#" target='_blank'>
                   <img className='icon' src={spotify} alt="" />
                   </a>
               </div>

@@ -1,34 +1,37 @@
 #principal {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.about-container, .elemento {
-  border: rgb(160, 160, 160) solid 1px;
+.about-card {
+  width: 300px;
+  height: 450px;
+  background-color: #121212;
   border-radius: 20px;
-  padding: 20px;gap: 15px
-
+  padding: 20px;
+  margin-bottom: 20px;
+  gap: 15px;
+  border-radius: 5px;
+  animation: breatheShadow 7s infinite;
+	color: #b3b3b3;
 }
 
-#aboutus {
-}
-
-#meet{
-
+@keyframes breatheShadow {
+  0% {box-shadow: 0px 2px 0px #1db954}
+  50% {box-shadow: 0px 2px 0px #1db954, 20px 20px 30px -10px rgb(117, 5, 158), -20px 20px 30px -10px rgb(117, 5, 158)}
+  100% {box-shadow: 0px 2px 0px #1db954}
 }
 
 .about-container {
   padding: 22px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;  
   color: white;
   width: 80vw;
   flex-wrap: wrap;
-}
-
-.about-container h1 {
-  display: inline;
+  padding: 20px;
 }
 
 .about-content {
@@ -37,23 +40,24 @@
   padding: 20px;
 }
 
-.elemento{
-}
-
-h6{
-  color:rgb(255, 255, 255)
-}
-
-.puesto{
+.title-job{
   font-size: 0.8rem;
-  color:rgb(255, 255, 255)
-
-}
-h6, .puesto{
+  color:rgb(255, 255, 255);
   padding-left: 0.5rem;
 }
 
 div > a > img.icon {
   width: 1.5rem;
   padding: 7px;
+  transition: 1s ease transform;
+}
+
+div > a > img.icon:hover {
+  transform: scale(1.4);
+}
+
+.about-us-avatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 5%;
 }

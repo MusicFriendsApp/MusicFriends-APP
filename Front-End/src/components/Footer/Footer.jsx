@@ -1,42 +1,47 @@
+import { useEffect, useState } from 'react';
 import './Footer.css'
-import logo from '../../assets/logo.png'
-
 import AdbIcon from '@mui/icons-material/Diversity2';
 
-
-const optionsData = ['artists', 'genres', 'songs', 'common friends']
-
 const Footer = () => {
+  const [date, setDate] = useState('')
+
+  useEffect(() => {
+    const getYear = () => {
+      const date = new Date()
+      const year = date.getFullYear()
+      setDate(year)
+    }
+    getYear()
+  }, [])
+
   return (
     <>
       <div id="footer-container">
       
-      <div id='column01'>
-        <h6 id='company-name'  className='text-footer'>Spotify Friends<AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /></h6>
-        {/* <img id='logo' src={logo} alt="" /> */}
-        
-      </div>
-      <div id='column02'>
-        <h6 className='text-footer'>SPOTIFY FRIENDS is a Social Networking/Friendship App based on your preferences about music, musical genres and artist. 
-          Enjoy your music, share with friends and keep up to date on the scene. Have you ever tried?</h6>
-        <ul>
-          <li className='text-footer'>User Authentication</li>
-          <li className='text-footer'>Profile</li>
-          <li className='text-footer'>Friend Networking</li>
-          <li className='text-footer'>Chat</li>
-          <li className='text-footer'>Friend Requests</li>
-          <li className='text-footer'>Activity Feed</li>
-          <li className='text-footer'>Music Recommendations</li>
-          <li className='text-footer'>Events</li>
-        </ul>
-      </div>
-{/* 
-      <div id='column03'>
-        <p>A Social Networking/Friendship App based on Spotify API</p>
-      </div>
-      
-       */}
-      
+        <div id='column01'>
+          <h6 id='company-name'  className='text-footer'>Spotify Friends</h6>
+          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        </div>
+        <div id='column02'>
+          <h5 className='text-footer'>SPOTIFY FRIENDS is a Social Networking/Friendship App based on your preferences about music, musical genres and artist. <br />
+            Enjoy your music, share with friends and keep up to date on the scene. Have you ever tried?</h5>
+            <p className='text-footer'>&#169; Copyright SPOTIFY FRIENDS developers {date}</p>
+          <div id='footer-list-container'>
+            <ul>
+              <li className='text-footer'><h6>User Authentication</h6></li>
+              <li className='text-footer'><h6>Profile</h6></li>
+              <li className='text-footer'><h6>Friend Networking</h6></li>
+              <li className='text-footer'><h6>Chat</h6></li>
+            </ul>
+            <ul>
+              <li className='text-footer'><h6>Friend Requests</h6></li>
+              <li className='text-footer'><h6>Activity Feed</h6></li>
+              <li className='text-footer'><h6>Music Recommendations</h6></li>
+              <li className='text-footer'><h6>Events</h6></li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </>
   )

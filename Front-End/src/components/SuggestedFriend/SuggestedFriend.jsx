@@ -45,7 +45,7 @@ export const SuggestedFriend = () => {
                   })
                 })
                 return commonGenres.length > 0 ? user : null
-              } // Filter out current
+              }
             })
         )
         const validSuggestions = suggestions.filter((user) => user !== null)

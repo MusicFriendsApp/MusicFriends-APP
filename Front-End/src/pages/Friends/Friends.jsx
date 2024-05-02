@@ -30,15 +30,19 @@ export const Friends = () => {
       }
     }
     getFriendsList()
-  }, [currentUser.id])
+  }, [])
 
   if (isLoading) {
     return <img id="loading-image" src={loadingImage} />
   }
 
+  if (!friendsList || friendsList.length === 0) {
+    return <h1>You have no friends yet here! We'll find someone for you soon</h1>
+  }
+
   return (
     <div id="friends-container">
-      {friendsList.map((friend) => (
+      {friendsList && friendsList.map((friend) => (
         friend && <UserCard key={friend.id} data={friend} />
       ))}
     </div>

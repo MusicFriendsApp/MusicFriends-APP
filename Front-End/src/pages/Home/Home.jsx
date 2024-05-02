@@ -6,7 +6,7 @@ import { SuggestedFriend } from "../../components/SuggestedFriend/SuggestedFrien
 import loadingImage from "../../assets/loading.gif"
 import Posts from "../../components/Posts/Posts"
 import PostForm from "../../components/PostForm/PostForm"
-import { UserContext } from "../../contexts/Contexts"
+import { UserContext, PostContext} from "../../contexts/Contexts"
 
 const Home = () => {
 
@@ -20,8 +20,9 @@ const Home = () => {
       try {
         const spotify_id = localStorage.getItem('spotify_id')
         const profile = await getCurrentUser(spotify_id)
-        setData(profile)
         setCurrentUser(profile)
+        setData(profile)
+        sessionStorage.setItem('currentUser_id', profile.id)
       } catch (error) {
       } finally {
         setIsLoading(false)

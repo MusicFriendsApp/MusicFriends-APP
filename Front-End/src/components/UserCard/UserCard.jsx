@@ -6,7 +6,7 @@ const UserCard = ({data}) => {
   const {currentUser, setCurrentUser} = useContext(UserContext)
   const [userCard, setUserCard] = useState('card')
   useEffect(() => {
-    if(data.spotify_id === currentUser.spotify_id){
+    if(data && data.spotify_id === currentUser.spotify_id){
       setUserCard('card current-user-card')
     }
   }, [])

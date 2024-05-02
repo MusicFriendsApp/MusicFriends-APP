@@ -22,6 +22,14 @@
   align-items: center;
 }
 
+#suggested-friend-card button.following {
+  background-color: rgb(117, 5, 158);
+  border-color: rgb(117, 5, 158);
+  border-radius: 2px;
+  width: 100px;
+}
+
+
 #suggested-friend-card button.following span {
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
@@ -56,10 +64,6 @@
 
 #suggested-friend-card button.following::before {
   content: 'UNFOLLOW';
-}
-
-#suggested-friend-card button.following:after {
-  content: 'FOLLOWING';
 }
 
 #suggested-friend-card button.following:hover:before {

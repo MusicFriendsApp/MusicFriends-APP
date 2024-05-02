@@ -17,15 +17,13 @@ import './Header.css'
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/Contexts';
 
-
-
 const color = 'rgb(18,18,18)' // font color
 
 const pages = ['Home', 'Friends', 'About'];
 const settings = ['Profile', 'Logout'];
 
 export default function Header() {
-  const currentUserData = useContext(UserContext)
+  const {currentUser, setCurrentUser} = useContext(UserContext)
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -139,7 +137,7 @@ export default function Header() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                {currentUserData.currentUser && <Avatar alt="Remy Sharp" src={currentUserData.currentUser.profile_picture_sm} />}
+                {currentUser && <Avatar alt="Remy Sharp" src={currentUser.profile_picture_sm} />}
               </IconButton>
             </Tooltip>
             <Menu

@@ -4,7 +4,7 @@ import likedImg from '../../assets/heart-filled.svg'
 import { useState } from 'react'
 
 const SinglePost = ({postData, user}) => {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(Math.round(Math.random() * 5))
   const [like, setLike] = useState(false)
   const [classLiked, setClassLiked] = useState(false)
   const [likeIcon, setLikeIcon] = useState(likeImg)
@@ -22,11 +22,13 @@ const SinglePost = ({postData, user}) => {
       setClassLiked('')
       setLike(false)
       setLikeIcon(likeImg)
+      setCount(count - 1)
     } else {
       // LikePost(currentUserId, postData.id)
       setClassLiked('liked')
       setLike(true)
       setLikeIcon(likedImg)
+      setCount(count + 1)
     }
   }
 

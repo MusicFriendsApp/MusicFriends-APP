@@ -2,7 +2,7 @@ import './Posts.css'
 import SinglePost from '../SinglePost/SinglePost'
 import loadingImage from "../../assets/loading.gif"
 import { getUserPosts } from "../../services/post"
-import { getAllUsers, checkFriend, getOneUser, getCurrentUser} from '../../services/user'
+import { getAllUsers, checkFriend, getOneUser} from '../../services/user'
 import { useEffect, useState, useContext} from "react"
 import { PostContext, UserContext } from '../../contexts/Contexts'
 

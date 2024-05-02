@@ -6,7 +6,7 @@ import { SuggestedFriend } from "../../components/SuggestedFriend/SuggestedFrien
 import loadingImage from "../../assets/loading.gif"
 import Posts from "../../components/Posts/Posts"
 import PostForm from "../../components/PostForm/PostForm"
-import { UserContext, PostContext} from "../../contexts/Contexts"
+import { UserContext} from "../../contexts/Contexts"
 
 const Home = () => {
 

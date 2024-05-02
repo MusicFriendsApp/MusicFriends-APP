@@ -2,7 +2,7 @@ import './Login.css'
 import { loginSpotify } from '../../services/loginSpotify'
 import { useState, useEffect } from 'react'
 import exampleCard from "../../assets/card.png"
-/* import exampleAuth from "../../assets/auth-spotify.png" */
+import exampleAuth from "../../assets/auth-spotify.png"
 import suggestExample from "../../assets/suggest.png"
 import examplePosts from "../../assets/posts.png"
 import usersExample from "../../assets/watch-removebg-preview.png"
@@ -68,7 +68,7 @@ const Login = () => {
         </div>
         <div id='segunda'>
           <div className='segunda'>Login with your Spotify account
-            <div id='auth'> <img src="./assets/auth-spotify.png" alt="" /></div>
+            <div id='auth'> <img src={exampleAuth} alt="" /></div>
           </div>
           <div className='segunda'>We suggest you other users with similar music taste
           <div> <img src={suggestExample} alt="" /> </div>

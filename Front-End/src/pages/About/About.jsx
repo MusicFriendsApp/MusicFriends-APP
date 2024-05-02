@@ -16,7 +16,7 @@ const About = () => {
             <div className="about-card">
               <h2>Pablo Santana</h2>
               <div><img className="about-us-avatar" src="../src/assets/kurayamiface.jpg" alt="" /> </div>
-              <span className='title-job'>👨🏻‍💻 Junior Fullstack Web Developer | 🎸 Musician | ☢️ Welder 👨🏻‍🏭 | Sound Engineer 🔊|<br />💜Love music, gaming, coffee and tattoos.</span>
+              <span className='title-job'>👨🏻‍💻 Junior Fullstack Web Developer <br /> 🎸 Musician | ☢️ Welder 👨🏻‍🏭 | Sound Engineer 🔊|<br />💜Love music, gaming, coffee and tattoos.</span>
               <div>
                 <a href="https://www.twitch.tv/darkown3r" target='_blank'>
                   <img className='icon' src={twitch} alt="" />

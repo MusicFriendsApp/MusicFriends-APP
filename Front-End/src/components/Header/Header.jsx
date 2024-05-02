@@ -63,7 +63,7 @@ export default function Header() {
             SPOTIFY FRIENDS
           </Typography>
           </Link>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          {currentUser && <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -100,7 +100,7 @@ export default function Header() {
                 </Link>
               ))}
             </Menu>
-          </Box>
+          </Box>}
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Link to="/Home">
           <Typography
@@ -120,7 +120,7 @@ export default function Header() {
             SPOTIFY FRIENDS
           </Typography>
             </Link> 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          {currentUser && <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Link key={page} to={`/${page}`}>
                 <Button
@@ -132,7 +132,7 @@ export default function Header() {
                 </Button>
               </Link>
             ))}
-          </Box>
+          </Box>}
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
@@ -140,7 +140,7 @@ export default function Header() {
                 {currentUser && <Avatar alt="Remy Sharp" src={currentUser.profile_picture_sm} />}
               </IconButton>
             </Tooltip>
-            <Menu
+            {currentUser && <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -163,7 +163,7 @@ export default function Header() {
                   </MenuItem>
                 </Link>
               ))}
-            </Menu>
+            </Menu>}
           </Box>
         </Toolbar>
       </Container>

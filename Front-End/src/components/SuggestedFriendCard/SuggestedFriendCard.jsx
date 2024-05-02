@@ -1,6 +1,7 @@
 import './SuggestedFriendCard.css'
 import { followUser, unfollowUser } from '../../services/user';
 import { useState } from 'react';
+import profilePic from '../../assets/defaultProfilePicture.svg'
 
 const SuggestedFriendCard = ({data, randomColor}) => {
 

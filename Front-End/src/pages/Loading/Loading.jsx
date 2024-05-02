@@ -4,7 +4,6 @@ import { UserContext } from "../../contexts/Contexts"
 import { getUserSpotify } from '../../services/getUserSpotify' 
 import { getUserTopArtist } from '../../services/getUserTopArtist'
 import { createUser, addUserGenres, addTopTenArtist, getAllUsers } from "../../services/user"
-import profilePic from '../../assets/defaultProfilePicture.svg'
 import  { Navigate } from 'react-router-dom'
 import './Loading.css'
 import { AuthContext } from '../../contexts/Contexts';
@@ -37,7 +36,7 @@ const Loading = () => {
         if (userData.images.length !== 0){
           createUser(userData.display_name,userData.country,userData.id,userData.images[0].url,userData.images[1].url)
         } else {
-          createUser(userData.display_name,userData.country,userData.id,profilePic,profilePic)
+          createUser(userData.display_name,userData.country,userData.id,"profilePic","profilePic")
         }
         setIsLoading(false)
         setCurrentUser({userData})

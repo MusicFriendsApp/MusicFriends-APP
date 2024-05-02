@@ -1,6 +1,8 @@
 import './Login.css'
 import { loginSpotify } from '../../services/loginSpotify'
 import { useState, useEffect } from 'react'
+import exampleCard from "../src/assets/card.png"
+import exampleAuth from "../src/assets/auth-spotify.png"
 
 const Login = () => {
 
@@ -59,11 +61,11 @@ const Login = () => {
           </div>
         <div id='primera'> 
           <div className='primera'>Connect with people that listen to the same artists or genres you listen</div>
-          <div className='primera'> <img src="../src/assets/card.png" alt="" /> </div>
+          <div className='primera'> <img src={exampleCard} alt="" /> </div>
         </div>
         <div id='segunda'>
           <div className='segunda'>Login with your Spotify account
-            <div id='auth'> <img src="../src/assets/auth-spotify.png" alt="" /></div>
+            <div id='auth'> <img src={exampleAuth} alt="" /></div>
           </div>
           <div className='segunda'>We suggest you other users with similar music taste
           <div> <img src="../src/assets/suggest.png" alt="" /> </div>

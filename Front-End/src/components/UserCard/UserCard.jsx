@@ -48,17 +48,17 @@ const UserCard = ({data, isFriendChecked}) => {
         <div className='user-stats-container'>
           <hr />
           <div>
-            <h6>10</h6>
+            <h6>{Math.round(Math.random() * 532)}</h6>
             <h6>Posts</h6>
           </div>
           <hr />
           <div>
-            <h6>5</h6>
+            <h6>{Math.round(Math.random() * 20)}</h6>
             <h6>Followers</h6>
           </div>
           <hr />
           <div>
-            <h6>5</h6>
+            <h6>{Math.round(Math.random() * 50)}</h6>
             <h6>Following</h6>
           </div>
           <hr />

@@ -60,7 +60,7 @@ const About = () => {
             <div className="about-card">
               <h2>Freddy Escalada</h2>
               <div><img className="about-us-avatar" src="../src/assets/faet1.jpg" alt="" /> </div>
-              <span className='title-job'>Fullstack Web Developer</span>
+              <span className='title-job'>Apprentice | moment stealer / rumbling / minimalist / dreamer</span>
               <div>
                 <a href="#" target='_blank'>
                   <img className='icon' src={twitch} alt="" />

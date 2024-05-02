@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'https://spotify-friends.netlify.app/api'
+    baseURL: 'https://spotifyfriends-app.onrender.com/api'
 })
 
 export default api

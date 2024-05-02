@@ -58,7 +58,7 @@
   border: rgb(160, 160, 160) solid 1px;
   height: 150px;
   border-radius: 20px;
-  padding: 20px;
+  padding: 25px;
   width: 450px;
 }
 #primera {
@@ -67,7 +67,7 @@
 }
 
 #primera > div > img {
-  width: 280px;
+  width: 220px;
 }
 
 #segunda, .segunda{
@@ -78,6 +78,7 @@
 .segunda{
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 #segunda > div > div > img {
@@ -85,7 +86,7 @@
 }
 
 #tercera > div > div > img{
-  width: 290px;
+  width: 320px;
 }
 
 .segunda, .tercera {
@@ -103,6 +104,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 20px;
 }
 
@@ -112,6 +114,7 @@
   margin-top: 10px;
   margin-right: 10px;
   margin-left: 10px;
+  max-height: 250px;
 }
 
 #cuarta {  

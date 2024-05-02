@@ -16,7 +16,7 @@ const About = () => {
             <div className="about-card">
               <h2>Pablo Santana</h2>
               <div><img className="about-us-avatar" src="../src/assets/kurayamiface.jpg" alt="" /> </div>
-              <span className='title-job'>Fullstack Web Developer</span>
+              <span className='title-job'>| 👨🏻‍💻 Junior Fullstack Web Developer 👨🏻‍💻 | |🎸 Musician 👹 |☢️ Welder 👨🏻‍🏭 |🎚️Sound Engineer 🔊| 💜Love music, gaming, coffee and tattoos ✨</span>
               <div>
                 <a href="https://www.twitch.tv/darkown3r" target='_blank'>
                   <img className='icon' src={twitch} alt="" />
@@ -38,8 +38,8 @@ const About = () => {
 
             <div className="about-card">
               <h2>Daniel Carretero</h2>
-              <div><img className="about-us-avatar" src="../src/assets/people01.png" alt="" /> </div>
-              <span className='title-job'>Fullstack Web Developer</span>
+              <div><img className="about-us-avatar" src="../src/assets/dcarrete.webp" alt="" /> </div>
+              <span className='title-job'>Apprentice Junior Fullstack Web Developer | Business graduated & Agronomist | Loving life challenges</span>
               <div>
                 <a href="#" target='_blank'>
                   <img className='icon' src={twitch} alt="" />
@@ -59,7 +59,7 @@ const About = () => {
 
             <div className="about-card">
               <h2>Freddy Escalada</h2>
-              <div><img className="about-us-avatar" src="../src/assets/people01.png" alt="" /> </div>
+              <div><img className="about-us-avatar" src="../src/assets/faet1.jpg" alt="" /> </div>
               <span className='title-job'>Fullstack Web Developer</span>
               <div>
                 <a href="#" target='_blank'>

@@ -16,7 +16,7 @@ const About = () => {
             <div className="about-card">
               <h2>Pablo Santana</h2>
               <div><img className="about-us-avatar" src="../src/assets/kurayamiface.jpg" alt="" /> </div>
-              <span className='title-job'>| 👨🏻‍💻 Junior Fullstack Web Developer 👨🏻‍💻 | |🎸 Musician 👹 |☢️ Welder 👨🏻‍🏭 |🎚️Sound Engineer 🔊| 💜Love music, gaming, coffee and tattoos ✨</span>
+              <span className='title-job'>👨🏻‍💻 Junior Fullstack Web Developer | 🎸 Musician | ☢️ Welder 👨🏻‍🏭 | Sound Engineer 🔊|<br />💜Love music, gaming, coffee and tattoos.</span>
               <div>
                 <a href="https://www.twitch.tv/darkown3r" target='_blank'>
                   <img className='icon' src={twitch} alt="" />
@@ -41,18 +41,18 @@ const About = () => {
               <div><img className="about-us-avatar" src="../src/assets/dcarrete.webp" alt="" /> </div>
               <span className='title-job'>Apprentice Junior Fullstack Web Developer | Business graduated & Agronomist | Loving life challenges</span>
               <div>
-                <a href="#" target='_blank'>
+                {/* <a href="#" target='_blank'>
                   <img className='icon' src={twitch} alt="" />
-                  </a>
+                  </a> */}
                 <a href="https://github.com/dcarrete" target='_blank'>
                   <img className='icon' src={github} alt="" />
                   </a>
-                <a href="#" target='_blank'>
+                {/* <a href="#" target='_blank'>
                   <img className='icon' src={linkedin} alt="" />
                   </a>
                 <a href="#" target='_blank'>
                   <img className='icon' src={spotify} alt="" />
-                  </a>
+                  </a> */}
               </div>
 
             </div>
@@ -60,20 +60,20 @@ const About = () => {
             <div className="about-card">
               <h2>Freddy Escalada</h2>
               <div><img className="about-us-avatar" src="../src/assets/faet1.jpg" alt="" /> </div>
-              <span className='title-job'>Apprentice | moment stealer / rumbling / minimalist / dreamer</span>
+              <span className='title-job'>Apprentice | moment stealer | rumbling | minimalist | dreamer</span>
               <div>
-                <a href="#" target='_blank'>
+                {/* <a href="#" target='_blank'>
                   <img className='icon' src={twitch} alt="" />
-                  </a>
+                  </a> */}
                 <a href="https://github.com/tajamajaka" target='_blank'>
                   <img className='icon' src={github} alt="" />
                   </a>
-                <a href="#" target='_blank'>
+                {/* <a href="#" target='_blank'>
                   <img className='icon' src={linkedin} alt="" />
                   </a>
                 <a href="#" target='_blank'>
                   <img className='icon' src={spotify} alt="" />
-                  </a>
+                  </a> */}
               </div>
             </div>
 

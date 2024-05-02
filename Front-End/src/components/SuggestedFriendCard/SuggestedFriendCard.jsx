@@ -26,7 +26,7 @@ const SuggestedFriendCard = ({data, randomColor}) => {
   return (
     <div id='suggested-friend-card'>
       <div id='suggested-friend-header'>
-        <img id='suggested-friend-avatar' src={data.profile_picture_sm} style={{backgroundColor: randomColor}}/>
+        <img id='suggested-friend-avatar' src={data.profile_picture_sm !== '' ? data.profile_picture_sm : profilePic} style={{backgroundColor: randomColor}}/>
         <h4 id='suggested-friend-name'>{data.username}</h4>
       </div>
       <button onClick={handleFollow} className={classFollow}><span>{follow}</span></button>

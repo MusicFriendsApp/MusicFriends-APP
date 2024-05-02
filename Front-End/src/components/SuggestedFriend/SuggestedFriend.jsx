@@ -26,49 +26,66 @@ export const SuggestedFriend = () => {
 
   useEffect(() => {
     async function filterSuggestions() {
-      if (!currentUser || userList.length === 0) return;
+      if (!currentUser || userList.length === 0) return
       try {
-        const currentUserGenres = await getUserGenres(currentUser.id);
+        const currentUserGenres = await getUserGenres(currentUser.id)
         const suggestions = await Promise.all(
-          userList.filter(user => user.id !== currentUser.id).map(async user => {
-            const suggestedUserGenres = await getUserGenres(user.id)
-            
-            const isFriend = await checkFriend(currentUser.id, user.id);
-            if (isFriend) {
-              return null
-            } else {
-              const commonGenres = suggestedUserGenres.filter((obj) =>  {
+          userList
+            .filter((user) => user.id !== currentUser.id)
+            .map(async (user) => {
+              const suggestedUserGenres = await getUserGenres(user.id)
+
+              const isFriend = await checkFriend(currentUser.id, user.id)
+              if (isFriend) {
+                return null
+              } else {
+                const commonGenres = suggestedUserGenres.filter((obj) => {
                   return currentUserGenres.filter((genre) => {
-                  return genre.genreId === obj.genreId
+                    return genre.genreId === obj.genreId
                   })
                 })
-              return commonGenres.length > 0 ? user : null;
-            } // Filter out current
-            
-          })
-        );
-        const validSuggestions = suggestions.filter(user => user !== null);
-        setRenderSuggestions(validSuggestions);
+                return commonGenres.length > 0 ? user : null
+              } // Filter out current
+            })
+        )
+        const validSuggestions = suggestions.filter((user) => user !== null)
+        setRenderSuggestions(validSuggestions)
       } catch (error) {
-        console.error('Error filtering suggestions:', error);
+        console.error('Error filtering suggestions:', error)
       }
     }
-    filterSuggestions();
-  }, [currentUser, userList]);
+    filterSuggestions()
+  }, [currentUser, userList])
 
   const randomColor = () => {
-    const randomColorArray = ['#b761bc', '#1db954', '#d7dbdc', '#86b3f6', '#e38417']
+    const randomColorArray = [
+      '#b761bc',
+      '#1db954',
+      '#d7dbdc',
+      '#86b3f6',
+      '#e38417',
+    ]
     const selectRandom = Math.floor(Math.random() * 5)
     return randomColorArray[selectRandom]
   }
 
   return (
     <>
-      <div id='suggestions-container'>
-      <h3>PEOPLE TO CONNECT</h3>
-        {renderSuggestions.length > 0 ? renderSuggestions.map((data) => {
-          return <SuggestedFriendCard key={data.id} data={data} randomColor={randomColor()}/>
-        }) : <p>We'll find someone for you soon!</p>}
+      <div id="suggestions-container">
+        <h3>PEOPLE TO CONNECT</h3>
+        {renderSuggestions.length > 0 ? (
+          renderSuggestions.map((data) => {
+            return (
+              <SuggestedFriendCard
+                key={data.id}
+                data={data}
+                randomColor={randomColor()}
+              />
+            )
+          })
+        ) : (
+          <p>We'll find someone for you soon!</p>
+        )}
       </div>
     </>
   )

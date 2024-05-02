@@ -1,12 +1,13 @@
 import './Profile.css'
 import Posts from '../../components/Posts/Posts'
 import UserCard from '../../components/UserCard/UserCard'
+import loadingImage from "../../assets/loading.gif"
 import { getCurrentUser } from '../../services/user'
 import { useState, useEffect } from 'react'
+import Artists from '../../components/Artists/Artists'
 
 export const Profile = () => {
   const [data, setData] = useState('')
-
   useEffect(() => {
     const spotify_id = localStorage.getItem('spotify_id')
     async function getUserData() {
@@ -24,10 +25,17 @@ export const Profile = () => {
   return (
     <>
       <div className='profile-container'>
-        <UserCard data={data}/>
+        <div id="user-info">
+          {data && Object.keys(data).length > 0 ? (
+                <UserCard data={data}/>
+              ) : (
+                <img id="loading-image" src={loadingImage} alt="loading image" />
+              )}
+          <Artists />
+        </div>
         <div>
           <div className="user-posts">
-            <Posts/>
+            <Posts user={data}/>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import exampleCard from "../../assets/card.png"
 import exampleAuth from "../../assets/auth-spotify.png"
 import suggestExample from "../../assets/suggest.png"
 import examplePosts from "../../assets/posts.png"
-import usersExample from "../../assets/watch-removebg-preview.png"
+import usersExample from "../../assets/usersExample.png"
 
 const Login = () => {
 

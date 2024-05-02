@@ -3,7 +3,7 @@ import { useEffect, useState, useContext } from "react"
 import { UserContext } from "../../contexts/Contexts"
 import { getUserSpotify } from '../../services/getUserSpotify' 
 import { getUserTopArtist } from '../../services/getUserTopArtist'
-import { createUser, addUserGenres, addTopTenArtist, getAllUsers } from "../../services/user"
+import { createUser, addUserGenres, addTopTenArtist } from "../../services/user"
 import profilePic from '../../assets/defaultProfilePicture.svg'
 import  { Navigate } from 'react-router-dom'
 import './Loading.css'
@@ -60,13 +60,8 @@ const Loading = () => {
         setIsLoading(false)
         setUser(true)
     }
-    const getUserFriends = async () => {
-      setIsLoading(true)
-        const users = await getAllUsers()
-    }
     getUserDataSpotify()
     getUserTopArtistData()
-    getUserFriends()
   }, [token, isLoggedIn]) 
 
   return (

@@ -45,7 +45,7 @@ const UserCard = ({data}) => {
         <p>
           User interface designer and <br /> front-end developer
         </p>
-        <div className="buttons">
+        <div className="button-myprofile">
           <button className="primary">My profile</button>
         </div>
       </div>

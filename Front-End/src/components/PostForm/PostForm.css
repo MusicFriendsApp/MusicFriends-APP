@@ -9,6 +9,9 @@ textarea{
   background-color: #3b3b3b;
   font-size: 1.2rem;
 }
+textarea:focus-within, textarea:focus, textarea:focus-within{
+  border-color: #1db954;
+}
 #submit-button {
   cursor: pointer;
   color: white;

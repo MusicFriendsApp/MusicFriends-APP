@@ -37,7 +37,7 @@ const Loading = () => {
         if (userData.images.length !== 0){
           createUser(userData.display_name,userData.country,userData.id,userData.images[0].url,userData.images[1].url)
         } else {
-          createUser(userData.display_name,userData.country,userData.id,'', '')
+          createUser(userData.display_name,userData.country,userData.id,profilePic, profilePic)
         }
         setIsLoading(false)
         setCurrentUser({userData})

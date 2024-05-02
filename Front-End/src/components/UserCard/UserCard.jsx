@@ -1,15 +1,38 @@
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './UserCard.css'
-import { UserContext } from '../../contexts/Contexts'
+import { followUser, unfollowUser} from '../../services/user';
 
-const UserCard = ({data}) => {
-  const {currentUser, setCurrentUser} = useContext(UserContext)
+const UserCard = ({data, isFriendChecked}) => {
   const [userCard, setUserCard] = useState('card')
+  const [isFollowing, setIsFollowing] = useState(false)
+  const [classFollow, setClassFollow] = useState('')
+  const [follow, setFollow] = useState('FOLLOW')
+  const currentUserId = localStorage.getItem('spotify_id')
+  
+  const handleFollow = async () => {
+    setIsFollowing(!isFollowing)
+    if(isFollowing) {
+      unfollowUser(currentUserId, data.spotify_id)
+      setClassFollow('')
+      setFollow('FOLLOW')
+    } else {
+      followUser(currentUserId, data.spotify_id)
+      setClassFollow('following')
+      setFollow('FOLLOWING')
+    }
+  }
+
   useEffect(() => {
-    if(data && data.spotify_id === currentUser.spotify_id){
+    if (isFriendChecked) {
+      setIsFollowing(!isFollowing)
+      setClassFollow('following')
+      setFollow('FOLLOWING')
+    }
+    if(data && data.spotify_id === currentUserId){
       setUserCard('card current-user-card')
     }
   }, [])
+
   const randomColor = () => {
     const randomColorArray = ['#b761bc', '#1db954', '#d7dbdc', '#86b3f6', '#e38417']
     const selectRandom = Math.floor(Math.random() * 5)
@@ -18,7 +41,7 @@ const UserCard = ({data}) => {
 
   return (
     <div>
-      <div className="card">
+      <div className={userCard}>
         <span className="pro">FREE</span>
         <img className="round" src={data.profile_picture_bg} alt="user" style={{backgroundColor: randomColor()}}/>
         <h3>{data.username}</h3>
@@ -40,13 +63,8 @@ const UserCard = ({data}) => {
           </div>
           <hr />
         </div>
-        <div className='user-stats-container'>
-        </div>
-        <p>
-          User interface designer and <br /> front-end developer
-        </p>
-        <div className="button-myprofile">
-          <button className="primary">My profile</button>
+        <div className="button-container">
+          <button onClick={handleFollow} className={classFollow}><span>{follow}</span></button>
         </div>
       </div>
     </div>

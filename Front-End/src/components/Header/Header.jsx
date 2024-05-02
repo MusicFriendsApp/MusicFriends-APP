@@ -14,8 +14,8 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Diversity2';
 import { Link } from 'react-router-dom';
 import './Header.css'
-import { useContext } from 'react';
-import { UserContext } from '../../contexts/Contexts';
+import { useEffect, useState } from 'react';
+import { getCurrentUser } from '../../services/user';
 
 const color = 'rgb(18,18,18)' // font color
 
@@ -23,9 +23,19 @@ const pages = ['Home', 'Friends', 'About'];
 const settings = ['Profile', 'Logout'];
 
 export default function Header() {
-  const {currentUser, setCurrentUser} = useContext(UserContext)
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const sessionUser = sessionStorage.getItem('currentUser_id')
+  const [currentUser, setCurrentUser] = useState({})
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
+  
+  useEffect(() => {
+    const userFetch = async () => {
+      const spotify_id = localStorage.getItem('spotify_id')
+      const profile = await getCurrentUser(spotify_id)
+      setCurrentUser(profile)
+    }
+    userFetch()
+  }, [sessionUser])
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -63,7 +73,7 @@ export default function Header() {
             SPOTIFY FRIENDS
           </Typography>
           </Link>
-          {currentUser && <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          {sessionUser && <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -120,7 +130,7 @@ export default function Header() {
             SPOTIFY FRIENDS
           </Typography>
             </Link> 
-          {currentUser && <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          {sessionUser && <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Link key={page} to={`/${page}`}>
                 <Button
@@ -140,7 +150,7 @@ export default function Header() {
                 {currentUser && <Avatar alt="Remy Sharp" src={currentUser.profile_picture_sm} />}
               </IconButton>
             </Tooltip>
-            {currentUser && <Menu
+            <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -163,7 +173,7 @@ export default function Header() {
                   </MenuItem>
                 </Link>
               ))}
-            </Menu>}
+            </Menu>
           </Box>
         </Toolbar>
       </Container>

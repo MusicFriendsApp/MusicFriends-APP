@@ -43,7 +43,7 @@ export const Friends = () => {
   return (
     <div id="friends-container">
       {friendsList && friendsList.map((friend) => (
-        friend && <UserCard key={friend.id} data={friend} />
+        friend && <UserCard key={friend.id} data={friend} isFriendChecked={true}/>
       ))}
     </div>
   )

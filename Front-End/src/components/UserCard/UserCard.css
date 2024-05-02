@@ -61,7 +61,7 @@ p {
   background-color: #1db954;
 }
 
-.button-myprofile >.primary {
+.button >.primary {
 	background-color: #3B3B3B;
 	border: 1px solid #1db954;
 	border-radius: 3px;
@@ -80,7 +80,7 @@ p {
   margin-bottom: 50px;
 }
 
-.current-user-card .buttons{
+.current-user-card .button-container{
   display: none;
 }
 
@@ -88,4 +88,67 @@ p {
   display: flex;
   justify-content: center;
   gap: 15px;
+}
+
+.button-container button {
+  font-weight: 600;
+  padding: 5px 8px 5px 8px;
+  font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container button.following {
+  background-color: rgb(117, 5, 158);
+  border-color: rgb(117, 5, 158);
+  border-radius: 2px;
+  width: 100px;
+}
+
+
+.button-container button.following span {
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.button-container button.following:hover span{
+  opacity: 0;
+}
+
+.button-container button:hover {
+  background-color: #1db954;
+  border-color: #1db954;
+  border-radius: 2px;
+}
+
+.button-container button.following:hover {
+  background-color: #cb1b26;
+  border-color: #cb1b26;
+  border-radius: 2px;
+}
+
+.button-container button.following:before,.button-container button.following:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+}
+
+.button-container button.following::before {
+  content: 'UNFOLLOW';
+}
+
+.button-container button.following:hover:before {
+  opacity: 1;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
 }

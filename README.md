@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/40f835eb-5287-4a3d-a99b-61276cc95b06/deploy-status)](https://app.netlify.com/sites/music-friends/deploys)
 # MusicFriends-APP
 # A Social Networking/Friendship App based on Spotify API
 

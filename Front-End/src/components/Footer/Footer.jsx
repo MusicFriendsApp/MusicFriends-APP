@@ -19,13 +19,13 @@ const Footer = () => {
       <div id="footer-container">
       
         <div id='column01'>
-          <h6 id='company-name'  className='text-footer'>Spotify Friends</h6>
+          <h6 id='company-name'  className='text-footer'>MUSIC FRIENDS</h6>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
         </div>
         <div id='column02'>
-          <h5 className='text-footer'>SPOTIFY FRIENDS is a Social Networking/Friendship App based on your preferences about music, musical genres and artist. <br />
+          <h5 className='text-footer'>MUSIC FRIENDS is a Social Networking/Friendship App based on your preferences about music, musical genres and artist. <br />
             Enjoy your music, share with friends and keep up to date on the scene. Have you ever tried?</h5>
-            <p className='text-footer'>&#169; Copyright SPOTIFY FRIENDS developers {date}</p>
+            <p className='text-footer'>&#169; Copyright MUSIC FRIENDS developers {date}</p>
           <div id='footer-list-container'>
             <ul>
               <li className='text-footer'><h6>User Authentication</h6></li>

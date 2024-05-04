@@ -1,7 +1,7 @@
-# SpotifyFriends-APP
+# MusicFriends-APP
 # A Social Networking/Friendship App based on Spotify API
 
-SpotifyFriends is a web application that allows users to connect, network, and potentially meet others with similar music tastes. Users can discover new music, create playlists, and find meaningful connections, with other users, based on their favorite artists and genres.
+MusicFriends is a web application that allows users to connect, network, and potentially meet others with similar music tastes. Users can discover new music, create playlists, and find meaningful connections, with other users, based on their favorite artists and genres.
 
 ## Features
 
@@ -24,10 +24,10 @@ SpotifyFriends is a web application that allows users to connect, network, and p
 - Material-UI: React UI framework for designing consistent and responsive user interfaces.
 
 ## MOCKUP design
-![mockup SpotifyFriends](https://github.com/SpotifyFriends/SpotifyFriends-APP/assets/118024726/bee4b753-a07d-47ad-ad0b-f937c84504bc)
+![mockup MusicFriends](https://github.com/SpotifyFriends/SpotifyFriends-APP/assets/118024726/bee4b753-a07d-47ad-ad0b-f937c84504bc)
 
 ## Diagram Table
-![Diagrama SpotifyFriends](https://github.com/SpotifyFriends/SpotifyFriends-APP/assets/118024726/6d731c70-b830-48e6-beb7-e4b1f4836678)
+![Diagrama MusicFriends](https://github.com/SpotifyFriends/SpotifyFriends-APP/assets/118024726/6d731c70-b830-48e6-beb7-e4b1f4836678)
 
 
 

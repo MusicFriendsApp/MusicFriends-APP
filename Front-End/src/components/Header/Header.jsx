@@ -81,7 +81,7 @@ export default function Header() {
                 textDecoration: 'none',
               }}
             >
-              SPOTIFY FRIENDS
+              MUSIC FRIENDS
             </Typography>
             </Link>
             {isLoggedIn && <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -138,7 +138,7 @@ export default function Header() {
                 textDecoration: 'none',
               }}
             >
-              SPOTIFY FRIENDS
+              MUSIC FRIENDS
             </Typography>
               </Link> 
             {isLoggedIn && <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
